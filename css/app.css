@@ -1,0 +1,25 @@
+/*---------------------Custom CSS------------------*/
+
+.head {
+    padding-top: 80px;
+    height: 50%;
+    background-color: darkslategray;
+    margin-bottom: 20px;
+}
+
+.main {}
+
+.top-bar-title {
+    font-size: 24px;
+    padding-left: 10px;
+}
+
+.wrap {
+    width: 95%;
+    margin: 0 auto;
+}
+
+footer {
+    height: 30%;
+    background-color: black;
+}

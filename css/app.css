@@ -1,25 +1,133 @@
 /*---------------------Custom CSS------------------*/
 
-.head {
-    padding-top: 80px;
-    height: 50%;
-    background-color: darkslategray;
-    margin-bottom: 20px;
-}
 
-.main {}
-
-.top-bar-title {
-    font-size: 24px;
-    padding-left: 10px;
-}
+/***********************************************
+Wrapper Class
+************************************************/
 
 .wrap {
     width: 95%;
     margin: 0 auto;
+    font-family: 'Open Sans', sans-serif;
 }
+
+
+/**********************************************
+HERO (HEAD)
+***********************************************/
+
+.hero {
+    padding-top: 80px;
+    height: 50%;
+    background-color: darkcyan;
+    margin-bottom: 20px;
+}
+
+.hero h1,
+.hero p {
+    color: rgba(255, 255, 255, 0.8);
+    width: 70%;
+}
+
+
+/**********************************************
+MAIN BODY
+***********************************************/
+
+.main {}
+
+.orbit {
+    height: 70%;
+    width: 70%;
+    margin: 0 auto;
+}
+
+
+/**********************************************
+NAVIGATION MOBILE
+***********************************************/
+
+.nav-mobile {
+    background-color: black;
+    height: 100%;
+    padding: 0;
+    font-family: "Work Sans", sans-serif;
+}
+
+
+/**********************************************
+NAVIGATION DESKTOP
+***********************************************/
+
+.nav-desktop {
+    background-color: black;
+    height: 70px;
+    padding: 0;
+    font-family: "Work Sans", sans-serif;
+}
+
+.site-logo {
+    color: white;
+    line-height: 70px;
+}
+
+.nav-desktop .menu-desktop {
+    line-height: 70px;
+    background-color: transparent;
+}
+
+.menu>li>a {
+    display: inline-block;
+    line-height: 70px;
+    color: white;
+    padding-top: 0;
+    padding-bottom: 0;
+}
+
+.menu>li>a:hover {
+    background-color: rgba(255, 255, 255, 0.4);
+}
+
+.menu-desktop input {
+    background: transparent;
+    border-color: dimgrey;
+    padding-right: 0;
+}
+
+.menu-desktop button {
+    background: transparent;
+}
+
+.menu-desktop button:hover {
+    background: auto;
+}
+
+
+/***********************************************
+footer
+************************************************/
 
 footer {
     height: 30%;
     background-color: black;
+    color: aliceblue;
+    font-family: "arial black";
+}
+
+
+/***********************************************
+MEDIA QUERIES
+************************************************/
+
+@media (max-width: 640px) {
+    .nav-desktop {
+        display: none;
+    }
+}
+
+@media (max-width: 875px) {
+    hero.p,
+    hero.h1 {
+        width: 100%;
+    }
 }

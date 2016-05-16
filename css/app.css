@@ -9,6 +9,15 @@
 
 .main {}
 
+.focus2 {
+    background-color: darkorchid;
+    background-image: image();
+}
+
+.focus {
+    background-color: aqua;
+}
+
 .top-bar-title {
     font-size: 24px;
     padding-left: 10px;

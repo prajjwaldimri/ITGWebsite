@@ -5,7 +5,7 @@
     <meta charset="utf-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Foundation for Sites</title>
+    <title>Institute of Technology, Gopeshwar</title>
     <link rel="stylesheet" href="css/foundation.css">
     <link rel="stylesheet" href="css/app.css">
     <link rel="stylesheet" href="css/font-awesome-4.6.3/css/font-awesome.min.css">
@@ -23,31 +23,53 @@
 
 
             <!--MOBILE NAVIGATION -->
+            <div class="nav-mobile">
+                <div class="off-canvas position-left" id="mobile-menu" data-off-canvas>
+                    <ul class="menu vertical" data-accordion-menu>
 
-            <div class="off-canvas position-left nav-mobile" id="mobile-menu" data-off-canvas>
-                <ul class="menu vertical" data-accordion-menu>
+                        <li><a href="#">About</a></li>
+                        <li>
+                            <a href="#">Academics</a>
+                            <ul class="menu vertical">
+                                <li><a href="#">One</a></li>
+                                <li><a href="#">Two</a></li>
+                                <li><a href="#">Three</a></li>
+                            </ul>
+                        </li>
 
-                    <li><a href="#">About</a></li>
-                    <li>
-                        <a href="#">Academics</a>
-                        <ul class="menu vertical">
-                            <li><a href="#">One</a></li>
-                            <li><a href="#">Two</a></li>
-                            <li><a href="#">Three</a></li>
-                        </ul>
-                    </li>
+                        <li><a href="#">Administration</a></li>
+                    </ul>
+                </div>
 
-                    <li><a href="#">Administration</a></li>
-                </ul>
-            </div>
-
-            <div class="off-canvas-content nav-mobile" data-off-canvas-content>
-                <div class="title-bar show-for-small-only">
-                    <div class="title-bar-left">
-                        <button class="menu-icon" type="button" data-open="mobile-menu"></button>
-                        <span class="title-bar-title">Menu</span>
+                <div class="off-canvas-content" data-off-canvas-content>
+                    <div class="title-bar show-for-small-only">
+                        <div class="title-bar-left">
+                            <button class="menu-icon" type="button" data-open="mobile-menu"></button>
+                            <span id="mobile-title" class="menu-mobile">Menu</span>
+                        </div>
+                        <div class="tertiary-nav">
+                            <div class="top-bar-right">
+                                <ul class="inline-list menu menu-mobile">
+                                    <li class="search-field">
+                                        <form>
+                                            <div class="row collapse">
+                                                <div class="small-12 columns">
+                                                    <input type="search" placeholder="Search">
+                                                </div>
+                                            </div>
+                                        </form>
+                                    </li>
+                                    <li>
+                                        <button type="button" class="button search-icon">
+                                            <i class="fa fa-search"></i>
+                                        </button>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
                     </div>
                 </div>
+
             </div>
 
             <!--DESKTOP NAVIGATION-->
@@ -59,7 +81,7 @@
                         <li><a href="#">About</a></li>
                         <li>
                             <a href="#">Academics</a>
-                            <ul class="menu vertical">
+                            <ul class="menu vertical" id="Academics">
                                 <li><a href="#">One</a></li>
                                 <li><a href="#">Two</a></li>
                                 <li><a href="#">Three</a></li>
@@ -88,7 +110,6 @@
             <section class="hero">
                 <div class="wrap">
                     <h1>Head Section</h1>
-                    <a href="www.google.com" class="button">View All Features</a>
 
                     <div class="orbit" role="region" aria-label="ITG Main Carousel" data-orbit>
                         <ul class="orbit-container">

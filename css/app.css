@@ -1,4 +1,4 @@
-/*---------------------Custom CSS------------------*/
+/*---------------------Custom SASS------------------*/
 /***********************************************
 Wrapper Class
 ************************************************/
@@ -24,21 +24,14 @@ HERO (HEAD)
 /**********************************************
 MAIN BODY
 ***********************************************/
+.focus4 {
+  background-color: bisque; }
 
-.main {}
-.focus4{
-     background-color:bisque;
-}
-.focus3{
-     background-color:bisque;
-}
+.focus3 {
+  background-color: bisque; }
+
 .focus2 {
-    background-color:bisque;
-}
-
-.focus {
-
-}
+  background-color: bisque; }
 
 .top-bar-title {
   font-size: 24px;
@@ -136,6 +129,9 @@ footer {
   color: aliceblue;
   font-family: "arial black"; }
 
+footer a {
+  height: 70%; }
+
 /***********************************************
 MEDIA QUERIES
 ************************************************/
@@ -146,5 +142,6 @@ MEDIA QUERIES
   hero.p,
   hero.h1 {
     width: 100%; } }
+/*# sourceMappingURL=app.css.map */
 
 /*# sourceMappingURL=app.css.map */

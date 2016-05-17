@@ -1,4 +1,4 @@
-/*---------------------Custom CSS------------------*/
+/*---------------------Custom SASS------------------*/
 
 
 /***********************************************
@@ -36,13 +36,19 @@ MAIN BODY
 
 .main {}
 
-.focus2 {
-    background-color: darkorchid;
+.focus4 {
+    background-color: bisque;
 }
 
-.focus {
-    background-color: aqua;
+.focus3 {
+    background-color: bisque;
 }
+
+.focus2 {
+    background-color: bisque;
+}
+
+.focus {}
 
 .top-bar-title {
     font-size: 24px;
@@ -68,11 +74,11 @@ NAVIGATION MOBILE
     line-height: 60px;
 }
 
-#mobile-menu{
-background-color: black;
+#mobile-menu {
+    background-color: black;
 }
 
-.menu-mobile{
+.menu-mobile {
     line-height: 60px;
 }
 
@@ -83,7 +89,6 @@ background-color: black;
     margin-top: 3px;
     padding: 0;
     border: none;
-
 }
 
 .menu-mobile button {
@@ -94,15 +99,14 @@ background-color: black;
     background: auto;
 }
 
-#mobile-title{
+#mobile-title {
     align-content: center;
     line-height: 60px;
-    }
-
-.search-field{
-  width: 0;
 }
 
+.search-field {
+    width: 0;
+}
 
 
 /**********************************************
@@ -116,8 +120,8 @@ NAVIGATION DESKTOP
     font-family: "Work Sans", sans-serif;
 }
 
-#Academics{
-background-color: black;
+#Academics {
+    background-color: black;
 }
 
 .site-logo {
@@ -130,7 +134,7 @@ background-color: black;
     background-color: transparent;
 }
 
-.menu>li>a {
+.menu > li > a {
     display: inline-block;
     line-height: 70px;
     color: white;
@@ -138,7 +142,7 @@ background-color: black;
     padding-bottom: 0;
 }
 
-.menu>li>a:hover {
+.menu > li > a:hover {
     background-color: rgba(255, 255, 255, 0.4);
 }
 
@@ -157,7 +161,6 @@ background-color: black;
 }
 
 
-
 /***********************************************
 footer
 ************************************************/
@@ -167,6 +170,10 @@ footer {
     background-color: black;
     color: aliceblue;
     font-family: "arial black";
+}
+
+footer a {
+    height: 70%
 }
 
 
@@ -186,3 +193,6 @@ MEDIA QUERIES
         width: 100%;
     }
 }
+
+
+/*# sourceMappingURL=app.css.map */

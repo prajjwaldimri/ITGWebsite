@@ -35,13 +35,18 @@ MAIN BODY
 ***********************************************/
 
 .main {}
-
+.focus4{
+     background-color:bisque;
+}
+.focus3{
+     background-color:bisque;
+}
 .focus2 {
-    background-color: darkorchid;    
+    background-color:bisque;
 }
 
 .focus {
-    background-color: aqua;
+
 }
 
 .top-bar-title {

@@ -1,8 +1,6 @@
 #!/bin/bash
 
-cd ..
-cd foundation-sites-develop
-npm start
-cd ITGWebsite
+echo "Starting Sass Watcher..."
+
 sass --watch sass:css
 

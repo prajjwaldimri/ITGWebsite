@@ -1,87 +1,19 @@
 /*---------------------Custom SASS------------------*/
-/***********************************************
-Wrapper Class
-************************************************/
 .wrap {
   width: 95%;
   margin: 0 auto;
   font-family: 'Open Sans', sans-serif; }
 
-/**********************************************
-HERO (HEAD)
-***********************************************/
 .hero {
   padding-top: 80px;
   height: 50%;
-  background-color: darkcyan;
-  margin-bottom: 20px; }
+  background-color: #324D5C; }
 
 .hero h1,
 .hero p {
   color: rgba(255, 255, 255, 0.8);
   width: 70%; }
 
-/**********************************************
-MAIN BODY
-***********************************************/
-.focus4 {
-  background-color: bisque; }
-
-.focus3 {
-  background-color: bisque; }
-
-.focus2 {
-  background-color: bisque; }
-
-.top-bar-title {
-  font-size: 24px;
-  padding-left: 10px; }
-
-.orbit {
-  height: 70%;
-  width: 70%;
-  margin: 0 auto; }
-
-/**********************************************
-NAVIGATION MOBILE
-***********************************************/
-.nav-mobile {
-  background-color: black;
-  height: 100%;
-  padding: 0;
-  font-family: "Work Sans", sans-serif;
-  line-height: 60px; }
-
-#mobile-menu {
-  background-color: black; }
-
-.menu-mobile {
-  line-height: 60px; }
-
-.menu-mobile input {
-  border-color: transparent;
-  top: 0;
-  height: 42px;
-  margin-top: 3px;
-  padding: 0;
-  border: none; }
-
-.menu-mobile button {
-  background: transparent; }
-
-.menu-mobile button:hover {
-  background: auto; }
-
-#mobile-title {
-  align-content: center;
-  line-height: 60px; }
-
-.search-field {
-  width: 0; }
-
-/**********************************************
-NAVIGATION DESKTOP
-***********************************************/
 .nav-desktop {
   background-color: black;
   height: 70px;
@@ -120,9 +52,40 @@ NAVIGATION DESKTOP
 .menu-desktop button:hover {
   background: auto; }
 
-/***********************************************
-footer
-************************************************/
+.nav-mobile {
+  background-color: black;
+  height: 100%;
+  padding: 0;
+  font-family: "Work Sans", sans-serif;
+  line-height: 60px; }
+
+#mobile-menu {
+  background-color: black; }
+
+.menu-mobile {
+  line-height: 60px; }
+
+.menu-mobile input {
+  border-color: transparent;
+  top: 0;
+  height: 42px;
+  margin-top: 3px;
+  padding: 0;
+  border: none; }
+
+.menu-mobile button {
+  background: transparent; }
+
+.menu-mobile button:hover {
+  background: auto; }
+
+#mobile-title {
+  align-content: center;
+  line-height: 60px; }
+
+.search-field {
+  width: 0; }
+
 footer {
   height: 30%;
   background-color: black;
@@ -131,6 +94,28 @@ footer {
 
 footer a {
   height: 70%; }
+
+.main {
+  background-color: silver;
+  width: 100%; }
+
+.focus4 {
+  background-color: bisque; }
+
+.focus3 {
+  background-color: bisque; }
+
+.focus2 {
+  background-color: bisque; }
+
+.top-bar-title {
+  font-size: 24px;
+  padding-left: 10px; }
+
+.orbit {
+  height: 70%;
+  width: 70%;
+  margin: 0 auto; }
 
 /***********************************************
 MEDIA QUERIES

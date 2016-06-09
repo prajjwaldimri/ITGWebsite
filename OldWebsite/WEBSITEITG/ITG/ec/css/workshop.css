@@ -1,0 +1,128 @@
+body
+	{
+		margin:0;
+		padding:0;
+		height:100%;
+		
+	}
+#div_depart_wrapper {
+	min-height:100%;
+	position:relative;
+	}
+#div_depart_header
+	{
+		top:0;
+		margin:0 auto;
+		height:auto;
+		#width:1700px;
+		width:100%;
+		background:none;
+	}
+#div_depart_content {
+	#padding:10px;
+	#padding-bottom:80px;
+	width:100%;
+	margin:0 auto;
+	/* Height of the footer element */
+			}
+#div_department_content_name
+	{
+		width:100%;
+		margin:0 auto;
+		height:60px;
+		background: #EBF5EB;
+		color:#2877A3;
+		font-size:20px;
+		
+		
+		
+	}
+#div_department_content_left
+	{
+		
+		height:auto;
+		width:70%;
+		background:none;
+		margin:0 auto;
+	}
+
+#div_department_content_left img
+	{
+		height:250px;
+		width:80%;
+		margin:0 auto;
+		padding:0;
+		border:1px solid gray;
+	}
+@media screen and (max-width: 768px) 
+{
+#div_department_content_left
+{
+	width:100%;
+	
+}
+#div_department_content_left img
+{
+	width:100%;
+}
+}
+#div_department_content_right
+	{
+		height:auto;
+		width:30%;
+		background:none;
+		float:right;
+	}
+#div_depart_footar
+	{
+		position:relative;
+		#bottom:0;
+		margin:auto;
+		#background:gray;
+		width:100%;
+		height:80px;
+		font-family: 'Open Sans', Helvetica, sans-serif;
+		background: #39b1cc;
+		background: -moz-linear-gradient(top, #51bbd2 0%, #2d97af 100%);
+		background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #51bbd2), color-stop(100%, #2d97af));
+		background: -webkit-linear-gradient(top, #51bbd2 0%, #2d97af 100%);
+		background: -o-linear-gradient(top, #51bbd2 0%, #2d97af 100%);
+		background: -ms-linear-gradient(top, #51bbd2 0%, #2d97af 100%);
+		background: linear-gradient(to bottom, #51bbd2 0%, #2d97af 100%);
+		 font-size: 13px;
+		font-weight: 700;
+		color: #d3eced;
+		text-transform:capitalize;
+		#letter-spacing: 1px;
+		}
+
+
+#left
+				{
+					width:50%;
+					float:left;
+					margin:0;
+					
+				}
+
+#right
+				{
+					width:50%;
+					float:right;
+					margin:0;
+				}
+@media screen and (max-width: 768px) 
+			{
+				#left
+					{
+					width:100%;
+					display:block;}
+				#center
+				{
+					width:100%;
+				}
+					#right
+					{
+					width:100%;
+					display:block;}
+			}

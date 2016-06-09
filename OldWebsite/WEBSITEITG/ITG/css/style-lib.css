@@ -1,0 +1,49 @@
+
+#depart_main
+{
+	margin:0px auto;
+	width:1916px;
+	height:auto;
+	background:#FFFFFF;
+	background: url(../images/bg-cyan.jpg) repeat;
+}
+#depart_header
+	{
+	margin:0px auto;
+	width:1916px;
+	height:223px;
+	background:white;
+	
+	}
+#depart_center
+	{
+	margin: 10px auto ;
+	width:1800px;
+	height:auto;
+	background:url(../images/bg-cyan.jpg) repeat;
+	}
+#depart_center_left
+	{
+	margin:0;
+	width:600px;
+	height:964px;
+	float:left;
+	background:gray;
+	}
+
+
+#depart_center_right
+	{
+	margin:0;
+	width:1200px;
+	height:964px;
+	float:right;
+	background:black;
+	}
+#depart_footar
+	{
+	margin:0 ;
+	width:1916px;
+	height:178px;
+	background:gray;
+	}

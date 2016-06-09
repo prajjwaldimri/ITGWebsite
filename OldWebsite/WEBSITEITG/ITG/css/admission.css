@@ -1,0 +1,69 @@
+
+h1
+	{
+		font-size:18px;
+	}
+
+#table_add
+{
+	width:60%;
+	margin:0px auto;
+	background:none;
+	
+}
+@media screen and (max-width: 768px) 
+{
+	#table_add
+		{
+			width:100%;
+		}
+}
+
+#table_add tr
+	{
+	width:100%;
+	border-bottom:1px solid black;
+	margin:0;
+	background:none;
+	}
+#table_add tr:nth-child(odd)
+	{
+		background:#B2e0e0;
+	}
+#table_add tr:nth-child(even)
+	{
+		background:#e6f5f5;
+	}
+
+#table_add_td_1
+	{
+		width:6%;
+		height:50px;
+		text-align:center;
+		line-height:37px;
+		
+	}
+#table_add_td_2
+	{
+		width:65%px;
+		height:50px;
+		text-align:center;
+		line-height:37px;
+		
+	}
+#table_add_td_3
+	{
+		width:11%px;
+		height:50px;
+		text-align:left;
+		line-height:37px;
+		
+	}
+#table_add_td_4
+	{
+		width:18%px;
+		height:50px;
+		text-align:left;
+		line-height:37px;
+		
+	}

@@ -1,0 +1,9 @@
+body
+{
+	background-image:url('../img_cse/images.jpg' );
+}
+#table_main
+	{
+		background:white;
+		z-index:10;
+	}

@@ -1,0 +1,38 @@
+// Place all the styles related to the home controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+/*---------------------Custom SASS------------------*/
+
+
+@import 'Partials/_colors';
+@import 'Partials/_wrapper';
+@import 'Partials/_mainbody';
+@import 'Partials/_hero';
+@import 'Partials/_navdesk';
+@import 'Partials/_navmob';
+@import 'Partials/_footer';
+
+
+
+
+
+/***********************************************
+MEDIA QUERIES
+************************************************/
+
+@media (max-width: 640px) {
+    .nav-desktop {
+        display: none;
+    }
+}
+
+@media (max-width: 875px) {
+    hero.p,
+    hero.h1 {
+        width: 100%;
+    }
+}
+
+
+/*# sourceMappingURL=app.css.map */

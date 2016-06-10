@@ -1,6 +1,12 @@
 Rails.application.routes.draw do
 
 
+  resources :students
+  resources :sessions
+  get 'staff_section/index'
+
+  get 'student_section/index'
+
   root 'home#index'
 
   get 'home/about'

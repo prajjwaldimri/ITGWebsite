@@ -10,6 +10,11 @@
     background-color: black;
 }
 
+#bordered {
+    border-right: 1px solid #737373;
+    border-left: 1px solid #737373;
+}
+
 .site-logo {
     color: white;
     line-height: 70px;
@@ -18,6 +23,7 @@
 .nav-desktop .menu-desktop {
     line-height: 70px;
     background-color: transparent;
+    padding-left: 10%;
 }
 
 .menu > li > a {

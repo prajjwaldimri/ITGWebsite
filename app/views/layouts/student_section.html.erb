@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+      <title><%= content_for?(:title) ? yield(:title) : "Student Section" %></title>
+
+    <%= stylesheet_link_tag    "application" %>
+      <%= javascript_include_tag "application", 'data-turbolinks-track'  => true %>
+    <%= csrf_meta_tags %>
+  </head>
+
+  <body>
+
+      <div class="off-canvas-wrapper">
+        <div class="off-canvas-wrapper-inner" data-off-canvas-wrapper>
+
+      <%= render partial: 'student_section/navigation' %>
+
+      <%= yield %>
+
+      <%= render partial: 'home/footer' %>
+
+          </div>
+      </div>
+
+
+  </body>
+</html>

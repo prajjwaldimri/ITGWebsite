@@ -1,7 +1,6 @@
 Rails.application.routes.draw do
 
 
-  resources :students
   resources :sessions
   get 'staff_section/index'
 

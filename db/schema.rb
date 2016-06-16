@@ -11,13 +11,19 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160610173130) do
+ActiveRecord::Schema.define(version: 20160616105511) do
 
-  create_table "students", force: :cascade do |t|
+  create_table "users", force: :cascade do |t|
+    t.string   "rollno"
+    t.string   "name"
     t.string   "email"
-    t.string   "password_digest"
+    t.string   "user_type"
     t.datetime "created_at",      null: false
     t.datetime "updated_at",      null: false
+    t.string   "password_digest"
   end
+
+  add_index "users", ["email"], name: "index_users_on_email"
+  add_index "users", ["rollno", "email"], name: "index_users_on_rollno_and_email", unique: true
 
 end

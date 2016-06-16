@@ -2,14 +2,28 @@
 <html lang="en">
   <head>
     <meta charset="utf-8" />
-
+    <meta content="ie=edge" http-equiv="x-ua-compatible">
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-      <title><%= content_for?(:title) ? yield(:title) : "Student Section" %></title>
+      <title><%= full_title(yield(:title)) %></title>
 
     <%= stylesheet_link_tag    "application" %>
       <%= javascript_include_tag "application", 'data-turbolinks-track'  => true %>
     <%= csrf_meta_tags %>
+
+    <!-- Custom Fonts -->
+  	<link href='https://fonts.googleapis.com/css?family=Work+Sans:700' rel=
+  	'stylesheet' type='text/css'>
+  	<link href='https://fonts.googleapis.com/css?family=Open+Sans' rel=
+  	'stylesheet' type='text/css'>
+  	<link href='https://fonts.googleapis.com/css?family=Inconsolata' rel=
+  	'stylesheet' type='text/css'>
+  	<link href='https://fonts.googleapis.com/css?family=Karla' rel='stylesheet'
+  	type='text/css'>
+  	<link href='https://fonts.googleapis.com/css?family=Roboto' rel=
+  	'stylesheet' type='text/css'>
+  	<link href='https://fonts.googleapis.com/css?family=Anonymous+Pro' rel=
+  	'stylesheet' type='text/css'>
   </head>
 
   <body>

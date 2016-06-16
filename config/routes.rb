@@ -6,6 +6,8 @@ Rails.application.routes.draw do
 
   get 'student_section/index'
 
+  get 'student_section' => 'student_section#index'
+
   root 'home#index'
 
   get 'home/about'

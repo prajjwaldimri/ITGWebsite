@@ -1,47 +1,57 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <meta content="ie=edge" http-equiv="x-ua-compatible">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<head>
+  <meta charset="utf-8" />
+  <meta content="ie=edge" http-equiv="x-ua-compatible">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-      <title><%= full_title(yield(:title)) %></title>
+  <title><%= full_title(yield(:title)) %></title>
 
-    <%= stylesheet_link_tag    "application" %>
-      <%= javascript_include_tag "application", 'data-turbolinks-track'  => true %>
-    <%= csrf_meta_tags %>
+  <%= stylesheet_link_tag    "application" %>
+  <%= javascript_include_tag "application", 'data-turbolinks-track'  => true %>
+  <%= csrf_meta_tags %>
 
-    <!-- Custom Fonts -->
-    
-  	<link href='https://fonts.googleapis.com/css?family=Work+Sans:700' rel=
-  	'stylesheet' type='text/css'>
-  	<link href='https://fonts.googleapis.com/css?family=Open+Sans' rel=
-  	'stylesheet' type='text/css'>
-  	<link href='https://fonts.googleapis.com/css?family=Inconsolata' rel=
-  	'stylesheet' type='text/css'>
-  	<link href='https://fonts.googleapis.com/css?family=Karla' rel='stylesheet'
-  	type='text/css'>
-  	<link href='https://fonts.googleapis.com/css?family=Roboto' rel=
-  	'stylesheet' type='text/css'>
-  	<link href='https://fonts.googleapis.com/css?family=Anonymous+Pro' rel=
-  	'stylesheet' type='text/css'>
+  <!-- Custom Fonts -->
 
-  </head>
+  <link href='https://fonts.googleapis.com/css?family=Work+Sans:700' rel=
+  'stylesheet' type='text/css'>
+  <link href='https://fonts.googleapis.com/css?family=Open+Sans' rel=
+  'stylesheet' type='text/css'>
+  <link href='https://fonts.googleapis.com/css?family=Inconsolata' rel=
+  'stylesheet' type='text/css'>
+  <link href='https://fonts.googleapis.com/css?family=Karla' rel='stylesheet'
+  type='text/css'>
+  <link href='https://fonts.googleapis.com/css?family=Roboto' rel=
+  'stylesheet' type='text/css'>
+  <link href='https://fonts.googleapis.com/css?family=Anonymous+Pro' rel=
+  'stylesheet' type='text/css'>
 
-  <body>
+</head>
 
-      <div class="off-canvas-wrapper">
-        <div class="off-canvas-wrapper-inner" data-off-canvas-wrapper>
+<body>
+
+  <div class="off-canvas-wrapper">
+    <div class="off-canvas-wrapper-inner" data-off-canvas-wrapper>
 
       <%= render partial: 'home/navigation' %>
 
+      <% flash.each do |message_type, message| %>
+      <div class="callout <%= message_type %>" data-closable="slide-out-right">
+        <%= message %>
+        <button class="close-button" aria-label="Dismiss alert" type="button" data-close>
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <% end %>
       <%= yield %>
 
       <%= render partial: 'home/footer' %>
 
-          </div>
-      </div>
+      <%= debug(params) if Rails.env.development? %>
+
+    </div>
+  </div>
 
 
-  </body>
+</body>
 </html>

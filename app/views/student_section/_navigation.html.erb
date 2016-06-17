@@ -85,7 +85,7 @@
   <div class="top-bar-left">
     <ul class="dropdown menu menu-desktop" data-dropdown-menu>
 
-      <li><a id="bordered" class="mega-button">Study at ITG</a></li>
+      <li class="mega-button"><a id="bordered">Study at ITG</a></li>
       <li>
         <a href="home/about">About ITG</a>
       </li>
@@ -94,59 +94,25 @@
     </ul>
   </div>
   <div class="top-bar-right">
-    <ul class="menu menu-desktop">
-      <li>
-        <button type="button" class="success button"
-        style="margin-right:20%" data-open="StudentLoginModal">Login
-      </button>
-
-      <div class="reveal" id="StudentLoginModal" data-reveal
-      data-animation-in="hinge-in-from-top" data-animation-out="hinge-out-from-bottom">
-
-      <form data-abide novalidate action="/login" method="POST">
-        <div data-abide-error class="alert callout" style="display: none;">
-          <p><i class="fi-alert"></i> There are some errors in your form.</p>
-        </div>
-        <div class="row">
-          <label style="font-family: sans-serif;
-          font-size: 1.15em;
-          font-weight: bold;">UserName
-          <input type="text" placeholder="Your Exam Roll.no" required pattern="number"
-          aria-describedby= "exampleHelpText">
-          <span class="form-error">
-            Yo, you had better fill this out, it's required.
-          </span>
-          <p class="help-text" id="exampleHelpText">Enter your username.</p>
-        </label>
-
-        <label style="font-family: sans-serif;
-        font-size: 1.15em;
-        font-weight: bold;">Password
-        <input type="password" id="password" placeholder="yeti4preZ" aria-describedby= "exampleHelpText1" required >
-        <span class="form-error">
-          I'm required!
-        </span>
-        <p class="help-text" id="exampleHelpText1">Enter a password please.</p>
-      </label>
-      <input type="submit" class="button" value="Submit">
-    </div>
-  </form>
-
-  <button class="close-button" data-close aria-label="Close reveal" type="button">
-    <span aria-hidden="true">&times;</span>
-  </button>
-
-</div>
-</li>
-
-</ul>
-
-</div>
-
+      <% if logged_in? %>
+        <ul class="dropdown menu menu-desktop" data-dropdown-menu>
+          <li>
+            <a>Account</a>
+            <ul class="menu">
+              <li><%= link_to "Profile", current_user %></li>
+              <li class="divider" style="color: white;"></li>
+              <li><%= link_to "Log-out", logout_path, method: 'delete' %></li>
+            </ul>
+          </li>
+        </ul>
+        <% else %>
+        <a class="success button" style="margin-right:20%" href="<%= login_path %>"></a>
+        <% end %>
+  </div>
 </nav>
 
 <!-- Mega-Menu -->
-<section class="row mega-menu">
+<section class="row mega-menu" style="display : none;">
   <div class="large-4 columns"> &gt; Postgraduate
     <ul>
       <li>

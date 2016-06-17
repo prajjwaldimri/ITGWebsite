@@ -19,12 +19,11 @@
 
 $(function() {
 
-    $(".mega-menu").hide();
+  $(document).foundation();
 
-    $(".mega-button").click(function() {
-        $(".mega-menu").toggle("slow");
-    })
-    $(document).foundation();
+  $(".mega-button a").click(function() {
+    $(".mega-menu").toggle("slow");
+  });
 
     var time = 7; // time in seconds
 
@@ -81,13 +80,13 @@ $(function() {
             });
             //if percentTime is equal or greater than 100
             if (percentTime >= 100) {
-                //slide to next item 
+                //slide to next item
                 $elem.trigger('owl.next')
             }
         }
     }
 
-    //pause while dragging 
+    //pause while dragging
     function pauseOnDragging() {
         isPause = true;
     }

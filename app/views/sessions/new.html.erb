@@ -1,0 +1,15 @@
+<% provide(:title, 'Log in') %>
+<h1 style="text-align: center;">Login</h1>
+
+<div class="wrap" style="padding-left: 30%; padding-right: 30%;">
+<%= form_for(:session, url: login_path) do |f| %>
+
+  <%= f.label :rollno %>
+  <%= f.text_field :rollno %>
+
+  <%= f.label :password %>
+  <%= f.password_field :password %>
+
+  <%= f.submit "Log-in", class: "button" %>
+<% end %>
+</div>

@@ -14,7 +14,7 @@ class User < ActiveRecord::Base
   format: { with: VALID_ROLLNO_REGEX }, uniqueness: true
 
   has_secure_password
-  validates :password, length: {minimum: 8}
+  validates :password, length: {minimum: 8}, allow_blank: true
 
 #Returns hash digest of given password
   def User.digest(string)
@@ -33,8 +33,14 @@ class User < ActiveRecord::Base
     update_attribute(:remember_digest, User.digest(remember_token))
   end
 
+#Forgets a user
+  def forget
+    update_attribute(:remember_digest, nil)
+  end
+
 #Returns true if given token matches digest
-  def authenticated?
-    BCrypt::Password.new(remember_digest) == remember_token
+  def authenticated?(remember_token)
+    return false if remember_digest.nil?
+    BCrypt::Password.new(remember_digest).is_password?(remember_token)
   end
 end

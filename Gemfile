@@ -20,6 +20,7 @@ gem 'jbuilder', '~> 2.0'
 # bundle exec rake doc:rails generates the API under doc/api.
 gem 'sdoc', '~> 0.4.0', group: :doc
 
+gem 'will_paginate-foundation'
 #Foundation-rails
 
 gem 'foundation-rails'
@@ -33,6 +34,9 @@ gem 'owlcarousel-rails'
 # Use ActiveModel has_secure_password
 gem 'bcrypt', '~> 3.1.7'
 
+#Faker
+
+gem 'faker', '~> 1.6.1'
 # Use Unicorn as the app server
 # gem 'unicorn'
 

@@ -106,7 +106,7 @@
           </li>
         </ul>
         <% else %>
-        <a class="success button" style="margin-right:20%" href="<%= login_path %>"></a>
+        <a class="success button" style="margin-right:20%" href="<%= login_path %>">Login</a>
         <% end %>
   </div>
 </nav>
@@ -166,7 +166,7 @@
         <a href="#">&gt; About UTU</a>
       </li>
       <li>
-        <a href="#">&gt; Student Login</a>
+        <a href="<%= login_path %>">&gt; Student Login</a>
       </li>
       <li>
         <a href="#">&gt; Faculty Login</a>

@@ -1,25 +1,31 @@
 <% provide(:title, 'Sign-up') %>
+
+<div class="row">
 <h1 style="text-align: center;">Admin User Creator</h1>
 
-<div class="wrap" style="padding-left: 30%; padding-right: 30%;">
+<form class="wrap" style="padding-left: 30%; padding-right: 30%;">
 <%= form_for(@user) do |f| %>
 
   <%= render 'shared/error_messages' %>
   <%= f.label :name %>
-  <%= f.text_field :name %>
+  <%= f.text_field :name, placeholder: "User's Full Name" %>
 
   <%= f.label :email %>
-  <%= f.text_field :email %>
+  <%= f.text_field :email, type: "email", placeholder: "User's email"  %>
 
   <%= f.label :rollno %>
-  <%= f.text_field :rollno %>
+  <%= f.text_field :rollno, type: "number", placeholder: "User's Roll. No./Emp. No." %>
+
+  <%= f.label :user_type %>
+  <%= f.select :user_type, options_for_select([['Student'], ['Faculty']]) %>
 
   <%= f.label :password %>
-  <%= f.password_field :password %>
+  <%= f.password_field :password, type: "password", placeholder: "Minimum 8 characters" %>
 
   <%= f.label :password_confirmation %>
-  <%= f.password_field :password_confirmation %>
+  <%= f.password_field :password_confirmation, type: "password" %>
 
   <%= f.submit "Create the user", class: "button" %>
 <% end %>
+</form>
 </div>

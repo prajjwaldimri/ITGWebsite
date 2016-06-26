@@ -33,6 +33,15 @@
 
       <%= render 'student_section/navigation' %>
 
+      <% flash.each do |message_type, message| %>
+      <div class="callout <%= message_type %>" data-closable="slide-out-right">
+        <%= message %>
+        <button class="close-button" aria-label="Dismiss alert" type="button" data-close>
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <% end %>
+
       <%= yield %>
 
       <%= render partial: 'home/footer' %>

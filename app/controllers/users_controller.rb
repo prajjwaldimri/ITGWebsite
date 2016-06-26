@@ -20,8 +20,10 @@ class UsersController < ApplicationController
   def create
     @user = User.new(user_params)
     if @user.save
-      log_in @user
-      redirect_to @user
+      flash[:success] = "User Created!"
+      render 'new'
+      #log_in @user
+      #redirect_to @user
     else
       render 'new'
     end
@@ -48,7 +50,7 @@ class UsersController < ApplicationController
   private
 
   def user_params
-    params.require(:user).permit(:name, :rollno, :email, :password, :password_confirmation)
+    params.require(:user).permit(:name, :rollno, :email, :user_type, :password, :password_confirmation)
   end
 
   #Before Filters
@@ -64,12 +66,16 @@ class UsersController < ApplicationController
 #Confirms if user is correct
   def correct_user
     @user = User.find(params[:id])
-    redirect_to(root_url) unless current_user?(@user)
+    redirect_to(root_url) unless current_user?(@user) || current_user.admin?
   end
 
   #Confirms admin_user
   def admin_user
     redirect_to(root_url) unless current_user.admin?
+  end
+
+  def faculty_user
+    redirect_to(root_url) unless current_user.user_type == 'Faculty'
   end
 
 end

@@ -7,22 +7,26 @@
   <div class="small-6 large-4 columns">
   <%= form_for(@user) do |f| %>
 
+  <%= render 'shared/error_messages' %>
   <%= f.label :name %>
-  <%= f.text_field :name %>
+  <%= f.text_field :name, placeholder: "User's Full Name" %>
 
   <%= f.label :email %>
-  <%= f.text_field :email %>
+  <%= f.text_field :email, type: "email", placeholder: "User's email"  %>
 
   <%= f.label :rollno %>
-  <%= f.text_field :rollno %>
+  <%= f.text_field :rollno, type: "number", placeholder: "User's Roll. No./Emp. No." %>
+
+  <%= f.label :user_type %>
+  <%= f.select :user_type, options_for_select([['Student'], ['Faculty']]) %>
 
   <%= f.label :password %>
-  <%= f.password_field :password %>
+  <%= f.password_field :password, type: "password", placeholder: "Minimum 8 characters" %>
 
   <%= f.label :password_confirmation %>
-  <%= f.password_field :password_confirmation %>
+  <%= f.password_field :password_confirmation, type: "password" %>
 
-  <%= f.submit "Update Profile", class: "button" %>
+  <%= f.submit "Update profile", class: "button" %>
   <% end %>
 
   <div class="gravatar_edit">

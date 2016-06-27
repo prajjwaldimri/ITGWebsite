@@ -24,48 +24,6 @@
             <span id="mobile-title" class="menu-mobile">Menu</span>
           </div>
           <div class="tertiary-nav">
-            <div class="top-bar-right">
-              <ul class="menu menu-desktop">
-                <li>
-                  <button type="button" class="success button"
-                  style="margin-right:20%; margin-top: 20%" data-open="StudentLoginModal">Login
-                </button>
-
-                <div class="reveal" id="StudentLoginModal" data-reveal
-                data-animation-in="hinge-in-from-top" data-animation-out="hinge-out-from-bottom">
-
-                <form data-abide novalidate action="/login" method="POST">
-                  <div data-abide-error class="alert callout" style="display: none;">
-                    <p><i class="fi-alert"></i> There are some errors in your form.</p>
-                  </div>
-                  <div class="row">
-                    <label style="font-family: sans-serif;
-                    font-size: 1.15em;
-                    font-weight: bold;">UserName
-                    <input type="text" placeholder="Your Exam Roll.no" required pattern="number"
-                    aria-describedby= "exampleHelpText">
-                    <span class="form-error">
-                      Yo, you had better fill this out, it's required.
-                    </span>
-                    <p class="help-text" id="exampleHelpText">Enter your username.</p>
-                  </label>
-
-                  <label style="font-family: sans-serif;
-                  font-size: 1.15em;
-                  font-weight: bold;">Password
-                  <input type="password" id="password" placeholder="yeti4preZ" aria-describedby= "exampleHelpText1" required >
-                  <span class="form-error">
-                    I'm required!
-                  </span>
-                  <p class="help-text" id="exampleHelpText1">Enter a password please.</p>
-                </label>
-                <input type="submit" class="button" value="Submit">
-              </div>
-            </form>
-
-            <button class="close-button" data-close aria-label="Close reveal" type="button">
-              <span aria-hidden="true">&times;</span>
-            </button>
 
           </div>
         </li>
@@ -100,6 +58,11 @@
             <a>Account</a>
             <ul class="menu">
               <li><%= link_to "Profile", current_user %></li>
+              <% if current_user.admin? %>
+                <li><%= link_to "All Users", users_path %></li>
+                <li><%= link_to "Add a User", signup_path %></li>
+              <% end %>
+              <li><%= link_to "User Settings", edit_user_path(current_user) %></li>
               <li class="divider" style="color: white;"></li>
               <li><%= link_to "Log-out", logout_path, method: 'delete' %></li>
             </ul>
@@ -110,72 +73,3 @@
         <% end %>
   </div>
 </nav>
-
-<!-- Mega-Menu -->
-<section class="row mega-menu" style="display : none;">
-  <div class="large-4 columns"> &gt; Postgraduate
-    <ul>
-      <li>
-        <a href="#">&gt; Courses</a>
-      </li>
-      <li>
-        <a href="#">&gt; Why ITG</a>
-      </li>
-      <li>
-        <a href="#">&gt; How to Apply</a>
-      </li>
-      <li>
-        <a href="#">&gt; Fees and funding</a>
-      </li>
-      <li>
-        <a href="#">&gt; Frequently Asked Questions</a>
-      </li>
-      <li><br>
-      </li>
-    </ul>
-  </div>
-
-  <div class="large-4 columns">&gt; Departments
-    <ul>
-      <li>
-        <a href="#">&gt; Civil Engineering</a>
-      </li>
-      <li>
-        <a href="#">&gt; Electrical Engineering</a>
-      </li>
-      <li>
-        <a href="#">&gt; Mechanical Engineering</a>
-      </li>
-      <li>
-        <a href="#">&gt; Electronics Engineering</a>
-      </li>
-      <li>
-        <a href="#">&gt; Computer Science and Engineering</a>
-      </li>
-      <li>
-        <a href="#">&gt; Science and Humanities</a>
-      </li>
-    </ul>
-  </div>
-  <div class="large-4 columns">&gt; Extras
-    <ul>
-      <li>
-        <a href="#">&gt; Our Vision</a>
-      </li>
-      <li>
-        <a href="#">&gt; About UTU</a>
-      </li>
-      <li>
-        <a href="<%= login_path %>">&gt; Student Login</a>
-      </li>
-      <li>
-        <a href="#">&gt; Faculty Login</a>
-      </li>
-      <li>
-        <a href="#">&gt; Director's and VC's Message</a>
-      </li>
-      <li><br>
-      </li>
-    </ul>
-  </div>
-</section>

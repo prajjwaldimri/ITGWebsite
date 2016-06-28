@@ -13,3 +13,10 @@
     font-size: 24px;
     padding-left: 10px;
 }
+
+.focus img{
+  object-fit: cover; /* Do not scale the image */
+  object-position: center; /* Center the image within the element */
+  height: 200px;
+  width: 500px;
+}

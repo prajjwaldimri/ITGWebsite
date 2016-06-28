@@ -1,0 +1,13 @@
+<li id="assignment-<%= assignment.id %>">
+
+  <%= link_to assignment.title %>
+  <%= link_to assignment.subject %>
+  <%= link_to assignment.semester %>
+  Uploaded <%= time_ago_in_words(assignment.created_at) %> ago.
+
+  <%= link_to assignment.pdf.current_path if assignment.pdf? %>
+
+  <% if current_user?(assignment.user) %>
+    <%= link_to "Delete", assignment, method: :delete, data: {confirm: "You Sure?"} %>
+  <% end %>
+</li>

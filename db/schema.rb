@@ -11,7 +11,20 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160626163220) do
+ActiveRecord::Schema.define(version: 20160628201643) do
+
+  create_table "assignments", force: :cascade do |t|
+    t.text     "title"
+    t.string   "subject"
+    t.integer  "semester"
+    t.integer  "user_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.string   "pdf"
+  end
+
+  add_index "assignments", ["user_id", "created_at"], name: "index_assignments_on_user_id_and_created_at"
+  add_index "assignments", ["user_id"], name: "index_assignments_on_user_id"
 
   create_table "users", force: :cascade do |t|
     t.string   "rollno"

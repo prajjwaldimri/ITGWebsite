@@ -18,3 +18,11 @@ User.create!(name: "Prajjwal Dimri",
                user_type: "Student")
 
 end
+
+users = User.order(:created_at).take(6)
+50.times do
+  title = Faker::Lorem.sentence(1)
+  subject = Faker::Lorem.sentence(1)
+  semester = 2
+  users.each{|user| user.assignments.create!(title: title, subject: subject, semester: semester)}
+end

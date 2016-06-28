@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+cs:
+  title: "Polymorphism in JAVA"
+  subject: "OOP"
+  semester: 3
+  user_id: 3
+  created_at: <%= 10.minutes.ago %>
+
+ec:
+  title: "Intel 8086"
+  subject: "Microprocessor"
+  semester: 4
+  user_id: 1
+  created_at: <%= 3.years.ago %>

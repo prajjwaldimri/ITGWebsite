@@ -1,5 +1,7 @@
 <% provide(:title, 'All Users') %>
 
+<div class="row">
+
 <h1>All Users</h1>
 
 <%= will_paginate @users, renderer: FoundationPagination::Rails %>
@@ -16,3 +18,5 @@
   <% end %>
 <%= will_paginate @users, renderer: FoundationPagination::Rails %>
 </ul>
+
+</div>

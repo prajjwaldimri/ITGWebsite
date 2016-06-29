@@ -2,15 +2,15 @@
 
 <%= render 'shared/error_messages' %>
 
-<div class="row collapse">
-  <div class="medium-3 columns">
+<div class="row collapse large-12 columns">
+  <div class="large-3 columns">
     <ul class="tabs vertical" id="example-vert-tabs" data-tabs>
       <li class="tabs-title is-active"><a href="#panel1v" aria-selected="true">Home</a></li>
       <li class="tabs-title"><a href="#panel2v">Submit an Assignment</a></li>
       <li class="tabs-title"><a href="#panel3v">Attendance Records</a></li>
     </ul>
     </div>
-    <div class="medium-9 columns">
+    <div class="large-9 columns">
     <div class="tabs-content vertical" data-tabs-content="example-vert-tabs">
       <div class="tabs-panel is-active" id="panel1v">
         <div class="row">
@@ -18,7 +18,11 @@
             <%= gravatar_for @user %>
             <%= @user.name %>
           </h1>
-          <div class="large-8 columns">
+          <h2>
+            <%= @user.branch %>
+            <%= @user.user_type %>
+          </h2>
+          <div class="large-9 columns">
             <% if @user.assignments.any? %>
               <h3>Assignments (<%= @user.assignments.count %>)</h3>
               <ol>

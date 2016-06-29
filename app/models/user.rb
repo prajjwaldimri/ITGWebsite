@@ -14,6 +14,9 @@ class User < ActiveRecord::Base
   validates :rollno, presence: true, length: {maximum: 20},
   format: { with: VALID_ROLLNO_REGEX }, uniqueness: true
 
+  validates :branch, presence: true
+  validates :user_type, presence: true
+
   has_secure_password
   validates :password, length: {minimum: 8}, allow_blank: true
 

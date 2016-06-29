@@ -2,7 +2,7 @@ class UsersController < ApplicationController
 
   before_action :logged_in_user, only: [:show, :edit, :update, :destroy]
   before_action :correct_user, only: [:show, :edit, :update]
-  before_action :admin_user, only: [:index, :destroy, :new]
+  before_action :admin_user, only: [:index, :destroy]
   layout 'student_section'
 
   def index
@@ -27,6 +27,7 @@ class UsersController < ApplicationController
       #log_in @user
       #redirect_to @user
     else
+      flash[:alert] = "User not created"
       render 'new'
     end
   end
@@ -52,7 +53,7 @@ class UsersController < ApplicationController
   private
 
   def user_params
-    params.require(:user).permit(:name, :rollno, :email, :user_type, :password, :password_confirmation)
+    params.require(:user).permit(:name, :rollno, :email, :user_type, :branch, :password, :password_confirmation)
   end
 
   #Before Filters

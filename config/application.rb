@@ -24,7 +24,5 @@ module ITGSite
     config.active_record.raise_in_transactional_callbacks = true
 
     config.assets.paths << Rails.root.join('vendor', 'assets', 'components')
-
-    config.assets.precompile += %w(*.png *.jpg *.jpeg *.gif *.js *.json *.css *.scss *.html)
   end
 end

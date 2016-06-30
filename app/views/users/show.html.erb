@@ -35,7 +35,7 @@
       </div>
 
 
-      <div class="tabs-panel" id="panel2v">
+      <div class="tabs-panel large-6 large-centered columns" id="panel2v">
         <%= form_for(@assignment, html: {multipart: true}) do |f| %>
           <div class="row wrap">
 
@@ -47,10 +47,10 @@
 
             <%= f.label :semester %>
             <%= f.text_field :semester, type: "number" %>
-          </div>
 
           <%= f.submit "Upload", class: "button" %>
           <%= f.file_field :pdf %>
+          </div>
         <% end %>
       </div>
 

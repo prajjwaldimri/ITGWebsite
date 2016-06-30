@@ -13,19 +13,22 @@
 //= require jquery
 //= require jquery_ujs
 //= require foundation
-//= require turbolinks
 //= require_tree .
 
 $(function() {
 
   $(document).foundation();
 
+  $(document).ready(function(){
+    $(window).load(function() {
+  		// Animate loader off screen
+  		$(".spinner-wrapper").fadeOut("slow");;
+  	});
+  });
+
   $(".mega-button a").click(function() {
     $(".mega-menu").toggle("slow");
   });
-
-
-
 
   $('.tertiary-nav .search-icon').click(function(event) {
 

@@ -2,39 +2,88 @@
 <h1 style="text-align: center;">Update your Profile</h1>
 
 <div class="row">
-  <div class="small-3 large-4 columns"><h1></h1></div>
 
-  <div class="small-6 large-4 columns">
+  <div class="small-6 columns large-centered">
   <%= form_for(@user) do |f| %>
 
   <%= render 'shared/error_messages' %>
-  <%= f.label :name %>
-  <%= f.text_field :name, placeholder: "User's Full Name" %>
 
-  <%= f.label :email %>
-  <%= f.text_field :email, type: "email", placeholder: "User's email"  %>
-
-  <%= f.label :rollno %>
-  <%= f.text_field :rollno, type: "number", placeholder: "User's Roll. No./Emp. No." %>
-
-  <%= f.label :user_type %>
-  <%= f.select :user_type, options_for_select([['Student'], ['Faculty']]) %>
-
-  <%= f.label :password %>
-  <%= f.password_field :password, type: "password", placeholder: "Minimum 8 characters" %>
-
-  <%= f.label :password_confirmation %>
-  <%= f.password_field :password_confirmation, type: "password" %>
-
-  <%= f.submit "Update profile", class: "button" %>
-  <% end %>
-
-  <div class="gravatar_edit">
+  <div class="gravatar_edit row" style="text-align: center; margin-bottom: 20px;">
     <%= gravatar_for @user %>
     <a href="http://gravatar.com/emails" target="_blank">change</a>
   </div>
 
+  <div class="row">
+    <div class="small-3 columns">
+      <%= f.label :name, "Name", class: 'text-right middle' %>
+    </div>
+    <div class="small-9 columns">
+      <%= f.text_field :name, placeholder: "Full Name as stated in records" %>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="small-3 columns">
+      <%= f.label :email, "Email", class: 'text-right middle' %>
+    </div>
+    <div class="small-9 columns">
+      <%= f.text_field :email, type: "email" %>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="small-3 columns">
+      <%= f.label :rollno, "Roll No/Emp. No", class: 'text-right middle' %>
+    </div>
+    <div class="small-9 columns">
+      <%= f.text_field :rollno, type: "number", placeholder: "Roll No/Emp. No" %>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="small-3 columns">
+      <%= f.label :user_type, class: 'text-right middle' %>
+    </div>
+    <div class="small-9 columns">
+      <%= f.select(:user_type, ["Student", "Faculty"], {}, {}) %>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="small-3 columns">
+      <%= f.label :branch, class: 'text-right middle' %>
+    </div>
+    <div class="small-9 columns">
+      <%= f.select(:branch, ["Civil", "Mechanical", "Electrical", "Computer Science",
+        "Electronics"], {}, {}) %>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="small-3 columns">
+        <%= f.label :password, class: 'text-right middle' %>
+      </div>
+      <div class="small-9 columns">
+        <%= f.password_field :password, type: "password", placeholder: "Password",
+        'aria-describedBy': 'nameHelpText' %>
+        <p class="help-text", id="nameHelpText">Your password must have at least 8 characters.</p>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="small-3 columns">
+        <%= f.label :password_confirmation, class: 'text-right middle' %>
+      </div>
+      <div class="small-9 columns">
+        <%= f.password_field :password_confirmation, type: "password", placeholder: "Type password again" %>
+      </div>
+    </div>
+
+  <div class="row" style="text-align: right;">
+    <%= f.submit "Update profile", class: "button" %>
+  </div>
+  <% end %>
+
 </div>
 
-<div class="small-3 large-4 columns"><h1></h1></div>
 </div>

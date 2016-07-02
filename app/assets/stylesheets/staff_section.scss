@@ -11,20 +11,3 @@
 @import 'Partials/_navdesk';
 @import 'Partials/_navmob';
 @import 'Partials/_footer';
-
-/***********************************************
-MEDIA QUERIES
-************************************************/
-
-@media (max-width: 640px) {
-    .nav-desktop {
-        display: none;
-    }
-}
-
-@media (max-width: 875px) {
-    hero.p,
-    hero.h1 {
-        width: 100%;
-    }
-}

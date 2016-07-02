@@ -12,25 +12,14 @@
 @import 'Partials/_navmob';
 @import 'Partials/_footer';
 
-/***********************************************
-MEDIA QUERIES
-************************************************/
 
-@media (max-width: 640px) {
-    .nav-desktop {
-        display: none;
-    }
-    .mega-menu {
-        display: none;
-    }
-    .logo {
-        display: none;
-    }
+.login .success{
+  margin-right: 15px;
+  margin-top: 15px;
+  margin-bottom: 15px;
 }
 
-@media (max-width: 875px) {
-    hero.p,
-    hero.h1 {
-        width: 100%;
-    }
+.success a{
+  display: block;
+  color: white;
 }

@@ -11,11 +11,20 @@
   <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
   <%= csrf_meta_tags %>
 
+  <!-- Custom Js Libraries -->
+  <link rel="stylesheet" href="http://s.mlcdn.co/animate.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/wow/1.1.2/wow.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/lettering.js/0.7.0/jquery.lettering.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/textillate/0.4.0/jquery.textillate.min.js"></script>
+  <script src="http://benalman.com/code/javascript/jquery/jquery.ba-cond.min.js"></script>
+  <script>new WOW().init();</script>
+
   <!-- Custom Fonts -->
 
   <link href="https://fonts.googleapis.com/css?family=Work+Sans" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css?family=Inconsolata" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css?family=Karla" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Bungee+Shade" rel="stylesheet">
 
 </head>
 
@@ -34,6 +43,51 @@
       </div>
       <% end %>
       <%= yield %>
+
+      <div class="reveal" id="developerModal" data-reveal data-animation-in="hinge-in-from-top"
+      data-animation-out="hinge-out-from-bottom">
+        <div class="media-object">
+          <div class="media-object-section">
+            <div class="thumbnail">
+              <img src= "https://pbs.twimg.com/profile_images/742589712913817600/unhnMDKn.jpg" height="90px" width="90px">
+            </div>
+          </div>
+          <div class="media-object-section">
+            <h4 class="animated tada">Prajjwal Dimri</h4>
+            <h6 class="tlt">
+              <ul class="texts">
+                <li data-in-effect="swing" data-out-effect="bounceOut" data-out-shuffle="true">Full Stack Developer</li>
+                <li data-in-effect="tada" data-out-effect="hinge" data-out-shuffle="true">Computer Science Engineering</li>
+                <li data-in-effect="rollIn" data-out-effect="fadeOutRightBig" data-out-shuffle="true">Institute Of Technology, Gopeshwar</li>
+              </ul>
+            </h6>
+          </div>
+        </div>
+
+        <div class="media-object">
+          <div class="media-object-section">
+            <h4 class="animated jello">Rohit Kothiyal</h4>
+            <h6 class="tlt">
+              <ul class="texts">
+                <li data-in-effect="rotateIn" data-out-effect="fadeOut" data-out-shuffle="true">Logo Designer</li>
+                <li data-in-effect="fadeInLeftBig" data-out-effect="rollOut" data-out-shuffle="true">Mechanical Engineering</li>
+                <li data-in-effect="flipInX" data-out-effect="fadeOutUp" data-out-shuffle="true">GRD Institute Of Technology, Dehradoon</li>
+              </ul>
+            </h6>
+          </div>
+          <div class="media-object-section">
+            <div class="thumbnail">
+              <img src= "https://pbs.twimg.com/profile_images/724976966202322946/KZT0pPMh_400x400.jpg" height="90px" width="90px">
+            </div>
+          </div>
+        </div>
+        <h1 class="tlt">
+
+        </h1>
+        <button class="close-button" data-close aria-label="Close modal" type="button">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
 
       <%= render partial: 'home/footer' %>
 

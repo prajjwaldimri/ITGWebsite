@@ -1,10 +1,10 @@
 @import "Partials/colors";
 .main {
-
-    width: 100%;
-
-
+  margin-top: 20px;
+  width: 100%;
+  margin-right: 0px;
 }
+
 .events{
   font-size: 1em;
 }
@@ -19,4 +19,26 @@
   object-position: center; /* Center the image within the element */
   height: 200px;
   width: 500px;
+}
+
+#ticker {
+  height: 100%;
+  overflow: hidden;
+
+}
+#ticker li {
+  display: flex;
+  padding-left: 10px;
+  padding-right: 10px;
+  flex-direction: column;
+  font-family: Noto Sans, sans-serif;
+  text-align: center;
+  min-height: 40px;
+}
+
+div.border {
+  border-left-style: solid;
+  border-color: #95a5a6;
+  border-width: 5px;
+  margin-bottom: 40px;
 }

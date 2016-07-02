@@ -13,6 +13,8 @@
 //= require jquery
 //= require jquery_ujs
 //= require foundation
+//= require jquery.particleground.min.js
+//= require jquery.elevator.min.js
 //= require_tree .
 
 $(function() {

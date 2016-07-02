@@ -1,15 +1,39 @@
 @import "Partials/colors";
 
 .hero {
-  padding-top: 40px;
-  height: 50%;
   background-color: $chelpark;
+  position: relative;
+  height: 90vh;
 }
 
-.hero h1,
-.hero p {
-  color: rgba(255, 255, 255, 0.8);
-  width: 70%;
+.hero-particles{
+  height: 100%;
+  z-index: 10;
+}
+
+.hero-content{
+  text-align: center;
+  color: white;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.hero-content h1{
+  height: 100%;
+  width: 100%;
+  margin-top: 60px;
+  font-family: 'Bungee Shade', cursive;
+}
+
+.hero-content button{
+  margin-top: 40px;
+  bottom: 0;
+}
+
+.hero-content i{
+  font-size: 50px;
 }
 
 .mega-menu {
@@ -39,28 +63,4 @@
 .mega-menu ul li a {
   font-weight: normal;
   color: white;
-}
-
-.logo {
-  margin-left: 0px;
-  padding-bottom: 20px;
-}
-
-.logo ul {
-  list-style-type: none;
-  font-family: "Inconsolata", sans-serif;
-  font-weight: bold;
-  font-size: 0.9em;
-  color: white;
-}
-
-.logo ul li a {
-  font-size: 1em;
-  color: white;
-  transition: all .5s;
-  cursor: pointer;
-}
-
-.logo ul li a:hover {
-  color: black;
 }

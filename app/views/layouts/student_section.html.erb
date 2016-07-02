@@ -11,6 +11,15 @@
       <%= javascript_include_tag "application", 'data-turbolinks-track'  => true %>
     <%= csrf_meta_tags %>
 
+    <!-- Custom Js Libraries -->
+    <link rel="stylesheet" href="http://s.mlcdn.co/animate.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/wow/1.1.2/wow.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/lettering.js/0.7.0/jquery.lettering.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/textillate/0.4.0/jquery.textillate.min.js"></script>
+    <script src="http://benalman.com/code/javascript/jquery/jquery.ba-cond.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/instafeed.js/1.4.1/instafeed.min.js"></script>
+    <script>new WOW().init();</script>  
+
     <!-- Custom Fonts -->
     <link href="https://fonts.googleapis.com/css?family=Work+Sans" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Inconsolata" rel="stylesheet">
@@ -22,7 +31,7 @@
       <div class="off-canvas-wrapper">
         <div class="off-canvas-wrapper-inner" data-off-canvas-wrapper>
 
-      <%= render 'student_section/navigation' %>
+      <%= render 'home/navigation' %>
 
       <% flash.each do |message_type, message| %>
       <div class="callout <%= message_type %>" data-closable="slide-out-right">

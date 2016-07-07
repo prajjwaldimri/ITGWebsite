@@ -14,9 +14,10 @@ class UsersController < ApplicationController
   end
 
   def show
-    @user = User.find(params[:id])
+    @user = User.friendly.find(params[:id])
     @assignments = @user.assignments.paginate(page: params[:page])
     @assignment = current_user.assignments.build if logged_in?
+    @article = current_user.articles.build if logged_in?
   end
 
   def create
@@ -45,7 +46,7 @@ class UsersController < ApplicationController
   end
 
   def destroy
-    User.find(params[:id]).destroy
+    User.friendly.find(params[:id]).destroy
     flash[:success] = "User deleted"
     redirect_to users_url
   end
@@ -61,7 +62,7 @@ class UsersController < ApplicationController
 
 #Confirms if user is correct
   def correct_user
-    @user = User.find(params[:id])
+    @user = User.friendly.find(params[:id])
     redirect_to(root_url) unless current_user?(@user) || current_user.admin?
   end
 

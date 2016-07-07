@@ -15,33 +15,44 @@
 				<i id="learnmore" class="fa fa-chevron-circle-down animated flash"></i>
 			</button>
 		</div>
-
 	</section>
 
 
 	<!--MAIN SECTION-->
 	<section class="main wrap wow fadeIn">
 		<div class="row">
-			<div class="large-9 columns">
-				<div class="row"></div>
+			<div class="large-8 columns">
+				<div class="row">
+					<h4 style="margin-left: 20px; font-family: Proxima Nova Bold; margin-bottom: 30px;
+					border-bottom-style: groove; border-bottom-width: 5px; ">What's Happening</h4>
+				</div>
+				<div class="row">
+					 <% if @articles.any? %>
+					 <ul style="list-style: none;">
+					 	<%= render @articles %>
+					 </ul>
+					 <% end %>
+				</div>
 			</div>
 			<div class="large-3 columns">
-				<div class="row border">
-					<ul id="ticker">
+				<!--News Widget -->
+				<div class="row border" style="border-color: #D24D57;">
+					<h4 style="margin-left: 20px; font-family: Karla; margin-bottom: 30px;">Latest News</h4>
+					<ul class="wow bounceInUp" id="ticker">
 						<li>
-							<h5>First News</h5>
+							<h6>First News</h6>
 						</li>
 						<li>
-							<h5>Second News</h5>
+							<h6>Second News</h6>
 						</li>
 						<li>
-							<h5>Third News</h5>
+							<h6>Third News</h6>
 						</li>
 						<li>
-							<h5>Forth News</h5>
+							<h6>Forth News</h6>
 						</li>
 						<li>
-							<h5>Fifth News</h5>
+							<h6>Fifth News</h6>
 						</li>
 						<li>
 							<div class="media-object">
@@ -51,15 +62,41 @@
 									</div>
 								</div>
 								<div class="media-object-section">
-									<h5>News with Image.</h5>
+									<h6>News with Image.</h6>
 								</div>
 							</div>
 						</li>
 					</ul>
 				</div>
- 				<div class="row">
+
+				<div class="row border" style="border-color: #8E44AD;">
+					<h4 style="margin-left: 20px; font-family: Karla; margin-bottom: 30px;">Statements</h4>
+					<ul class="wow flip" id="ticker1">
+						<li>
+							<h6>VC's Statement</h6>
+						</li>
+						<li>
+							<h6>Director's Statement regarding to recent disasters in Uttarakhand</h6>
+						</li>
+						<li>
+							<div class="media-object">
+								<div class="media-object-section">
+									<div class="thumbnail">
+										<img src= "assets/01.jpg" height="40px" width="40px">
+									</div>
+								</div>
+								<div class="media-object-section">
+									<h6>Statement with Image.</h6>
+								</div>
+							</div>
+						</li>
+					</ul>
+				</div>
+
+				<!-- Instagram Widget -->
+ 				<div class="row" style="margin-bottom: 40px;">
 					<blockquote class="instagram-media" data-instgrm-captioned data-instgrm-version="7" style=" background:#FFF; border:0; border-radius:3px; box-shadow:0 0 1px 0 rgba(0,0,0,0.5),0 1px 10px 0 rgba(0,0,0,0.15); margin: 1px; max-width:658px; padding:0; width:99.375%; width:-webkit-calc(100% - 2px); width:calc(100% - 2px);"><div style="padding:8px;"> <div style=" background:#F8F8F8; line-height:0; margin-top:40px; padding:50.0% 0; text-align:center; width:100%;"> <div style=" background:url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACwAAAAsCAMAAAApWqozAAAABGdBTUEAALGPC/xhBQAAAAFzUkdCAK7OHOkAAAAMUExURczMzPf399fX1+bm5mzY9AMAAADiSURBVDjLvZXbEsMgCES5/P8/t9FuRVCRmU73JWlzosgSIIZURCjo/ad+EQJJB4Hv8BFt+IDpQoCx1wjOSBFhh2XssxEIYn3ulI/6MNReE07UIWJEv8UEOWDS88LY97kqyTliJKKtuYBbruAyVh5wOHiXmpi5we58Ek028czwyuQdLKPG1Bkb4NnM+VeAnfHqn1k4+GPT6uGQcvu2h2OVuIf/gWUFyy8OWEpdyZSa3aVCqpVoVvzZZ2VTnn2wU8qzVjDDetO90GSy9mVLqtgYSy231MxrY6I2gGqjrTY0L8fxCxfCBbhWrsYYAAAAAElFTkSuQmCC); display:block; height:44px; margin:0 auto -44px; position:relative; top:-22px; width:44px;"></div></div> <p style=" margin:8px 0 0 0; padding:0 4px;"> <a href="https://www.instagram.com/p/BHHDQnGA_Uw/" style=" color:#000; font-family:Arial,sans-serif; font-size:14px; font-style:normal; font-weight:normal; line-height:17px; text-decoration:none; word-wrap:break-word;" target="_blank">#rudranath</a></p> <p style=" color:#c9c8cd; font-family:Arial,sans-serif; font-size:14px; line-height:17px; margin-bottom:0; margin-top:8px; overflow:hidden; padding:8px 0 7px; text-align:center; text-overflow:ellipsis; white-space:nowrap;">A photo posted by gáûřåv bhatt (@gaurav_bhattt) on <time style=" font-family:Arial,sans-serif; font-size:14px; line-height:17px;" datetime="2016-06-26T07:59:10+00:00">Jun 26, 2016 at 12:59am PDT</time></p></div></blockquote>
-<script async defer src="//platform.instagram.com/en_US/embeds.js"></script>
+				<script async defer src="//platform.instagram.com/en_US/embeds.js"></script>
 				</div>
 			</div>
 		</div>

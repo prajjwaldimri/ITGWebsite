@@ -1,13 +1,21 @@
-<li id="assignment-<%= assignment.id %>">
+<div class="row">
+  <li id="assignment">
+    <div class="row" style="display: inline;">
+      <h4><%= assignment.title %></h4>
+      <h5>Subject: (<%= assignment.subject %>)</h5>
+    </div>
+    <div class="row" style="display: inline;">
+      <h7 style="color: #ABB7B7">Semester: <%= assignment.semester %> &nbsp;&nbsp;&nbsp;</h7>
+      <h7>Uploaded <%= time_ago_in_words(assignment.created_at) %> ago.</h7>
+    </div>
+    <div class="row" style="display: inline;">
+    <% if assignment.pdf? %>
+    <a href="<%= assignment.pdf.current_path %>" class="button">Download</a>
+    <% end %>
 
-  <%= link_to assignment.title %>
-  <%= link_to assignment.subject %>
-  <%= link_to assignment.semester %>
-  Uploaded <%= time_ago_in_words(assignment.created_at) %> ago.
-
-  <%= link_to assignment.pdf.current_path if assignment.pdf? %>
-
-  <% if current_user?(assignment.user) %>
-    <%= link_to "Delete", assignment, method: :delete, data: {confirm: "You Sure?"} %>
-  <% end %>
-</li>
+    <% if current_user?(assignment.user) %>
+    <%= link_to "Delete", assignment, method: :delete, data: {confirm: "You Sure?"}, class: "alert button" %>
+    <% end %>
+    </div>
+  </li>
+</div>

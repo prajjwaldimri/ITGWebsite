@@ -28,7 +28,7 @@ class AssignmentsController < ApplicationController
   end
 
   def correct_user
-    @assignment = current_user.assignments.find_by(id: params[:id])
+    @assignment = current_user.assignments.friendly.find_by(id: params[:id])
     redirect_to root_url if @assignment.nil?
   end
 

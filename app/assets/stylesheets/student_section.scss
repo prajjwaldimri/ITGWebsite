@@ -4,6 +4,7 @@
 
 /*---------------------Custom SASS------------------*/
 
+@import 'Partials/_fonts';
 @import 'Partials/_colors';
 @import 'Partials/_wrapper';
 @import 'Partials/_mainbody';
@@ -11,7 +12,6 @@
 @import 'Partials/_navdesk';
 @import 'Partials/_navmob';
 @import 'Partials/_footer';
-
 
 .login .success{
   margin-right: 15px;
@@ -22,4 +22,16 @@
 .success a{
   display: block;
   color: white;
+}
+
+.slider {
+  height: 80vh;
+  width: 80%;
+  margin-top: 0px;
+  vertical-align: middle;
+  overflow: hidden;
+}
+
+.slider img{
+  object-fit: contain;
 }

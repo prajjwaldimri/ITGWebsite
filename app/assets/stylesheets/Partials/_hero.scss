@@ -1,9 +1,13 @@
 @import "Partials/colors";
 
 .hero {
-  background-color: $chelpark;
+  background: linear-gradient(270deg, #18f0b8, #18a2f0, #db5640);
   position: relative;
   height: 90vh;
+  background-size: 600% 600%;
+	-webkit-animation: Gradient 60s ease infinite;
+	-moz-animation: Gradient 60s ease infinite;
+	animation: Gradient 60s ease infinite;
 }
 
 .hero-particles{
@@ -24,7 +28,11 @@
   height: 100%;
   width: 100%;
   margin-top: 60px;
-  font-family: 'Bungee Shade', cursive;
+  font-family: "Proxima Nova Black", cursive;
+}
+
+.hero-content h4{
+  font-family: "Proxima Nova Light", sans-serif;
 }
 
 .hero-content button{
@@ -52,8 +60,8 @@
 .mega-menu ul {
   border-right: 1px dotted #737373;
   margin-top: 20px;
-    list-style-type: none;
-  font-family: "Karla", sans-serif;
+  list-style-type: none;
+  font-family: "Proxima Nova Regular", sans-serif;
 }
 
 .mega-menu ul li {
@@ -63,4 +71,21 @@
 .mega-menu ul li a {
   font-weight: normal;
   color: white;
+  font-family: "Proxima Nova Regular", sans-serif;
 }
+
+@-webkit-keyframes Gradient {
+		0%{background-position:0% 50%}
+		50%{background-position:100% 50%}
+		100%{background-position:0% 50%}
+	}
+	@-moz-keyframes Gradient {
+		0%{background-position:0% 50%}
+		50%{background-position:100% 50%}
+		100%{background-position:0% 50%}
+	}
+	@keyframes Gradient {
+		0%{background-position:0% 50%}
+		50%{background-position:100% 50%}
+		100%{background-position:0% 50%}
+	}

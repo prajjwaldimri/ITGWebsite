@@ -3,8 +3,8 @@ Rails.application.routes.draw do
   get 'sessions/new'
 
   root  'home#index'
-  get     'staff_section/index', as: 'student_section'
-  get     'student_section/index'
+  get     'staff_section/index', as: 'staff_section'
+  get     'student_section/index', as: 'student_section'
   get     'student'               => 'student_section#index'
   get     'home/about',           as: 'about'
   get     'users/show'
@@ -14,6 +14,7 @@ Rails.application.routes.draw do
   delete  'logout'                => 'sessions#destroy'
   resources :users
   resources :assignments, only: [:create, :destroy]
+  resources :articles
   #resources :sessions
 
   # The priority is based upon order of creation: first created -> highest priority.

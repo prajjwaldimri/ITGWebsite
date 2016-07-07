@@ -1,6 +1,11 @@
 class User < ActiveRecord::Base
 
+  extend FriendlyId
+  friendly_id :rollno, use: :slugged
+  validates :rollno, :slug, presence: true
+
   has_many :assignments, dependent: :destroy
+  has_many :articles
   attr_accessor :remember_token
   before_save{self.email = email.downcase}
   VALID_EMAIL_REGEX = /\A[\w+.\-]+@[a-z\-.]+\.[a-z]+\z/i

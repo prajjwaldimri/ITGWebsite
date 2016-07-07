@@ -28,3 +28,17 @@ users = User.order(:created_at).take(6)
   semester = Faker::Number.number(1)
   users.each{|user| user.assignments.create!(title: title, subject: subject, semester: semester)}
 end
+
+4.times do |n|
+  title = Faker::Lorem.sentence(11) + "#{n}"
+  content = Faker::Lorem.paragraphs(5)
+  post_type = Faker::Lorem.characters(10)
+  user_id = 1
+  article = Article.new(
+    title: title,
+    content: content,
+    post_type: post_type,
+    user_id: user_id
+  )
+  article.save!
+end

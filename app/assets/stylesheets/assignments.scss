@@ -7,3 +7,13 @@
 @import 'Partials/_navdesk';
 @import 'Partials/_navmob';
 @import 'Partials/_footer';
+
+#assignment{
+  border-top: dashed;
+  border-width: 2px;
+  border-color: $lynch;
+}
+
+#assignment .row{
+  margin-left: 20px;
+}

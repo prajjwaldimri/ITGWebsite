@@ -1,6 +1,8 @@
 $(function(){
+
   function tick(){
-    $('#ticker li:first').slideUp( function () { $(this).appendTo($('#ticker')).slideDown(); });
+    $('#ticker li:first').fadeOut( function () { $(this).appendTo($('#ticker')).fadeIn(); });
+    $('#ticker1 li:first').slideUp(function(){$(this).appendTo($('#ticker1')).slideDown();});
   }
   setInterval(function(){ tick () }, 5000);
 
@@ -10,8 +12,8 @@ $(function(){
   });
 
   $('.hero-particles').particleground({
-    dotColor: 'rgba(127, 140, 141,0.4)',
-    lineColor: 'rgba(127, 140, 141,0.4)'
+    dotColor: 'rgba(127, 140, 141,0.8)',
+    lineColor: 'rgba(127, 140, 141,0.8)'
   });
 
   $("#scroll-to-main").click(function() {
@@ -25,5 +27,4 @@ $(function(){
       mainAudio: '/assets/elevator.mp3',
       endAudio: '/assets/ding.mp3'
     });
-
 });

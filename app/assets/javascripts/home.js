@@ -12,8 +12,9 @@ $(function(){
   });
 
   $('.hero-particles').particleground({
-    dotColor: 'rgba(127, 140, 141,0.8)',
-    lineColor: 'rgba(127, 140, 141,0.8)'
+    dotColor: 'rgba(255,255,255,1.0)',
+    lineColor: 'rgba(127, 140, 141,0.0)',
+    density: '100000'
   });
 
   $("#scroll-to-main").click(function() {

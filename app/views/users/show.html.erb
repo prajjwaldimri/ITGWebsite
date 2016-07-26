@@ -31,7 +31,7 @@
               <ul style="list-style: none;">
                 <%= render @assignments %>
               </ul>
-              <%= will_paginate @assignments, renderer: FoundationPagination::Rails %>
+              <%= will_paginate @assignments, renderer: WillPaginateSemanticUi::ActionView::Renderer %>
             <% end %>
           </div>
         </div>

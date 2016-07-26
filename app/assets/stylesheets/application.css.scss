@@ -14,13 +14,26 @@
  *= require_self
  */
 
+@import "semantic-ui";
 @import "font-awesome";
-@import "foundation";
-@import "foundation_and_overrides";
 @import "home";
 @import "student_section";
 @import "staff_section";
 @import "users";
+
+/**** SiteWide Fonts *****/
+
+h1,h2,h3,h4,h5,h6{
+  font-family: "Proxima Nova Bold";
+}
+
+body{
+  font-family: "Proxima Nova Regular"
+}
+
+nav{
+  font-family: "Proxima Nova Black"
+}
 
 /*************Loading Animation*************/
 

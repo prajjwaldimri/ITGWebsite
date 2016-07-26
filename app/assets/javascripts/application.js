@@ -12,14 +12,12 @@
 //
 //= require jquery
 //= require jquery_ujs
-//= require foundation
+//= require semantic-ui
 //= require jquery.particleground.min.js
 //= require jquery.elevator.min.js
 //= require_tree .
 
 $(function() {
-
-  $(document).foundation();
 
   $(document).ready(function(){
     $(window).load(function() {

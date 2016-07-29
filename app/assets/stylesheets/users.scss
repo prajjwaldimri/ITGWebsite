@@ -2,21 +2,9 @@
 
 @import 'Partials/_colors';
 @import 'Partials/_wrapper';
-@import 'Partials/_mainbody';
-@import 'Partials/_hero';
 @import 'Partials/_navigation';
-@import 'Partials/_footer';
+@import 'Partials/Users/_profile-hero.scss';
 
-.page-headline{}
-
-h1.page-headline {
-  text-align: center;
-  margin-bottom: 60px;
-  font-family: 'Work Sans', sans-serif;
-}
-
-h2.page-headline {
-  text-align: center;
-  margin-bottom: 40px;
-  font-family: 'Work Sans', sans-serif;
+.gravatar{
+  border-radius: 50%;
 }

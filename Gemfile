@@ -24,6 +24,11 @@ gem "will_paginate_semantic_ui"
 #Semantic-UI
 gem 'semantic-ui-sass', github: 'doabit/semantic-ui-sass'
 
+#Iconate
+source 'https://rails-assets.org' do
+  gem 'rails-assets-css-hamburgers'
+end
+
 #Font-Awesome
 
 gem 'font-awesome-rails'
@@ -33,8 +38,10 @@ gem 'carrierwave'
 # Use ActiveModel has_secure_password
 gem 'bcrypt', '~> 3.1.7'
 
-#Faker
+#Bower
+  gem "bower-rails", "~> 0.10.0"
 
+#Faker
 gem 'faker', '~> 1.6.1'
 # Use Unicorn as the app server
 # gem 'unicorn'

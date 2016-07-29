@@ -6,26 +6,64 @@ $(function(){
   }
   setInterval(function(){ tick () }, 5000);
 
-  $('.tlt').textillate({
+  //Listening to scrollTop
+
+  $(window).scroll(function(){
+    var wScroll = $(this).scrollTop();
+    $('.hero-content').css({
+      'transform' : 'translate(0px, '+ wScroll /5 +'%)'
+    });
+    if(wScroll >50){
+      $('.ui.secondary.menu').css({
+        'background-color':'#fff', 'transition':'background-color 0.5s ease'
+      });
+      $('.ui.menu .item').css({
+        'color':'#000', 'transition':'color 0.5s ease'
+      });
+    }
+    if(wScroll<50){
+      $('.ui.secondary.menu').css({
+        'background-color':'rgba(0,0,0,0)', 'transition':'background-color 0.5s ease'
+      });
+      $('.ui.menu .item').css({
+        'color':'#000', 'transition':'color 0.5s ease'
+      });
+    }
+
+    //main-body
+    if(wScroll > $('.large-window1').offset().top - $(window).height()){
+      var opacity = (wScroll - $('.large-window1').offset().top + 400) / (wScroll/5);
+      $('.window1-tint').css({'opacity' : opacity});
+    }
+    if(wScroll > $('.large-window2').offset().top - $(window).height()){
+      var opacity = (wScroll - $('.large-window2').offset().top + 400) / (wScroll/5);
+      $('.window2-tint').css({'opacity' : opacity});
+    }
+    if(wScroll > $('.large-window3').offset().top - $(window).height()){
+      var opacity = (wScroll - $('.large-window3').offset().top + 400) / (wScroll/5);
+      $('.window3-tint').css({'opacity' : opacity});
+    }
+    if(wScroll > $('.large-window4').offset().top - $(window).height()){
+      var opacity = (wScroll - $('.large-window4').offset().top + 400) / (wScroll/5);
+      $('.window4-tint').css({'opacity' : opacity});
+    }
+  });
+
+
+    $('.tlt').textillate({
     loop: true,
     initialDelay: 2000
   });
 
-  $('.hero-particles').particleground({
-    dotColor: 'rgba(255,255,255,1.0)',
-    lineColor: 'rgba(127, 140, 141,0.0)',
-    density: '100000'
+  $('.tlt').click(function(){
+    $('.ui.modal')
+    .modal('show');
   });
 
-  $("#scroll-to-main").click(function() {
+
+  $("#learnmore").click(function() {
     $('html,body').animate({
-      scrollTop: $(".main").offset().top},
+      scrollTop: $(".main-body").offset().top -70},
       'slow');
-  });
-
-    var elevator = new Elevator({
-      element: document.querySelector('.elevator-button'),
-      mainAudio: '/assets/elevator.mp3',
-      endAudio: '/assets/ding.mp3'
     });
-});
+  });

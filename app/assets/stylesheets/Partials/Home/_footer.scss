@@ -1,0 +1,11 @@
+@import "Partials/colors";
+footer {
+    background-color: black;
+    color: aliceblue;
+    width: 100%;    
+    height: 40vh;
+    font-family: "Proxima Nova SemiBold", open-sans;
+    text-align: center;
+    position: fixed;
+    bottom: 0;
+}

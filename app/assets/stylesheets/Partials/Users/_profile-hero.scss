@@ -1,0 +1,26 @@
+.hero-user{
+  height: 50vh;
+  vertical-align: middle;
+  align-items: center;
+  justify-content: center;
+}
+
+#spacer{
+  background: transparent;
+  border: 0px;
+  box-shadow: 0 0 0 0;
+}
+
+.tabs-user{
+  z-index: 5;
+}
+
+.user-details h2,
+.user-details h3,
+.user-details h4,{
+  margin-top: 0px;
+  padding: 0px;
+  margin-bottom: 10px;
+  font-family: "Poppins", sans-serif;
+  font-weight: normal;
+}

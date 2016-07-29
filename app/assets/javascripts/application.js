@@ -21,35 +21,37 @@ $(function() {
 
   $(document).ready(function(){
     $(window).load(function() {
-  		// Animate loader off screen
-  		$(".spinner-wrapper").fadeOut("slow");;
-  	});
+      // Animate loader off screen
+      $(".spinner-wrapper").fadeOut("slow");;
+    });
   });
 
-  $(".mega-button a").click(function() {
-    $(".mega-menu").toggle("slow");
+  //Listening to scroll
+
+  $(window).scroll(function(){
+    var wScroll = $(this).scrollTop();
+		if (wScroll > 100) {
+			$('.elevator-button').fadeIn();
+		} else {
+			$('.elevator-button').fadeOut();
+		}
+	});
+
+  //MenuIcon
+  var $menubutton = $(".menu-button");
+  $menubutton.on("click", function(e) {
+    $('.ui.sidebar')
+    .sidebar('toggle');
   });
 
-  $('.tertiary-nav .search-icon').click(function(event) {
+  var elevator = new Elevator({
+    element: document.querySelector('.up-elevator-button'),
+    mainAudio: '/assets/elevator.mp3',
+    endAudio: '/assets/ding.mp3'
+  });
 
-    if ($('.inline-list li.search-field').hasClass('open')) {
-
-      $('.inline-list li.search-field').animate({
-        width: "0px",
-        margin: "0px"
-      }, 500).removeClass('open')
-
-      $('.inline-list').style({
-        margin: "0 -10px 0 0"
-      })
-
-    } else {
-
-      $('.inline-list li.search-field').animate({
-        width: "160px",
-        margin: "0 0 0 10px"
-      }, 500).addClass('open')
-
-    }
+  $('.down-elevator-button').click(function(){
+    $('html, body').animate({
+       scrollTop: $(document).height()}, 5000);
   });
 });

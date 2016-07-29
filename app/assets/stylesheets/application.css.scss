@@ -16,6 +16,8 @@
 
 @import "semantic-ui";
 @import "font-awesome";
+@import "Partials/_hamburger-settings";
+@import "css-hamburgers";
 @import "home";
 @import "student_section";
 @import "staff_section";
@@ -31,10 +33,14 @@ body{
   font-family: "Proxima Nova Regular"
 }
 
-nav{
-  font-family: "Proxima Nova Black"
+/****** Scroll-to-top Button *******/
+.elevator-button{
+  top:92%;
+  right: 2%;
+  position: fixed;
+  display: none;
+  z-index: 4;
 }
-
 /*************Loading Animation*************/
 
 .spinner-wrapper{

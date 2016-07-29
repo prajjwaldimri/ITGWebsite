@@ -1,3 +1,35 @@
 .segment{
-  min-height: 100px;
+  min-height: 80px;
+}
+
+.overlay{
+  background-color: #FFFFFF;
+  padding: 0em;
+  box-shadow: 0px 0px 0px rgba(0, 0, 0, 0);
+  transition: all 0.5s ease;
+  background: transparent;
+}
+
+.fixed.overlay{
+  position: fixed;
+  padding: 1em;
+  box-shadow: 0px 0px 6px rgba(0, 0, 0, 0.2);
+}
+
+.ui.menu a.item{
+  color: black;
+}
+
+.menu-profile-image{
+  vertical-align: middle;
+  align-self: center;
+  border-radius: 50%;
+  padding-right: 10px;
+}
+
+#menu-search{
+  max-height: 40px;
+  vertical-align: middle;
+  align-self: center;
+  max-width: 700px;
 }

@@ -12,84 +12,73 @@
   <%= csrf_meta_tags %>
 
   <!-- Custom Js Libraries -->
-  <link rel="stylesheet" href="https://s.mlcdn.co/animate.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
   <script src="https://cdnjs.cloudflare.com/ajax/libs/wow/1.1.2/wow.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/lettering.js/0.7.0/jquery.lettering.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/textillate/0.4.0/jquery.textillate.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.lazyload/1.9.1/jquery.lazyload.min.js"></script>
   <script>new WOW().init();</script>
 
   <!-- Custom Fonts -->
-  <link href="https://fonts.googleapis.com/css?family=Karla|Open+Sans|Poppins|Work+Sans" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Karla|Lato:400,900|Open+Sans|Poppins|Work+Sans" rel="stylesheet">
 </head>
 
 <body>
-  <div class="off-canvas-wrapper">
-    <div class="off-canvas-wrapper-inner" data-off-canvas-wrapper>
+  <%= render partial: 'home/sidebar' %>
+    <div class="dimmed pusher">
+  <%= render partial: 'home/navigation' %>
 
-      <%= render partial: 'home/navigation' %>
+  <% flash.each do |message_type, message| %>
+  <div class="callout <%= message_type %>" data-closable="slide-out-right">
+    <%= message %>
+    <button class="close-button" aria-label="Dismiss alert" type="button" data-close>
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
+  <% end %>
+  
+  <%= yield %>
 
-      <% flash.each do |message_type, message| %>
-      <div class="callout <%= message_type %>" data-closable="slide-out-right">
-        <%= message %>
-        <button class="close-button" aria-label="Dismiss alert" type="button" data-close>
-          <span aria-hidden="true">&times;</span>
-        </button>
+  <div class="ui modal">
+    <i class="close icon"></i>
+    <div class="header">
+      Profile Picture
+    </div>
+    <div class="image content">
+      <div class="ui medium image">
+        <img src="/images/avatar/large/chris.jpg">
       </div>
-      <% end %>
-      <%= yield %>
-
-      <div class="reveal" id="developerModal" data-reveal data-animation-in="hinge-in-from-top"
-      data-animation-out="hinge-out-from-bottom">
-        <div class="media-object">
-          <div class="media-object-section">
-            <div class="thumbnail">
-              <img src= "https://pbs.twimg.com/profile_images/742589712913817600/unhnMDKn.jpg" height="90px" width="90px">
-            </div>
-          </div>
-          <div class="media-object-section">
-            <h4 class="animated tada">Prajjwal Dimri</h4>
-            <h6 class="tlt">
-              <ul class="texts">
-                <li data-in-effect="swing" data-out-effect="bounceOut" data-out-shuffle="true">Full Stack Developer</li>
-                <li data-in-effect="tada" data-out-effect="hinge" data-out-shuffle="true">Computer Science Engineering</li>
-                <li data-in-effect="rollIn" data-out-effect="fadeOutRightBig" data-out-shuffle="true">Institute Of Technology, Gopeshwar</li>
-              </ul>
-            </h6>
-          </div>
-        </div>
-
-        <div class="media-object">
-          <div class="media-object-section">
-            <h4 class="animated jello">Rohit Kothiyal</h4>
-            <h6 class="tlt">
-              <ul class="texts">
-                <li data-in-effect="rotateIn" data-out-effect="fadeOut" data-out-shuffle="true">Logo Designer</li>
-                <li data-in-effect="fadeInLeftBig" data-out-effect="rollOut" data-out-shuffle="true">Mechanical Engineering</li>
-                <li data-in-effect="flipInX" data-out-effect="fadeOutUp" data-out-shuffle="true">GRDIMT Dehradoon</li>
-              </ul>
-            </h6>
-          </div>
-          <div class="media-object-section">
-            <div class="thumbnail">
-              <img src= "https://pbs.twimg.com/profile_images/749199393589305344/g0CNlhRm.jpg" height="90px" width="90px">
-            </div>
-          </div>
-        </div>
-        <h1 class="tlt">
-
-        </h1>
-        <button class="close-button" data-close aria-label="Close modal" type="button">
-          <span aria-hidden="true">&times;</span>
-        </button>
+      <div class="description">
+        <div class="ui header">We've auto-chosen a profile image for you.</div>
+        <p>We've grabbed the following image from the <a href="https://www.gravatar.com" target="_blank">gravatar</a> image associated with your registered e-mail address.</p>
+        <p>Is it okay to use this photo?</p>
       </div>
-
-      <%= render partial: 'home/footer' %>
-
-      <%= debug(params) if Rails.env.development? %>
-
+    </div>
+    <div class="actions">
+      <div class="ui black deny button">
+        Nope
+      </div>
+      <div class="ui positive right labeled icon button">
+        Yep, that's me
+        <i class="checkmark icon"></i>
+      </div>
     </div>
   </div>
 
+  <div class="ui large buttons elevator-button">
+    <button class="inverted circular ui icon button down-elevator-button">
+      <i class="icon angle double down"></i>
+    </button>
+    <div class="or"></div>
+    <button class="inverted circular ui icon button up-elevator-button">
+      <i class="icon angle double up"></i>
+    </button>
+  </div>
+
+  <%= render partial: 'home/footer' %>
+
+  <%= debug(params) if Rails.env.development? %>
+</div>
 </body>
 
 <div class="spinner-wrapper">

@@ -1,0 +1,38 @@
+@import "Partials/colors";
+
+.hero {
+  position: relative;
+  height: 100vh;
+  background-image: url("/assets/05.jpg");
+  background-size: cover;
+  background-position: top center;
+  background-attachment: fixed;
+  z-index: 2;
+}
+
+.hero-content{
+  text-align: center;
+  color: black;
+  position: absolute;
+  width: 100%;
+  top: 50%;
+  margin-top: -10vh;
+}
+
+.hero-content h1{
+  font-family: "Lato", sans-serif;
+  font-weight: bolder;
+  font-size: 3em;
+}
+
+.hero-content h4{
+  font-family: "Work Sans", sans-serif;
+}
+
+.hero-content i{
+  font-size: 50px;
+}
+
+.main-body{
+  min-height: 500px;
+}

@@ -36,7 +36,7 @@
     </button>
   </div>
   <% end %>
-  
+
   <%= yield %>
 
   <div class="ui modal">
@@ -74,8 +74,11 @@
       <i class="icon angle double up"></i>
     </button>
   </div>
-
+  <% if current_page?(root_path) %>
   <%= render partial: 'home/footer' %>
+  <% else %>
+  <%= render partial: 'shared/footer' %>
+  <% end %>
 
   <%= debug(params) if Rails.env.development? %>
 </div>

@@ -20,7 +20,7 @@
     </div>
     <div class="middle aligned column">
       <div class="ui buttons">
-        <button class="ui blue button">Edit Profile</button>
+        <a href="<%= edit_user_path %>" class="ui orange button">Edit Profile</a>
         <button class="ui green button">Submit Assignment</button>
         <button class="ui violet button">Submit Article</button>
       </div>
@@ -30,22 +30,31 @@
 
 <div class="tabs-user">
   <div class="ui top attached tabular menu">
-  <a class="item active" data-tab="first">Assignments</a>
-  <a class="item" data-tab="second">Articles</a>
-  <a class="item" data-tab="third">Submit Assignment</a>
-  <a class="item" data-tab="forth">Submit Article</a>
-</div>
-<div class="ui bottom attached tab segment active" data-tab="first">
-  Articles
-</div>
-<div class="ui bottom attached tab segment" data-tab="second">
-  Assignments
-</div>
-<div class="ui bottom attached tab segment" data-tab="third">
-  Third
-</div>
-<div class="ui bottom attached tab segment" data-tab="forth">
-  Third
-</div>
-
+    <a class="item active" data-tab="first">Assignments (<%= @user.assignments.count %>)</a>
+    <a class="item" data-tab="second">Articles</a>
+    <a class="item" data-tab="third">Submit Assignment</a>
+    <a class="item" data-tab="forth">Submit Article</a>
+  </div>
+  <div class="ui bottom attached tab segment active" data-tab="first">
+    <% if @user.assignments.any? %>
+      <div class="ui three column middle aligned centered grid stackable">
+      <%= render @assignments %>
+      </div>
+    <%= will_paginate @assignments, renderer: WillPaginateSemanticUi::ActionView::Renderer %>
+    <% end %>
+  </div>
+  <div class="ui bottom attached tab segment" data-tab="second">
+    <% if @user.articles.any? %>
+      <div class="ui three column middle aligned centered grid stackable">
+      <%= render @articles %>
+      </div>
+    <%= will_paginate @articles, renderer: WillPaginateSemanticUi::ActionView::Renderer %>
+    <% end %>
+  </div>
+  <div class="ui bottom attached tab segment" data-tab="third">
+    Third
+  </div>
+  <div class="ui bottom attached tab segment" data-tab="forth">
+    Third
+  </div>
 </div>

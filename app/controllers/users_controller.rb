@@ -17,6 +17,7 @@ class UsersController < ApplicationController
     @assignments = @user.assignments.paginate(page: params[:page])
     @assignment = current_user.assignments.build if logged_in?
     @article = current_user.articles.build if logged_in?
+    @articles = @user.articles.paginate(page: params[:page])
   end
 
   def create

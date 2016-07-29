@@ -8,9 +8,12 @@
       <i class="search icon"></i>
     </div>
     <div class="right menu">
-    <a class="item">For Students</a>
-    <a class="item">For Faculty</a>
-    <a class="item"><img class="menu-profile-image" src="/assets/02.jpg" width="0" height="35"/> User Name </a>
+      <a class="item">For Students</a>
+      <a class="item">For Faculty</a>
+      <a class="item">
+        <img class="ui avatar image" src="<%= gravatar_url @user %>">        
+        <span>Username</span>
+      </a>
     </div>
   </div>
 </div>

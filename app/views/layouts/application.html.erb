@@ -65,6 +65,8 @@
     </div>
   </div>
 
+
+  <% if current_page?(root_path) %>
   <div class="ui large buttons elevator-button">
     <button class="inverted circular ui icon button down-elevator-button">
       <i class="icon angle double down"></i>
@@ -74,9 +76,17 @@
       <i class="icon angle double up"></i>
     </button>
   </div>
-  <% if current_page?(root_path) %>
   <%= render partial: 'home/footer' %>
   <% else %>
+  <div class="ui large buttons elevator-button">
+    <button class="circular ui icon button down-elevator-button">
+      <i class="icon angle double down"></i>
+    </button>
+    <div class="or"></div>
+    <button class="circular ui icon button up-elevator-button">
+      <i class="icon angle double up"></i>
+    </button>
+  </div>
   <%= render partial: 'shared/footer' %>
   <% end %>
 

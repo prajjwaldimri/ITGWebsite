@@ -12,7 +12,7 @@ class ArticlesController < ApplicationController
   end
 
   def show
-    @article = Article.friendly.find(params[:id])
+    @article = Article.find(params[:id])
   end
 
   def create
@@ -40,9 +40,9 @@ class ArticlesController < ApplicationController
   end
 
   def destroy
-    Article.friendly.find(params[:id]).destroy
+    Article.find(params[:id]).destroy
     flash[:success] = "Article Deleted"
-    redirect_to articles_url
+    redirect_to :back
   end
 
   private

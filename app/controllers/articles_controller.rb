@@ -19,10 +19,10 @@ class ArticlesController < ApplicationController
     @article = Article.new(article_params)
     if @article.save
       flash[:success] = "Article Created"
-      render 'new'
+      redirect_to :back
     else
-      flash[:alert] = "Article creation Failed"
-      render 'new'
+      flash[:error] = "Article creation Failed"
+      redirect_to :back
     end
   end
 
@@ -34,7 +34,7 @@ class ArticlesController < ApplicationController
       flash[:success] = "Article Updated"
       redirect_to @user
     else
-      flash[:alert] = "Errors"
+      flash[:error] = "Errors"
       render 'edit'
     end
   end

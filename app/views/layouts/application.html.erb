@@ -29,11 +29,10 @@
   <%= render partial: 'home/navigation' %>
 
   <% flash.each do |message_type, message| %>
-  <div class="callout <%= message_type %>" data-closable="slide-out-right">
-    <%= message %>
-    <button class="close-button" aria-label="Dismiss alert" type="button" data-close>
-      <span aria-hidden="true">&times;</span>
-    </button>
+  <div class="ui <%= message_type %> message" style="margin-top: 10vh; z-index: 4;">
+    <i class="close icon"></i>
+    <div class="header">Error!</div>
+    <%= message %>    
   </div>
   <% end %>
 

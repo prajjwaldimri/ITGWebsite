@@ -1,28 +1,36 @@
 <% provide(:title, 'Log in') %>
-<h1 class="page-headline">Login</h1>
 
-<div class="row">
-  <div class="small-2 large-4 columns"><h1></h1></div>
+<div id="spacer" class="massive ui menu">
+  &nbsp;
+</div>
 
-  <div class="small-8 large-4 columns">
 
-  <%= form_for(:session, url: login_path) do |f| %>
 
-  <%= f.label :rollno %>
-  <%= f.text_field :rollno %>
-
-  <%= f.label :password %>
-  <%= f.password_field :password %>
-
-  <%= f.label :remember_me, class: "checkbox" do %>
-  <%= f.check_box :remember_me %>
-  <span>Remember me on this computer</span>
-  <% end %>
-
-  <%= f.submit "Log-in", class: "button" %>
-  <% end %>
-
+<div class="ui grid container stackable">
+  <div class="centered row">
+    <h1 class="">Login</h1>
   </div>
+  <div class="row">
+    <div class="six wide centered middle aligned column">
 
-  <div class="small-2 large-4 columns"><h1></h1></div>
+      <%= form_for(:session, url: login_path, html: {class: "ui form"}) do |f| %>
+
+      <div class="field">
+        <%= f.label "Roll Number/ Employement Number" %>
+        <%= f.text_field :rollno, placeholder: "Provided by Institute" %>
+      </div>
+      <div class="field">
+        <%= f.label :password %>
+        <%= f.password_field :password %>
+      </div>
+      <div class="inline field">
+        <%= f.label :remember_me do %>
+        <%= f.check_box :remember_me, class: "ui checkbox hidden", tabindex: "0" %>
+        <span>Remember me on this computer</span>
+      </div>
+      <% end %>
+      <%= f.submit "Log-in", class: "ui button" %>
+      <% end %>
+    </div>
+  </div>
 </div>

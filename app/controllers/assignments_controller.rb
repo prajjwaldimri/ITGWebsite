@@ -9,14 +9,14 @@ class AssignmentsController < ApplicationController
       flash[:success] = "Assignment Created"
       redirect_to current_user
     else
-      flash[:alert] = "Assignment Creation Failed"
+      flash[:error] = "Assignment Creation Failed"
       redirect_to current_user
     end
   end
 
   def destroy
     @assignment.destroy
-    flash[:alert] = "Assignment Deleted"
+    flash[:error] = "Assignment Deleted"
     redirect_to current_user
   end
 

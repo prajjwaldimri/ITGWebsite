@@ -1,5 +1,5 @@
 <% if @user.errors.any? %>
-<div class="ui icon message">
+<div class="ui error icon message">
   <i class="warning icon"></i>
   <div class="content">
     <div class="header">
@@ -7,11 +7,9 @@
     </div>
     <ul>
       <% @user.errors.full_messages.each do |msg| %>
-      <li>
-        <%= msg %>
-      </li>
+      <li><%= msg %></li>
       <% end %>
-    </ul>     
+    </ul>
   </div>
 </div>
 <% end %>

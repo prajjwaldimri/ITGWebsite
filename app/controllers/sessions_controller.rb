@@ -9,7 +9,7 @@ class SessionsController < ApplicationController
       params[:session][:remember_me] == '1' ? remember(user) : forget(user)
       redirect_back_or user
     else
-      flash.now[:alert] = 'Invalid rollno/password combination'
+      flash.now[:error] = 'Invalid roll.no/password combination'
       render 'new'
     end
   end

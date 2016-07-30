@@ -5,6 +5,7 @@ class UsersController < ApplicationController
   before_action :admin_user, only: [:index, :destroy, :new]
 
   def index
+    @user = current_user
     @users = User.paginate(page: params[:page])
   end
 
@@ -28,7 +29,7 @@ class UsersController < ApplicationController
       #log_in @user
       #redirect_to @user
     else
-      flash[:alert] = "User not created"
+      flash[:error] = "User not created"
       render 'new'
     end
   end

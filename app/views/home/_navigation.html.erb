@@ -1,5 +1,5 @@
 <div class="overlay">
-  <div class="ui secondary menu massive fixed stackable">
+  <div class="ui secondary menu large fixed stackable">
     <a class="item menu-button">
       <i class="sidebar icon"></i>
     </a>
@@ -10,10 +10,19 @@
     <div class="right menu">
       <a class="item">For Students</a>
       <a class="item">For Faculty</a>
+      <% if logged_in? %>
       <a class="item">
-        <img class="ui avatar image" src="<%= gravatar_url @user %>">        
+        <img class="ui avatar image" src="<%= gravatar_url @user %>">
         <span>Username</span>
       </a>
+      <% else %>
+      <div class="item">
+        <a href="<%= signup_path %>" class="ui labeled icon green button">
+          <i class="sign in icon"></i>
+          Login
+        </a>
+      </div>
+      <% end %>
     </div>
   </div>
 </div>

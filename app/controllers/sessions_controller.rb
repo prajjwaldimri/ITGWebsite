@@ -1,5 +1,10 @@
 class SessionsController < ApplicationController
   def new
+    @user = current_user
+    if @user != nil
+      redirect_to @user
+      flash.now[:success] = 'Already Logged in'
+    end
   end
 
   def create

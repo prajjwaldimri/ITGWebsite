@@ -8,13 +8,13 @@
       <i class="search icon"></i>
     </div>
     <div class="right menu">
-      <a class="item">For Students</a>
-      <a class="item">For Faculty</a>
+      <a class="item" href="<%= student_path %>">For Students</a>
+      <a class="item" href="<%= faculty_path %>">For Faculty</a>
       <% if logged_in? %>
-      <a class="item">
+      <%= link_to current_user, class: 'item' do %>
         <img class="ui avatar image" src="<%= gravatar_url @user %>">
         <span>Username</span>
-      </a>
+      <% end %>
       <% else %>
       <div class="item">
         <a href="<%= signup_path %>" class="ui labeled icon green button">

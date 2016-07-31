@@ -1,0 +1,39 @@
+@import 'Partials/_colors';
+
+.article-hero{
+  height: 90vh;
+  background: $midnight-blue;
+  background-size: cover;
+  background-position: top center;
+  background-attachment: fixed;
+}
+
+.article-hero-header{
+  text-align: center;
+  color: white;
+  position: absolute;
+  width: 100%;
+  top: 50%;
+  margin-top: -10vh;
+}
+
+.article-hero-header h1,
+.article-hero-header h3,{
+  color: white;
+}
+
+.article-hero-header h1{
+  font-size: 3em;
+}
+
+.article-content{
+  padding: 5%;
+  margin-left: 10%;
+  margin-right: 10%;
+}
+
+.article-content p{
+  font-size: 1.2em;
+  font-family: "Open Sans", sans-serif;
+  text-align: justify;
+}

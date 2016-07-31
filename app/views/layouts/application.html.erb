@@ -31,8 +31,8 @@
   <% flash.each do |message_type, message| %>
   <div class="ui <%= message_type %> message" style="margin-top: 10vh; z-index: 4;">
     <i class="close icon"></i>
-    <div class="header">Error!</div>
-    <%= message %>    
+    <div class="header"><%= message_type.capitalize + "!" %></div>
+    <%= message %>
   </div>
   <% end %>
 

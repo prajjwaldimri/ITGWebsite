@@ -6,6 +6,7 @@ Rails.application.routes.draw do
   get     'staff_section/index', as: 'staff_section'
   get     'student_section/index', as: 'student_section'
   get     'student'               => 'student_section#index'
+  get     'faculty'               => 'staff_section#index'
   get     'home/about',           as: 'about'
   get     'users/show'
   get     'signup'       => 'users#new'

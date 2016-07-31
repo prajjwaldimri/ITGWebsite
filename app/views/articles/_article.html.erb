@@ -4,7 +4,7 @@
   </div>
   <div class="four wide column">
     <h3 style="font-weight: lighter;"><%= article.title %></h3>
-    <h4 style="font-weight: lighter;"><%= article.content %></h4>
+    <h4 style="font-weight: lighter;"><%= truncate(article.content, length: 200, omission: '... (continued)') %></h4>
   </div>
   <div class="three wide column">
     <h5 style="font-weight: lighter;"> Category: <%= article.post_type %></h5>

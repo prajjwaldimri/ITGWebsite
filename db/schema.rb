@@ -11,15 +11,16 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160703192126) do
+ActiveRecord::Schema.define(version: 20160731154359) do
 
   create_table "articles", force: :cascade do |t|
     t.text     "title"
     t.text     "content"
     t.text     "post_type"
     t.integer  "user_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.datetime "created_at",   null: false
+    t.datetime "updated_at",   null: false
+    t.string   "articleimage"
   end
 
   add_index "articles", ["title"], name: "index_articles_on_title", unique: true

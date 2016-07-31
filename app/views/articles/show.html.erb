@@ -1,0 +1,18 @@
+<% provide(:title, truncate(@article.title)) %>
+
+<% if @article.articleimage.file.nil? %>
+<div class="article-hero">
+<% else %>
+<div class="article-hero" style="background-image: url(<%= @article.articleimage.url %>)">
+<% end %>
+  <div class="article-hero-header">
+    <h1 class="wow fadeInLeft"><%= @article.title %></h1>
+    <h3 class="wow fadeInRight">Published: <%= @article.created_at.strftime("%A, %B %d %Y") %></h3>
+  </div>
+</div>
+
+<div class="article-content">
+  <p>
+    <%= simple_format(@article.content) %>
+  </p>
+</div>

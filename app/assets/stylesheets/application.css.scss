@@ -27,10 +27,16 @@
 
 h1,h2{
   font-family: "Proxima Nova Bold";
+  color: #333;
 }
 
-body,h3,h4,h5,h6{
-  font-family: "Proxima Nova Regular"
+h3,h4,h5,h6{
+  font-family: "Proxima Nova Regular";
+  color: #555;
+}
+
+body{
+  background: #eee;
 }
 
 label{

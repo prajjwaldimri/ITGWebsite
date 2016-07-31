@@ -12,7 +12,7 @@
   </div>
   <div class="four wide column">
     <div class="ui buttons">
-      <% if !assignment.pdf? %>
+      <% if assignment.pdf? %>
       <a href="<%= assignment.pdf.current_path %>" class="ui labeled icon blue button">
         <i class="download icon"></i>
         Download

@@ -95,7 +95,7 @@
       <div class="two fields">
         <div class="field">
           <%= f.label :title %>
-          <%= f.text_field :title %>
+          <%= f.text_field :title, placeholder: "Enter title of Assignment" %>
         </div>
         <div class="field">
           <%= f.label :post_type %>
@@ -105,12 +105,13 @@
 
       <div class="field">
         <%= f.label :content %>
-        <%= f.text_area :content %>
+        <%= f.text_area :content, placeholder: "Enter content of Assignment" %>
       </div>
 
-      <div class="field">
-        <%= f.submit "Create!", class: "ui green button" %>
-      </div>
+
+      <%= f.submit "Create!", class: "ui green button" %>
+      <%= f.file_field :articleimage %>
+
     </div>
     <% end %>
   </div>

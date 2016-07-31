@@ -16,7 +16,7 @@ class AssignmentsController < ApplicationController
 
   def destroy
     @assignment.destroy
-    flash[:error] = "Assignment Deleted"
+    flash[:success] = "Assignment Deleted"
     redirect_to current_user
   end
 

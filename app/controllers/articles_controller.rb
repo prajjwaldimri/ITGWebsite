@@ -12,11 +12,12 @@ class ArticlesController < ApplicationController
   end
 
   def show
+    @user = current_user
     @article = Article.find(params[:id])
   end
 
   def create
-    @article = Article.new(article_params)
+    @article = current_user.articles.build(article_params)
     if @article.save
       flash[:success] = "Article Created"
       redirect_to :back
@@ -27,6 +28,7 @@ class ArticlesController < ApplicationController
   end
 
   def edit
+    @user = current_user
   end
 
   def update
@@ -34,7 +36,7 @@ class ArticlesController < ApplicationController
       flash[:success] = "Article Updated"
       redirect_to @user
     else
-      flash[:error] = "Errors"
+      flash[:error] = "Error Updating Article"
       render 'edit'
     end
   end
@@ -48,7 +50,7 @@ class ArticlesController < ApplicationController
   private
 
   def article_params
-    params.require(:article).permit(:title, :content, :post_type)
+    params.require(:article).permit(:title, :content, :post_type, :articleimage)
   end
 
   def admin_user

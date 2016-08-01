@@ -20,10 +20,14 @@
     </div>
     <div class="middle aligned column">
       <div class="ui buttons">
+        <% if current_user.admin? || current_user?(@user) %>
         <a href="<%= edit_user_path %>" class="ui orange button">Edit Profile</a>
+        <% end %>
+        <% if current_user?(@user) %>
         <button class="ui green button">Submit Assignment</button>
         <button class="ui violet button">Submit Article</button>
         <%= link_to "Logout", logout_path, method: 'delete', class: "ui grey button" %>
+        <% end %>
       </div>
       <% if current_user.admin? %>
       <%= link_to "Users Management",users_path, class:"ui black button" %>
@@ -63,19 +67,19 @@
   <!-- Submit Assignment Form -->
 
   <div class="ui bottom attached tab segment" data-tab="third">
-    <%= form_for(@assignment, html: {class: "ui form", multipart: true}) do |f| %>
-
+    <%= form_for(@assignment, html: {class: "ui form assignment", multipart: true}) do |f| %>
+    <div class="ui error message"></div>
     <div class="three fields">
-      <div class="field">
+      <div class="required field">
         <%= f.label "Title" %>
         <%= f.text_field :title, placeholder: "Title of Assignment" %>
       </div>
 
-      <div class="field">
+      <div class="required field">
         <%= f.label :subject %>
         <%= f.text_field :subject, placeholder: "Subject of Assignment" %>
       </div>
-      <div class="field">
+      <div class="required field">
         <%= f.label :semester %>
         <%= f.text_field :semester, type: "number",
         placeholder: "Enter your current semester" %>
@@ -90,20 +94,21 @@
   <!-- Submit Article Tab -->
 
   <div class="ui bottom attached tab segment" data-tab="forth">
-    <%= form_for(@article, html: {class: "ui form", multipart: true}) do |f| %>
+    <%= form_for(@article, html: {class: "ui form article", multipart: true}) do |f| %>
     <div class="row wrap">
+      <div class="ui error message"></div>
       <div class="two fields">
-        <div class="field">
+        <div class="required field">
           <%= f.label :title %>
           <%= f.text_field :title, placeholder: "Enter title of Assignment" %>
         </div>
-        <div class="field">
+        <div class="required field">
           <%= f.label :post_type %>
           <%= f.select(:post_type, ["News", "Blog", "Research", "Statements"], {}, {}) %>
         </div>
       </div>
 
-      <div class="field">
+      <div class="required field">
         <%= f.label :content %>
         <%= f.text_area :content, placeholder: "Enter content of Assignment" %>
       </div>
@@ -111,8 +116,8 @@
 
       <%= f.submit "Create!", class: "ui green button" %>
       <%= f.file_field :articleimage %>
-
     </div>
+
     <% end %>
   </div>
 </div>

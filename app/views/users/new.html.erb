@@ -1,80 +1,54 @@
 <% provide(:title, 'Sign-up') %>
 
-<div class="row large-6 columns">
-  <h1 class="page-headline">Admin User Creator</h1>
+<div id="spacer" class="massive ui menu">
+  &nbsp;
+</div>
 
-  <%= form_for(@user) do |f| %>
+<div class="ui grid container">
+  <div class="six wide centered column">
+    <h1 style="text-align: center;">Add A User</h1>
+    <%= form_for(@user, html: {class: "ui form"}) do |f| %>
 
-  <%= render 'shared/error_messages' %>
-  <div class="row">
-    <div class="small-3 columns">
-      <%= f.label :name, "Name", class: 'text-right middle' %>
-    </div>
-    <div class="small-9 columns">
+    <%= render 'shared/error_messages' %>
+    <div class="field">
+      <%= f.label :name, "Name" %>
       <%= f.text_field :name, placeholder: "Full Name as stated in records" %>
     </div>
-  </div>
 
-  <div class="row">
-    <div class="small-3 columns">
-      <%= f.label :email, "Email", class: 'text-right middle' %>
+    <div class="field">
+      <%= f.label :email, "Email" %>
+      <%= f.text_field :email, type: "email", placeholder: "If not available then ask the student/staff to provide one" %>
     </div>
-    <div class="small-9 columns">
-      <%= f.text_field :email, type: "email" %>
-    </div>
-  </div>
 
-  <div class="row">
-    <div class="small-3 columns">
-      <%= f.label :rollno, "Roll No/Emp. No", class: 'text-right middle' %>
+    <div class="field">
+      <%= f.label :rollno, "Roll No/Emp. No"%>
+      <%= f.text_field :rollno, type: "number", placeholder: "Provided by Institute" %>
     </div>
-    <div class="small-9 columns">
-      <%= f.text_field :rollno, type: "number", placeholder: "Roll No/Emp. No" %>
-    </div>
-  </div>
 
-  <div class="row">
-    <div class="small-3 columns">
-      <%= f.label :user_type, class: 'text-right middle' %>
-    </div>
-    <div class="small-9 columns">
+    <div class="field">
+      <%= f.label :user_type %>
       <%= f.select(:user_type, ["Student", "Faculty"], {}, {}) %>
     </div>
+
+    <div class="field">
+      <%= f.label :branch %>
+      <%= f.select(:branch, ["Civil", "Mechanical", "Electrical", "Computer Science", "Electronics"], {}, {}) %>
+    </div>
+
+    <div class="field">
+      <%= f.label :password %>
+      <%= f.password_field :password, type: "password"%>
+    </div>
+
+    <div class="field">
+      <%= f.label :password_confirmation%>
+      <%= f.password_field :password_confirmation, type: "password" %>
+    </div>
+
+    <div class="field" style="text-align: center;">
+      <%= f.submit "Add User to Database!", class: "ui blue button" %>
+    </div>
+    <% end %>
+
   </div>
-
-  <div class="row">
-    <div class="small-3 columns">
-      <%= f.label :branch, class: 'text-right middle' %>
-    </div>
-    <div class="small-9 columns">
-      <%= f.select(:branch, ["Civil", "Mechanical", "Electrical", "Computer Science",
-        "Electronics"], {}, {}) %>
-      </div>
-    </div>
-
-    <div class="row">
-      <div class="small-3 columns">
-        <%= f.label :password, class: 'text-right middle' %>
-      </div>
-      <div class="small-9 columns">
-        <%= f.password_field :password, type: "password", placeholder: "Password",
-        'aria-describedBy': 'nameHelpText' %>
-        <p class="help-text", id="nameHelpText">Your password must have at least 8 characters.</p>
-      </div>
-    </div>
-
-    <div class="row">
-      <div class="small-3 columns">
-        <%= f.label :password_confirmation, class: 'text-right middle' %>
-      </div>
-      <div class="small-9 columns">
-        <%= f.password_field :password_confirmation, type: "password", placeholder: "Type password again" %>
-      </div>
-    </div>
-
-    <div class="row" style="text-align: right;">
-      <%= f.submit "Create the user", class: "button" %>
-    </div>
-
-  <% end %>
 </div>

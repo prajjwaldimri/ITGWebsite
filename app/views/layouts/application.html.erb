@@ -25,72 +25,50 @@
 
 <body>
   <%= render partial: 'home/sidebar' %>
-    <div class="dimmed pusher">
-  <%= render partial: 'home/navigation' %>
+  <div class="dimmed pusher">
+    <%= render partial: 'home/navigation' %>
 
-  <% flash.each do |message_type, message| %>
-  <div class="ui <%= message_type %> message" style="margin-top: 10vh; z-index: 4;">
-    <i class="close icon"></i>
-    <div class="header"><%= message_type.capitalize + "!" %></div>
-    <%= message %>
-  </div>
-  <% end %>
-
-  <%= yield %>
-
-  <div class="ui modal">
-    <i class="close icon"></i>
-    <div class="header">
-      Profile Picture
+    <% flash.each do |message_type, message| %>
+    <div class="ui <%= message_type %> message" style="margin-top: 10vh; z-index: 4;">
+      <i class="close icon"></i>
+      <div class="header"><%= message_type.capitalize + "!" %></div>
+      <%= message %>
     </div>
-    <div class="image content">
-      <div class="ui medium image">
-        <img src="/images/avatar/large/chris.jpg">
-      </div>
-      <div class="description">
-        <div class="ui header">We've auto-chosen a profile image for you.</div>
-        <p>We've grabbed the following image from the <a href="https://www.gravatar.com" target="_blank">gravatar</a> image associated with your registered e-mail address.</p>
-        <p>Is it okay to use this photo?</p>
-      </div>
+    <% end %>
+
+    <%= yield %>
+
+    <div class="ui modal">
+
     </div>
-    <div class="actions">
-      <div class="ui black deny button">
-        Nope
-      </div>
-      <div class="ui positive right labeled icon button">
-        Yep, that's me
-        <i class="checkmark icon"></i>
-      </div>
+
+
+    <% if current_page?(root_path) %>
+    <div class="ui large buttons elevator-button">
+      <button class="inverted circular ui icon button down-elevator-button">
+        <i class="icon angle double down"></i>
+      </button>
+      <div class="or"></div>
+      <button class="inverted circular ui icon button up-elevator-button">
+        <i class="icon angle double up"></i>
+      </button>
     </div>
-  </div>
+    <%= render partial: 'home/footer' %>
+    <% else %>
+    <div class="ui large buttons elevator-button">
+      <button class="circular ui icon button down-elevator-button">
+        <i class="icon angle double down"></i>
+      </button>
+      <div class="or"></div>
+      <button class="circular ui icon button up-elevator-button">
+        <i class="icon angle double up"></i>
+      </button>
+    </div>
+    <%= render partial: 'shared/footer' %>
+    <% end %>
 
-
-  <% if current_page?(root_path) %>
-  <div class="ui large buttons elevator-button">
-    <button class="inverted circular ui icon button down-elevator-button">
-      <i class="icon angle double down"></i>
-    </button>
-    <div class="or"></div>
-    <button class="inverted circular ui icon button up-elevator-button">
-      <i class="icon angle double up"></i>
-    </button>
+    <%= debug(params) if Rails.env.development? %>
   </div>
-  <%= render partial: 'home/footer' %>
-  <% else %>
-  <div class="ui large buttons elevator-button">
-    <button class="circular ui icon button down-elevator-button">
-      <i class="icon angle double down"></i>
-    </button>
-    <div class="or"></div>
-    <button class="circular ui icon button up-elevator-button">
-      <i class="icon angle double up"></i>
-    </button>
-  </div>
-  <%= render partial: 'shared/footer' %>
-  <% end %>
-
-  <%= debug(params) if Rails.env.development? %>
-</div>
 </body>
 
 <div class="spinner-wrapper">

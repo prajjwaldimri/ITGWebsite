@@ -62,4 +62,9 @@ $(function() {
     $('html, body').animate({
        scrollTop: $(document).height()}, 5000);
   });
+
+  $('.developer-button').click(function(){
+    $('.ui.modal')
+  .modal('show');
+  });
 });

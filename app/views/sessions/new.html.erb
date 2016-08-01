@@ -4,22 +4,20 @@
   &nbsp;
 </div>
 
-
-
 <div class="ui grid container stackable">
   <div class="centered row">
-    <h1 class="">Login</h1>
+    <h1>Login</h1>
   </div>
   <div class="row">
     <div class="six wide centered middle aligned column">
 
-      <%= form_for(:session, url: login_path, html: {class: "ui form"}) do |f| %>
-
-      <div class="field">
+      <%= form_for(:session, url: login_path, html: {class: "ui form login"}) do |f| %>
+      <div class="ui error message"></div>
+      <div class="required field">
         <%= f.label "Roll Number/ Employement Number" %>
         <%= f.text_field :rollno, placeholder: "Provided by Institute" %>
       </div>
-      <div class="field">
+      <div class="required field">
         <%= f.label :password %>
         <%= f.password_field :password %>
       </div>
@@ -29,7 +27,7 @@
         <span>Remember me on this computer</span>
       </div>
       <% end %>
-      <%= f.submit "Log-in", class: "ui button" %>
+      <%= f.submit "Log-in", class: "ui green button" %>
       <% end %>
     </div>
   </div>

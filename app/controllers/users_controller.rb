@@ -32,6 +32,7 @@ class UsersController < ApplicationController
       flash[:error] = "User not created"
       render 'new'
     end
+    @user = current_user
   end
 
   def edit

@@ -7,7 +7,10 @@
 <% end %>
   <div class="article-hero-header">
     <h1 class="wow fadeInLeft"><%= @article.title %></h1>
-    <h3 class="wow fadeInRight">Published: <%= @article.created_at.strftime("%A, %B %d %Y") %></h3>
+    <% if @article.post_type == "Blog" %>
+    <h2 class="wow fadeInRight">A Blog by <%= @article.user.name %></h2>
+    <% end %>
+    <h3 class="wow fadeInUp">Published: <%= @article.created_at.strftime("%A, %B %d %Y") %></h3>
   </div>
 </div>
 

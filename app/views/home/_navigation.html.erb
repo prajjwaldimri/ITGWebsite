@@ -12,8 +12,13 @@
       <a class="item" href="<%= faculty_path %>">For Faculty</a>
       <% if logged_in? %>
       <%= link_to current_user, class: 'item' do %>
+        <% if !current_user.email.nil? %>
+        <img class="ui avatar image" src="<%= gravatar_url current_user %>">
+        <span><%= current_user.name %></span>
+        <% elsif !@user.email.nil? %>
         <img class="ui avatar image" src="<%= gravatar_url @user %>">
-        <span>Username</span>
+        <span><%= @user.name %></span>
+        <% end %>
       <% end %>
       <% else %>
       <div class="item">

@@ -1,1 +1,31 @@
 <% provide(:title, 'All Users') %>
+
+<div id="spacer" class="massive ui menu">
+  &nbsp;
+</div>
+<div class="ui grid container centered">
+  <a href="<%= signup_path %>" class="ui pink button" style= "margin: 5%;">Create A User!</a>
+  <div class="ui row">
+    <%= will_paginate @users, renderer: WillPaginateSemanticUi::ActionView::Renderer %>
+  </div>
+  <% @users.each do |user| %>
+  <div class="ui row">
+    <div class="one wide column">
+      <%= gravatar_for user, size: 60 %>
+    </div>
+    <div class="three wide column">
+      <h4><%= user.name %></h4>
+    </div>
+    <% if current_user.admin? && !current_user?(user) %>
+    <div class="four wide column">
+      <div class="ui buttons">
+        <%= link_to "Show Profile", user, class:"ui blue button"  %>
+        | <%= link_to "Edit Profile", edit_user_path(user), class: "ui orange button" %>
+        | <%= link_to "Delete User", user, method: :delete, data: {confirm: "Are you sure?"}, class: "ui red button" %>
+      </div>
+    </div>
+    <% end %>
+  </div>
+  <% end %>
+  <%= will_paginate @users, renderer: WillPaginateSemanticUi::ActionView::Renderer %>
+</div>

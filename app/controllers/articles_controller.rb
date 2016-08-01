@@ -28,13 +28,14 @@ class ArticlesController < ApplicationController
   end
 
   def edit
-    @user = current_user
+    @article = current_user.articles.find(params[:id])
   end
 
   def update
+    @article = current_user.articles.find(params[:id])
     if @article.update_attributes(article_params)
       flash[:success] = "Article Updated"
-      redirect_to @user
+      redirect_to current_user
     else
       flash[:error] = "Error Updating Article"
       render 'edit'

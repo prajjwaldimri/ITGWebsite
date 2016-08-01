@@ -1,0 +1,31 @@
+<% provide(:title, truncate("Editing" +"|")) %>
+
+<div id="spacer" class="massive ui menu">
+  &nbsp;
+</div>
+
+<%= form_for(@article, html: {class: "ui form article", multipart: true}) do |f| %>
+<div class="row wrap">
+  <div class="ui error message"></div>
+  <div class="two fields">
+    <div class="required field">
+      <%= f.label :title %>
+      <%= f.text_field :title, placeholder: "Enter title of Assignment" %>
+    </div>
+    <div class="required field">
+      <%= f.label :post_type %>
+      <%= f.select(:post_type, ["News", "Blog", "Research", "Statements"], {}, {}) %>
+    </div>
+  </div>
+
+  <div class="required field">
+    <%= f.label :content %>
+    <%= f.text_area :content, placeholder: "Enter content of Assignment" %>
+  </div>
+
+
+  <%= f.submit "Update Article!", class: "ui green button" %>
+  <%= f.file_field :articleimage %>
+</div>
+
+<% end %>

@@ -5,10 +5,10 @@
 </div>
 
 <div class="hero-user" style="margin-top: 50px;">
-  <div class="ui two column grid container stackable">
+  <div class="ui two column grid padded container stackable">
     <div class="column">
       <div class="ui grid">
-        <div class="five wide column">
+        <div class="five wide column" >
           <%= gravatar_for @user %>
         </div>
         <div class="eleven wide column user-details">
@@ -37,7 +37,7 @@
 </div>
 
 <div class="tabs-user">
-  <div class="ui top attached tabular menu">
+  <div class="ui top attached tabular menu stackable">
     <a class="item active" data-tab="first">Assignments (<%= @user.assignments.count %>)</a>
     <a class="item" data-tab="second">Articles (<%= @user.articles.count %>)</a>
     <a class="item" data-tab="third">Submit Assignment</a>

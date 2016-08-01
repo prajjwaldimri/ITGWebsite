@@ -1,0 +1,43 @@
+.right{
+  float:left;
+  width: 300px;
+
+}
+body{
+  margin: 0;
+  padding: 0;
+}
+
+
+#homeicon{
+  float: left;
+  text-align: center;
+  padding: 11px 0;
+}
+@media screen and (min-width:0px) and (max-width:600px){
+#menu-search1{
+  display: block;
+  max-height: 40px;
+  vertical-align: middle;
+  align-self: center;
+  max-width: 240px;
+  }
+}
+@media screen and (min-width:601px) and (max-width:2024px){
+  #menu-search1{
+    display: none;
+
+  }
+}
+@media screen and (min-width:0px) and (max-width:600px){
+#my-content1{
+  display: block;
+  
+  }
+}
+@media screen and (min-width:601px) and (max-width:2024px){
+  #my-content1{
+    display: none;
+
+  }
+}

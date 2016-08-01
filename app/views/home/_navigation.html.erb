@@ -3,13 +3,13 @@
     <a class="item menu-button">
       <i class="sidebar icon"></i>
     </a>
-    <div id="menu-search" class="ui icon input">
+    <div id="menu-search" class="ui icon input" >
       <input type="text" placeholder="Search...">
       <i class="search icon"></i>
     </div>
     <div class="right menu">
-      <a class="item" href="<%= student_path %>">For Students</a>
-      <a class="item" href="<%= faculty_path %>">For Faculty</a>
+      <a class="item" href="<%= student_path %>" id="my-content">For Students</a>
+      <a class="item" href="<%= faculty_path %>"id="my-content">For Faculty</a>
       <% if logged_in? %>
       <%= link_to current_user, class: 'item' do %>
         <% if !current_user.email.nil? %>
@@ -21,7 +21,7 @@
         <% end %>
       <% end %>
       <% else %>
-      <div class="item">
+      <div class="item" id="login">
         <a href="<%= signup_path %>" class="ui labeled icon green button">
           <i class="sign in icon"></i>
           Login

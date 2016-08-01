@@ -5,20 +5,20 @@
 </div>
 
 <div class="hero-user" style="margin-top: 50px;">
-  <div class="ui two column grid padded container stackable">
+  <div class="ui two column grid container stackable">
     <div class="column">
       <div class="ui grid">
-        <div class="five wide column" >
+        <div class="six wide column" >
           <%= gravatar_for @user %>
         </div>
-        <div class="eleven wide column user-details">
+        <div class="ten wide column user-details">
           <h2><%= @user.name %></h2>
           <h3><%= @user.branch %> <%= @user.user_type %></h3>
           <h4><%= @user.rollno %></h4>
         </div>
       </div>
     </div>
-    <div class="middle aligned column">
+    <div class="middle aligned column stackable">
       <div class="ui buttons">
         <% if current_user.admin? || current_user?(@user) %>
         <a href="<%= edit_user_path %>" class="ui orange button">Edit Profile</a>

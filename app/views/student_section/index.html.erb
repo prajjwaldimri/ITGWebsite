@@ -35,43 +35,62 @@
   </div>
 
   <div class="four wide column">
-    <div class="row">
-      <div class="ui feed" style="margin-bottom: 5%;">
-        <h2>News</h2>
-        <div class="event">
-          <div class="label">
-            <i class="info icon circular"></i>
-          </div>
-          <div class="content">
-            You added Elliot Fu to the group <a>Coworkers</a>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div class="row" style="margin-bottom: 5%;">
+
+    <div class="row" style="margin-bottom: 10%;">
       <div class="ui feed">
-        <h2>Announcements</h2>
+        <h2>News</h2>
+        <% if @news_items.any? %>
+        <% @news_items.each do |news_item| %>
         <div class="event">
           <div class="label">
             <i class="info icon circular"></i>
           </div>
           <div class="content">
-            You added Elliot Fu to the group <a>Coworkers</a>
+            <%= news_item.content %>
           </div>
         </div>
+        <% end %>
+        <% end %>
       </div>
     </div>
-    <div class="row" style="margin-bottom: 5%;">
+    <div class="row">
+      <div class="ui feed" style="margin-bottom: 10%;">
+        <h2>Announcements</h2>
+        <% if @statement_items.any? %>
+        <% @statement_items.each do |statement_item| %>
+        <div class="event">
+          <div class="label">
+            <i class="info icon circular"></i>
+          </div>
+          <div class="content">
+            <%= statement_item.content %>
+          </div>
+        </div>
+        <% end %>
+        <% end %>
+      </div>
+    </div>
+    <div class="row" style="margin-bottom: 10%;">
       <div class="ui feed">
         <h2>User Feed</h2>
+        <% if @user_feed_items.any? %>
+        <% @user_feed_items.each do |user_feed_item| %>
         <div class="event">
           <div class="label">
-            <i class="info icon circular"></i>
+            <img src="<%= gravatar_url(user_feed_item.user) %>">
           </div>
           <div class="content">
-            You added Elliot Fu to the group <a>Coworkers</a>
+            <div class="summary">
+              A <%= link_to user_feed_item.post_type, user_feed_item %> was posted by <%= user_feed_item.user.name %>
+            </div>
+            <div class="date">
+              <%= time_ago_in_words(user_feed_item.created_at) %>
+            </div>
           </div>
+
         </div>
+        <% end %>
+        <% end %>
       </div>
     </div>
   </div>

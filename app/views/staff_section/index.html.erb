@@ -1,2 +1,97 @@
-<h1>StaffSection#index</h1>
-<p>Find me in app/views/staff_section/index.html.erb</p>
+<% provide(:title, "Staff-Section") %>
+<div class="my-slider" style="height: 80vh;">
+  <ul>
+    <li><img id="slider-image" src="/assets/04.jpg"/></li>
+    <li><img id="slider-image" src="/assets/05.jpg"/></li>
+    <li><img id="slider-image" src="/assets/06.jpg"/></li>
+  </ul>
+</div>
+
+<div class="ui relaxed two column grid stackable">
+  <div class="twelve wide column">
+    <div class="ui top attached tabular menu">
+      <a class="active item" data-tab="first">What's Happening</a>
+      <a class="item" data-tab="second">Programmes</a>
+      <a class="item" data-tab="third">Admissions</a>
+      <a class="item" data-tab="forth">Fee Structure</a>
+      <a class="item" data-tab="fifth">Facilities</a>
+    </div>
+
+    <div class="ui bottom attached active tab segment" data-tab="first">
+      First
+    </div>
+    <div class="ui bottom attached tab segment" data-tab="second">
+      Second
+    </div>
+    <div class="ui bottom attached tab segment" data-tab="third">
+      Third
+    </div>
+    <div class="ui bottom attached tab segment" data-tab="forth">
+      Forth
+    </div>
+    <div class="ui bottom attached tab segment" data-tab="fifth">
+      Fifth
+    </div>
+  </div>
+
+  <div class="four wide column">
+
+    <div class="row" style="margin-bottom: 10%;">
+      <div class="ui feed">
+        <h2>News</h2>
+        <% if @news_items.any? %>
+        <% @news_items.each do |news_item| %>
+        <div class="event">
+          <div class="label">
+            <i class="info icon circular"></i>
+          </div>
+          <div class="content">
+            <%= news_item.content %>
+          </div>
+        </div>
+        <% end %>
+        <% end %>
+      </div>
+    </div>
+    <div class="row">
+      <div class="ui feed" style="margin-bottom: 10%;">
+        <h2>Announcements</h2>
+        <% if @statement_items.any? %>
+        <% @statement_items.each do |statement_item| %>
+        <div class="event">
+          <div class="label">
+            <i class="info icon circular"></i>
+          </div>
+          <div class="content">
+            <%= statement_item.content %>
+          </div>
+        </div>
+        <% end %>
+        <% end %>
+      </div>
+    </div>
+    <div class="row" style="margin-bottom: 10%;">
+      <div class="ui feed">
+        <h2>User Feed</h2>
+        <% if @user_feed_items.any? %>
+        <% @user_feed_items.each do |user_feed_item| %>
+        <div class="event">
+          <div class="label">
+            <img src="<%= gravatar_url(user_feed_item.user) %>">
+          </div>
+          <div class="content">
+            <div class="summary">
+              A <%= link_to user_feed_item.post_type, user_feed_item %> was posted by <%= user_feed_item.user.name %>
+            </div>
+            <div class="date">
+              <%= time_ago_in_words(user_feed_item.created_at) %>
+            </div>
+          </div>
+
+        </div>
+        <% end %>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>

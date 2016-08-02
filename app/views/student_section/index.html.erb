@@ -35,7 +35,7 @@
   </div>
 
   <div class="four wide column">
-
+<!-- News Feed -->
     <div class="row" style="margin-bottom: 10%;">
       <div class="ui feed">
         <h2>News</h2>
@@ -46,13 +46,19 @@
             <i class="info icon circular"></i>
           </div>
           <div class="content">
-            <%= news_item.content %>
+            <div class="summary">
+              <%= link_to news_item.title, news_item %>
+            </div>
+            <div class="date">
+              <%= time_ago_in_words(news_item.created_at) + " ago" %>
+            </div>
           </div>
         </div>
         <% end %>
         <% end %>
       </div>
     </div>
+<!-- Annoucements Feed -->
     <div class="row">
       <div class="ui feed" style="margin-bottom: 10%;">
         <h2>Announcements</h2>
@@ -63,13 +69,19 @@
             <i class="info icon circular"></i>
           </div>
           <div class="content">
-            <%= statement_item.content %>
+            <div class="summary">
+              <%= link_to statement_item.title, statement_item %>
+            </div>
+            <div class="date">
+              <%= time_ago_in_words(user_feed_item.created_at) + " ago" %>
+            </div>
           </div>
         </div>
         <% end %>
         <% end %>
       </div>
     </div>
+<!-- User Feed -->
     <div class="row" style="margin-bottom: 10%;">
       <div class="ui feed">
         <h2>User Feed</h2>
@@ -84,10 +96,9 @@
               A <%= link_to user_feed_item.post_type, user_feed_item %> was posted by <%= user_feed_item.user.name %>
             </div>
             <div class="date">
-              <%= time_ago_in_words(user_feed_item.created_at) %>
+              <%= time_ago_in_words(user_feed_item.created_at) + " ago" %>
             </div>
           </div>
-
         </div>
         <% end %>
         <% end %>

@@ -1,13 +1,18 @@
 Rails.application.routes.draw do
 
-  get 'sessions/new'
-
-  root  'home#index'
+  get     'sessions/new'
+  root    'home#index'
   get     'staff_section/index', as: 'staff_section'
   get     'student_section/index', as: 'student_section'
   get     'student'               => 'student_section#index'
   get     'faculty'               => 'staff_section#index'
   get     'home/about',           as: 'about'
+  get     'departments/cse'
+  get     'departments/ece'
+  get     'departments/civil'
+  get     'departments/mech'
+  get     'departments/ee'
+  get     'departments/hum'
   get     'users/show'
   get     'signup'       => 'users#new'
   get     'login'                => 'sessions#new'

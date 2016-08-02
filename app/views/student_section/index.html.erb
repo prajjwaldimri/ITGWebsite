@@ -1,10 +1,78 @@
 <% provide(:title, "Student-Section") %>
-<!doctype html>
-<html class="no-js" lang="en" dir="ltr">
+<div class="my-slider" style="height: 80vh;">
+  <ul>
+    <li><img id="slider-image" src="/assets/04.jpg"/></li>
+    <li><img id="slider-image" src="/assets/05.jpg"/></li>
+    <li><img id="slider-image" src="/assets/06.jpg"/></li>
+  </ul>
+</div>
 
-<body>
-  <div class="row expanded large-12 columns slider">
-    <img src="/assets/01.jpg"/>
-    <img src="/assets/02.jpg"/>
+<div class="ui relaxed two column grid stackable">
+  <div class="twelve wide column">
+    <div class="ui top attached tabular menu">
+      <a class="active item" data-tab="first">What's Happening</a>
+      <a class="item" data-tab="second">Programmes</a>
+      <a class="item" data-tab="third">Admissions</a>
+      <a class="item" data-tab="forth">Fee Structure</a>
+      <a class="item" data-tab="fifth">Facilities</a>
+    </div>
+
+    <div class="ui bottom attached active tab segment" data-tab="first">
+      First
+    </div>
+    <div class="ui bottom attached tab segment" data-tab="second">
+      Second
+    </div>
+    <div class="ui bottom attached tab segment" data-tab="third">
+      Third
+    </div>
+    <div class="ui bottom attached tab segment" data-tab="forth">
+      Forth
+    </div>
+    <div class="ui bottom attached tab segment" data-tab="fifth">
+      Fifth
+    </div>
   </div>
-</body>
+
+  <div class="four wide column">
+    <div class="row">
+      <div class="ui feed" style="margin-bottom: 5%;">
+        <h2>News</h2>
+        <div class="event">
+          <div class="label">
+            <i class="info icon circular"></i>
+          </div>
+          <div class="content">
+            You added Elliot Fu to the group <a>Coworkers</a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="row" style="margin-bottom: 5%;">
+      <div class="ui feed">
+        <h2>Announcements</h2>
+        <div class="event">
+          <div class="label">
+            <i class="info icon circular"></i>
+          </div>
+          <div class="content">
+            You added Elliot Fu to the group <a>Coworkers</a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="row" style="margin-bottom: 5%;">
+      <div class="ui feed">
+        <h2>User Feed</h2>
+        <div class="event">
+          <div class="label">
+            <i class="info icon circular"></i>
+          </div>
+          <div class="content">
+            You added Elliot Fu to the group <a>Coworkers</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

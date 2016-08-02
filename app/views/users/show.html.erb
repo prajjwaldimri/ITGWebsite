@@ -20,6 +20,7 @@
     </div>
     <div class="middle aligned column stackable">
       <div class="ui buttons">
+        <% if !current_user.nil? %>
         <% if current_user.admin? || current_user?(@user) %>
         <a href="<%= edit_user_path %>" class="ui orange button">Edit Profile</a>
         <% end %>
@@ -32,30 +33,23 @@
       <% if current_user.admin? %>
       <%= link_to "Users Management",users_path, class:"ui black button" %>
       <% end %>
+      <% end %>
     </div>
   </div>
 </div>
 
 <div class="tabs-user">
   <div class="ui top attached tabular menu stackable">
-    <a class="item active" data-tab="first">Assignments (<%= @user.assignments.count %>)</a>
-    <a class="item" data-tab="second">Articles (<%= @user.articles.count %>)</a>
+    <a class="item active" data-tab="first">Articles (<%= @user.articles.count %>)</a>
+    <% if !current_user.nil? %>
+    <a class="item" data-tab="second">Assignments (<%= @user.assignments.count %>)</a>
     <a class="item" data-tab="third">Submit Assignment</a>
     <a class="item" data-tab="forth">Submit Article</a>
-  </div>
-
-  <!-- Show User's Assignments Page -->
-  <div class="ui bottom attached tab segment active" data-tab="first">
-    <% if @user.assignments.any? %>
-    <div class="ui three column middle aligned centered grid stackable">
-      <%= render @assignments %>
-    </div>
-    <%= will_paginate @assignments, renderer: WillPaginateSemanticUi::ActionView::Renderer %>
     <% end %>
   </div>
 
   <!-- Show User's Articles Page -->
-  <div class="ui bottom attached tab segment" data-tab="second">
+  <div class="ui bottom attached tab segment active" data-tab="first">
     <% if @user.articles.any? %>
     <div class="ui three column middle aligned centered grid stackable">
       <%= render @articles %>
@@ -64,6 +58,19 @@
     <% end %>
   </div>
 
+  <% if !current_user.nil? %>
+    <!-- Show User's Assignments Page -->
+    <div class="ui bottom attached tab segment" data-tab="second">
+      <% if @user.assignments.any? %>
+      <div class="ui three column middle aligned centered grid stackable">
+        <%= render @assignments %>
+      </div>
+      <%= will_paginate @assignments, renderer: WillPaginateSemanticUi::ActionView::Renderer %>
+      <% end %>
+    </div>
+  <% end %>
+
+<% if !current_user.nil? %>
   <!-- Submit Assignment Form -->
 
   <div class="ui bottom attached tab segment" data-tab="third">
@@ -120,4 +127,5 @@
 
     <% end %>
   </div>
+  <% end %>
 </div>

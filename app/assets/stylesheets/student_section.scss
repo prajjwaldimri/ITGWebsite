@@ -9,25 +9,6 @@
 @import 'Partials/_wrapper';
 @import 'Partials/_navigation';
 
-.login .success{
-  margin-right: 15px;
-  margin-top: 15px;
-  margin-bottom: 15px;
-}
-
-.success a{
-  display: block;
-  color: white;
-}
-
-.slider {
-  height: 80vh;
-  width: 80%;
-  margin-top: 0px;
-  vertical-align: middle;
-  overflow: hidden;
-}
-
-.slider img{
-  object-fit: contain;
+#slider-image{
+  object-fit: cover;
 }

@@ -15,6 +15,7 @@
 //= require semantic-ui
 //= require jquery.particleground.min.js
 //= require jquery.elevator.min.js
+//= require unslider-min.js
 //= require_tree .
 
 $(function() {
@@ -59,7 +60,7 @@ $(function() {
   });
 
   $('.down-elevator-button').click(function(){
-    $('html, body').animate({
+    $('html, body').velocity({
        scrollTop: $(document).height()}, 5000);
   });
 

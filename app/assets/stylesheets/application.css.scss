@@ -14,13 +14,15 @@
  *= require_self
  */
 
+@import "unslider";
+@import "unslider-dots";
 @import "semantic-ui";
 @import "font-awesome";
 @import "Partials/_hamburger-settings";
 @import "css-hamburgers";
 @import "home";
-@import "student_section";
 @import "staff_section";
+@import "student_section";
 @import "users";
 
 /**** SiteWide Fonts *****/

@@ -62,7 +62,7 @@ $(function(){
 
 
   $("#learnmore").click(function() {
-    $('html,body').animate({
+    $('html,body').velocity({
       scrollTop: $(".main-body").offset().top -70},
       'slow');
     });

@@ -1,5 +1,5 @@
 class Assignment < ActiveRecord::Base
-  belongs_to :user
+  belongs_to :user, dependent: :destroy
   default_scope -> {order(created_at: :desc)}
   mount_uploader :pdf, PdfUploader
   validates :user_id, presence: true

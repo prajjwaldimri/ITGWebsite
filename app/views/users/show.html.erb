@@ -40,11 +40,15 @@
 
 <div class="tabs-user">
   <div class="ui top attached tabular menu stackable">
-    <a class="item active" data-tab="first">Articles (<%= @user.articles.count %>)</a>
+    <a class="item active teal" data-tab="first">Articles
+      <span class="ui left pointing teal label"><%= @user.articles.count %></span>
+    </a>
     <% if !current_user.nil? %>
-    <a class="item" data-tab="second">Assignments (<%= @user.assignments.count %>)</a>
-    <a class="item" data-tab="third">Submit Assignment</a>
-    <a class="item" data-tab="forth">Submit Article</a>
+    <a class="teal item" data-tab="second">Assignments
+      <span class="ui teal left pointing label"><%= @user.assignments.count %></span>
+    </a>
+    <a class="teal item" data-tab="third">Submit Assignment</a>
+    <a class="teal item" data-tab="forth">Submit Article</a>
     <% end %>
   </div>
 

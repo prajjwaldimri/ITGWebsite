@@ -50,6 +50,7 @@ $(function() {
   var $menubutton = $(".menu-button");
   $menubutton.on("click", function(e) {
     $('.ui.sidebar')
+    .sidebar('setting', 'transition', 'scale down')
     .sidebar('toggle');
   });
 

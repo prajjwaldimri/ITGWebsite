@@ -1,2 +1,81 @@
-<h1>Departments#mech</h1>
-<p>Find me in app/views/departments/mech.html.erb</p>
+<% provide(:title, "Mechanical Engineering Department") %>
+<div class="my-slider" style="height: 80vh;">
+  <ul>
+    <li><img id="slider-image" src="/assets/04.jpg"/></li>
+    <li><img id="slider-image" src="/assets/05.jpg"/></li>
+    <li><img id="slider-image" src="/assets/06.jpg"/></li>
+  </ul>
+</div>
+
+<div class="ui relaxed two column grid stackable">
+  <div class="twelve wide column">
+    <div class="ui relaxed two column grid stackable">
+      <div class="four wide column">
+        <div class="ui vertical fluid secondary pointing menu" >
+          <a class="active teal item" data-tab="first">What's Happening</a>
+          <a class="teal item" data-tab="second">Programmes</a>
+          <a class="teal item" data-tab="third">Admissions</a>
+          <a class="teal item" data-tab="forth">Fee Structure</a>
+          <a class="teal item" data-tab="fifth">Facilities</a>
+        </div>
+      </div>
+
+      <div class="twelve wide column" style="padding-left: 0;">
+
+        <div class="ui active tab segment" data-tab="first">
+          First
+        </div>
+        <div class="ui attached tab segment" data-tab="second">
+          Second
+        </div>
+        <div class="ui attached tab segment" data-tab="third">
+          Third
+        </div>
+        <div class="ui attached tab segment" data-tab="forth">
+          Forth
+        </div>
+        <div class="ui attached tab segment" data-tab="fifth">
+          Fifth
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="four wide column">
+
+    <div class="row" style="margin-bottom: 10%;">
+      <div class="ui feed">
+        <h2>Department News</h2>
+        <% if @news_items.any? %>
+        <% @news_items.each do |news_item| %>
+        <div class="event">
+          <div class="label">
+            <i class="info icon circular"></i>
+          </div>
+          <div class="content">
+            <%= news_item.title %>
+          </div>
+        </div>
+        <% end %>
+        <% end %>
+      </div>
+    </div>
+    <div class="row">
+      <div class="ui feed" style="margin-bottom: 10%;">
+        <h2>Notices</h2>
+        <% if @statement_items.any? %>
+        <% @statement_items.each do |statement_item| %>
+        <div class="event">
+          <div class="label">
+            <i class="info icon circular"></i>
+          </div>
+          <div class="content">
+            <%= statement_item.content %>
+          </div>
+        </div>
+        <% end %>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>

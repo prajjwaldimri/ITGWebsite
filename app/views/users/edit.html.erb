@@ -18,6 +18,7 @@
       class="ui teal button">Change Profile Picture</a>
     </div>
 
+    <% if current_user.admin? %>
     <div class="field">
       <%= f.label :name, "Name" %>
       <%= f.text_field :name, placeholder: "Full Name as stated in records" %>
@@ -42,6 +43,34 @@
       <%= f.label :branch %>
       <%= f.select(:branch, ["Civil", "Mechanical", "Electrical", "Computer Science", "Electronics"], {}, {}) %>
     </div>
+
+    <% else %>
+
+    <div class="disabled field">
+      <%= f.label :name, "Name" %>
+      <%= f.text_field :name, placeholder: "Full Name as stated in records" %>
+    </div>
+
+    <div class="disabled field">
+      <%= f.label :email, "Email" %>
+      <%= f.text_field :email, type: "email" %>
+    </div>
+
+    <div class="disabled field">
+      <%= f.label :rollno, "Roll No/Emp. No"%>
+      <%= f.text_field :rollno, type: "number", placeholder: "Roll No/Emp. No" %>
+    </div>
+
+    <div class="disabled field">
+      <%= f.label :user_type %>
+      <%= f.select(:user_type, ["Student", "Faculty"], {}, {}) %>
+    </div>
+
+    <div class="disabled field">
+      <%= f.label :branch %>
+      <%= f.select(:branch, ["Civil", "Mechanical", "Electrical", "Computer Science", "Electronics"], {}, {}) %>
+    </div>
+    <% end %>
 
     <div class="field">
       <%= f.label :password %>

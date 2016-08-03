@@ -1,6 +1,9 @@
 $(function(){
   $('.menu .item')
-  .tab();
+  .tab({
+    history: true,
+    historyType: 'hash'
+  });
 
   $('.ui.form.article')
   .form({

@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
 
+  get 'about/index'
+
   get     'sessions/new'
   root    'home#index'
   get     'staff_section/index', as: 'staff_section'

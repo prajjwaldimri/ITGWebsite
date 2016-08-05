@@ -49,6 +49,11 @@
       <%= f.select(:branch, ["Civil", "Mechanical", "Electrical", "Computer Science", "Electronics"], {}, {}) %>
     </div>
 
+    <div class="field">
+      <%= f.label :other_designations, "Other Designations" %>
+      <%= f.text_field :other_designations, placeholder: "e.g. Exam Controller, Hostel Incharge" %>
+    </div>
+
     <% else %>
 
     <div class="disabled field">
@@ -79,6 +84,11 @@
     <div class="disabled field">
       <%= f.label :branch %>
       <%= f.select(:branch, ["Civil", "Mechanical", "Electrical", "Computer Science", "Electronics"], {}, {}) %>
+    </div>
+
+    <div class="disabled field">
+      <%= f.label :other_designations, "Other Designations" %>
+      <%= f.text_field :other_designations, placeholder: "e.g. Exam Controller, Hostel Incharge" %>
     </div>
     <% end %>
 

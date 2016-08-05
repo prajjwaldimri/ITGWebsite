@@ -15,6 +15,9 @@
           <h2><%= @user.name %></h2>
           <h3><%= @user.branch %> <%= @user.user_type %></h3>
           <h4><%= @user.rollno %></h4>
+          <% if @user.admin? %>
+          <h4>+91(<%= @user.phone_number %>)</h4>
+          <% end %>
         </div>
       </div>
     </div>
@@ -40,20 +43,20 @@
 
 <div class="tabs-user">
   <div class="ui top attached tabular menu stackable">
-    <a class="item active teal" data-tab="first">Articles
+    <a class="item active teal" data-tab="articles">Articles
       <span class="ui left pointing teal label"><%= @user.articles.count %></span>
     </a>
     <% if !current_user.nil? %>
-    <a class="teal item" data-tab="second">Assignments
+    <a class="teal item" data-tab="assignments">Assignments
       <span class="ui teal left pointing label"><%= @user.assignments.count %></span>
     </a>
-    <a class="teal item" data-tab="third">Submit Assignment</a>
-    <a class="teal item" data-tab="forth">Submit Article</a>
+    <a class="teal item" data-tab="submit_assignment">Submit Assignment</a>
+    <a class="teal item" data-tab="submit_article">Submit Article</a>
     <% end %>
   </div>
 
   <!-- Show User's Articles Page -->
-  <div class="ui bottom attached tab segment active" data-tab="first">
+  <div class="ui bottom attached tab segment active" data-tab="articles">
     <% if @user.articles.any? %>
     <div class="ui three column middle aligned centered grid stackable">
       <%= render @articles %>
@@ -64,7 +67,7 @@
 
   <% if !current_user.nil? %>
     <!-- Show User's Assignments Page -->
-    <div class="ui bottom attached tab segment" data-tab="second">
+    <div class="ui bottom attached tab segment" data-tab="assignments">
       <% if @user.assignments.any? %>
       <div class="ui three column middle aligned centered grid stackable">
         <%= render @assignments %>
@@ -77,7 +80,7 @@
 <% if !current_user.nil? %>
   <!-- Submit Assignment Form -->
 
-  <div class="ui bottom attached tab segment" data-tab="third">
+  <div class="ui bottom attached tab segment" data-tab="submit_assignment">
     <%= form_for(@assignment, html: {class: "ui form assignment", multipart: true}) do |f| %>
     <div class="ui error message"></div>
     <div class="three fields">
@@ -104,7 +107,7 @@
 
   <!-- Submit Article Tab -->
 
-  <div class="ui bottom attached tab segment" data-tab="forth">
+  <div class="ui bottom attached tab segment" data-tab="submit_article">
     <%= form_for(@article, html: {class: "ui form article", multipart: true}) do |f| %>
     <div class="row wrap">
       <div class="ui error message"></div>

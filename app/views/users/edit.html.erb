@@ -31,12 +31,17 @@
 
     <div class="field">
       <%= f.label :rollno, "Roll No/Emp. No"%>
-      <%= f.text_field :rollno, type: "number", placeholder: "Roll No/Emp. No" %>
+      <%= f.text_field :rollno, type: "number", placeholder: "Provided by Institute" %>
+    </div>
+
+    <div class="field">
+      <%= f.label :phone_number, "Phone Number"%>
+      <%= f.text_field :phone_number, placeholder: "User's available mobile number" %>
     </div>
 
     <div class="field">
       <%= f.label :user_type %>
-      <%= f.select(:user_type, ["Student", "Faculty"], {}, {}) %>
+      <%= f.select(:user_type, ["Student", "Faculty", "Staff", "Director"], {}, {}) %>
     </div>
 
     <div class="field">
@@ -59,6 +64,11 @@
     <div class="disabled field">
       <%= f.label :rollno, "Roll No/Emp. No"%>
       <%= f.text_field :rollno, type: "number", placeholder: "Roll No/Emp. No" %>
+    </div>
+
+    <div class="field">
+      <%= f.label :phone_number, "Phone Number"%>
+      <%= f.text_field :phone_number, placeholder: "User's available mobile number" %>
     </div>
 
     <div class="disabled field">

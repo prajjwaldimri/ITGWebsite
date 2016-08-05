@@ -1,0 +1,31 @@
+<% if @faculty_members.any? %>
+<div class="ui special cards">
+  <% @faculty_members.each do |faculty_member| %>
+  <div class="ui centered card">
+    <div class="blurring dimmable image">
+      <div class="ui dimmer">
+        <div class="content">
+          <div class="center">
+            <div class="ui inverted button">See Profile</div>
+          </div>
+        </div>
+      </div>
+      <img src="<%= gravatar_url(faculty_member, {size: 480}) %>">
+    </div>
+    <div class="content">
+      <a class="header" href="<%= user_path(faculty_member) %>"><%= faculty_member.name %></a>
+      <div class="meta">
+        <span class="date"><%= faculty_member.branch %></span>
+      </div>
+    </div>
+    <div class="extra content">
+      <a href="<%= user_path(faculty_member) %>#/articles">
+        <i class="users icon"></i>
+        <%= faculty_member.articles.count %> Articles written
+      </a>
+    </div>
+  </div>
+
+  <% end %>
+</div>
+<% end %>

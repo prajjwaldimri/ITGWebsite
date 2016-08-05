@@ -26,8 +26,13 @@
     </div>
 
     <div class="field">
+      <%= f.label :phone_number, "Phone Number"%>
+      <%= f.text_field :phone_number, placeholder: "User's available mobile number" %>
+    </div>
+
+    <div class="field">
       <%= f.label :user_type %>
-      <%= f.select(:user_type, ["Student", "Faculty"], {}, {}) %>
+      <%= f.select(:user_type, ["Student", "Faculty", "Staff", "Director"], {}, {}) %>
     </div>
 
     <div class="field">

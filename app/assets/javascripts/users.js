@@ -1,6 +1,6 @@
 $(function(){
   $('.menu .item')
-  .tab({
+  .tab({    
     history: true,
     historyType: 'hash'
   });

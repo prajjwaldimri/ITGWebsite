@@ -35,7 +35,7 @@ $(function() {
       .transition('fade');
   });
 
-  //Listening to scroll
+    //Listening to scroll
 
   $(window).scroll(function(){
     var wScroll = $(this).scrollTop();

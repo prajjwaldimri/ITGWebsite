@@ -18,7 +18,29 @@
     </div>
 
     <div class="ui bottom attached active tab segment" data-tab="first">
-      First
+      <% if @user_feed_items.any? %>
+      <div class="ui cards">
+        <% @user_feed_items.each do |user_feed_item| %>
+        <% if user_feed_item.user.user_type == "Faculty" || user_feed_item.user.user_type == "Director" ||
+          user_feed_item.user.user_type == "Staff" %>
+        <div class="card">
+          <% if !user_feed_item.articleimage.file.nil? %>
+          <div class="image">
+            <img src="<%= user_feed_item.articleimage.url %>">
+          </div>
+          <% end %>
+          <div class="content">
+            <a class="header" href="<%= article_path(user_feed_item) %>"><%=user_feed_item.title%></a>
+            <div class="meta">A <%=user_feed_item.post_type %> by <%= user_feed_item.user.name %></div>
+            <div class="description">
+              <%= truncate(user_feed_item.content, length: 100) %>
+            </div>
+          </div>
+        </div>
+        <% end %>
+        <% end %>
+      </div>
+      <% end %>
     </div>
     <div class="ui bottom attached tab segment" data-tab="second">
       Second

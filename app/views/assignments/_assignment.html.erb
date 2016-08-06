@@ -6,11 +6,11 @@
     <h3 style="font-weight: lighter;"><%= assignment.title %></h3>
     <h4 style="font-weight: lighter;"><%= assignment.subject %></h4>
   </div>
-  <div class="three wide column">
+  <div class="two wide column">
     <h5 style="font-weight: lighter;"> Semester: <%= assignment.semester %></h5>
     <h5 style="font-weight: lighter;">Uploaded <%= time_ago_in_words(assignment.created_at) %> ago.</h5>
   </div>
-  <div class="four wide column">
+  <div class="five wide column">
     <div class="ui buttons">
       <% if assignment.pdf? %>
       <a href="<%= assignment.pdf.current_path %>" class="ui labeled icon blue button">
@@ -20,11 +20,25 @@
       <div class="or"></div>
       <% end %>
       <% if current_user?(assignment.user) %>
-      <%= link_to assignment, method: :delete, data: {confirm: "You Sure?"}, class: "ui labeled icon red button" do %>
-      <i class="inverted ban icon"></i>
-      Delete
-      <% end %>
+      <a href="<%=edit_assignment_path(assignment)%>", class= "ui labeled icon teal button" >
+        <i class="inverted edit icon"></i>
+        Edit
+      </a>
+
+        <div class="or"></div>
+        <%= link_to assignment, method: :delete, data: {confirm: "You Sure?"}, class: "ui labeled icon red button" do %>
+        <i class="inverted ban icon"></i>
+        Delete
+        <% end %>
+        <% end %>
+      </div>
+    </div>
+    <div class="three wide column">
+      <%= form_for(assignment) do |f| %>
+      <div class="ui disabled toggle checkbox">
+        <%= f.check_box :approved, class: "ui checkbox", disabled: "disabled" %>
+        <label>Approved?</label>
+      </div>
       <% end %>
     </div>
   </div>
-</div>

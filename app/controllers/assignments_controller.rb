@@ -20,6 +20,21 @@ class AssignmentsController < ApplicationController
     redirect_to current_user
   end
 
+  def edit
+    @assignment = current_user.assignments.find(params[:id])
+  end
+
+  def update
+    @assignment = current_user.assignments.find(params[:id])
+    if @assignment.update_attributes(assignment_params)
+      flash[:success] = "Assignment Updated"
+      redirect_to current_user
+    else
+      flash[:error] = "Error Updating Assignment"
+      render 'edit'
+    end
+  end
+
 
   private
 

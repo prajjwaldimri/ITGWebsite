@@ -20,8 +20,11 @@
     </div>
   </div>
   <div class="three wide column">
-    <%= form_for(article, remote: true) do |f| %>
-        <%= link_to :approved %>
+    <%= form_for(article) do |f| %>
+    <div class="ui disabled toggle checkbox">
+      <%= f.check_box :approved, class: "ui checkbox", disabled: "disabled" %>
+      <label>Verified?</label>
+    </div>
     <% end %>
   </div>
 </div>

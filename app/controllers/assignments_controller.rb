@@ -24,7 +24,7 @@ class AssignmentsController < ApplicationController
   private
 
   def assignment_params
-    params.require(:assignment).permit(:title, :subject, :semester, :pdf)
+    params.require(:assignment).permit(:title, :subject, :semester, :pdf, :approved)
   end
 
   def correct_user

@@ -45,6 +45,8 @@ $(function() {
 		}
 	});
 
+  $('.ui.checkbox')
+    .checkbox();
   //MenuIcon
   var $menubutton = $(".menu-button");
   $menubutton.on("click", function(e) {

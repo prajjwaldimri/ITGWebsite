@@ -20,6 +20,8 @@
     </div>
   </div>
   <div class="three wide column">
-    
+    <%= form_for(article, remote: true) do |f| %>
+        <%= link_to :approved %>
+    <% end %>
   </div>
 </div>

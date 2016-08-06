@@ -46,12 +46,12 @@ class ArticlesController < ApplicationController
     Article.find(params[:id]).destroy
     flash[:success] = "Article Deleted"
     redirect_to :back
-  end 
+  end
 
   private
 
   def article_params
-    params.require(:article).permit(:title, :content, :post_type, :articleimage)
+    params.require(:article).permit(:title, :content, :post_type, :articleimage, :approved)
   end
 
   def admin_user

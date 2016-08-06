@@ -1,10 +1,10 @@
-<% provide(:title, truncate("Editing" +"|")) %>
+<% provide(:title, truncate("Editing")) %>
 
 <div id="spacer" class="massive ui menu">
   &nbsp;
 </div>
 
-<%= form_for(@article, html: {class: "ui form article", multipart: true}) do |f| %>
+<%= form_for(@article, html: {class: "ui form article", multipart: true, style: "margin-bottom: 10%;"}) do |f| %>
 <div class="row wrap">
   <div class="ui error message"></div>
   <div class="two fields">
@@ -23,6 +23,12 @@
     <%= f.text_area :content, placeholder: "Enter content of Assignment" %>
   </div>
 
+  <% if current_user.admin? %>
+  <div class="required field">
+    <%= f.label "Approved?" %>
+    <%= f.check_box :approved%>
+  </div>
+  <% end %>
 
   <%= f.submit "Update Article!", class: "ui green button" %>
   <%= f.file_field :articleimage %>

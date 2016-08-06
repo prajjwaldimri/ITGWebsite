@@ -21,7 +21,7 @@
       <% if @user_feed_items.any? %>
       <div class="ui cards">
         <% @user_feed_items.each do |user_feed_item| %>
-        <% if user_feed_item.user.user_type == "Student" %>
+        <% if user_feed_item.user.user_type == "Student" && user_feed_item.approved? %>
         <div class="card">
           <% if !user_feed_item.articleimage.file.nil? %>
           <div class="image">
@@ -189,6 +189,7 @@
       <h2>News</h2>
       <% if @news_items.any? %>
       <% @news_items.each do |news_item| %>
+      <% if news_item.approved? %>
       <div class="event">
         <div class="label">
           <i class="info icon circular"></i>
@@ -204,6 +205,7 @@
       </div>
       <% end %>
       <% end %>
+      <% end %>
     </div>
   </div>
   <!-- Annoucements Feed -->
@@ -212,6 +214,7 @@
       <h2>Announcements</h2>
       <% if @statement_items.any? %>
       <% @statement_items.each do |statement_item| %>
+      <% if statement_item.approved? %>
       <div class="event">
         <div class="label">
           <i class="info icon circular"></i>
@@ -227,6 +230,7 @@
       </div>
       <% end %>
       <% end %>
+      <% end %>
     </div>
   </div>
   <!-- User Feed -->
@@ -235,6 +239,7 @@
       <h2>User Feed</h2>
       <% if @user_feed_items.any? %>
       <% @user_feed_items.each do |user_feed_item| %>
+      <% if user_feed_item.approved? %>
       <div class="event">
         <div class="label">
           <img src="<%= gravatar_url(user_feed_item.user) %>">
@@ -248,6 +253,7 @@
           </div>
         </div>
       </div>
+      <% end %>
       <% end %>
       <% end %>
     </div>

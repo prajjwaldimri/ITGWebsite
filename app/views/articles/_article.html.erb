@@ -19,4 +19,8 @@
       <% end %>
     </div>
   </div>
+  <div class="three wide column">
+    <%= link_to "#{ article.approved ? 'Approved' : 'UnApproved' }", toggle_approved_status_article_path,
+     method: :patch, remote: :true, class: "btn btn-xs btn-#{ article.approved ? 'success' : 'warning' }" %>
+  </div>
 </div>

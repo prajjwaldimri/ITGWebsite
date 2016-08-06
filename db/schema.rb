@@ -11,16 +11,17 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160805061319) do
+ActiveRecord::Schema.define(version: 20160805161341) do
 
   create_table "articles", force: :cascade do |t|
     t.text     "title"
     t.text     "content"
     t.text     "post_type"
     t.integer  "user_id"
-    t.datetime "created_at",   null: false
-    t.datetime "updated_at",   null: false
+    t.datetime "created_at",                   null: false
+    t.datetime "updated_at",                   null: false
     t.string   "articleimage"
+    t.boolean  "approved",     default: false
   end
 
   add_index "articles", ["title"], name: "index_articles_on_title", unique: true
@@ -31,9 +32,10 @@ ActiveRecord::Schema.define(version: 20160805061319) do
     t.string   "subject"
     t.integer  "semester"
     t.integer  "user_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.datetime "created_at",                 null: false
+    t.datetime "updated_at",                 null: false
     t.string   "pdf"
+    t.boolean  "approved",   default: false
   end
 
   add_index "assignments", ["user_id", "created_at"], name: "index_assignments_on_user_id_and_created_at"

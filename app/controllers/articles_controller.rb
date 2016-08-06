@@ -48,6 +48,12 @@ class ArticlesController < ApplicationController
     redirect_to :back
   end
 
+  def toggle_approved_status
+  @a = Article.find(params[:id])
+  @a.toggle!(:approved)
+  render :nothing => true
+  end
+
   private
 
   def article_params

@@ -36,7 +36,6 @@ $(function() {
   });
 
     //Listening to scroll
-
   $(window).scroll(function(){
     var wScroll = $(this).scrollTop();
 		if (wScroll > 100) {
@@ -61,12 +60,15 @@ $(function() {
   });
 
   $('.down-elevator-button').click(function(){
-    $('html, body').velocity({
+    $('html, body').animate({
        scrollTop: $(document).height()}, 5000);
   });
 
-  $('.developer-button').click(function(){
+  $('#developer-button').click(function(){
     $('.ui.modal')
+  .modal({
+    blurring: true
+  })
   .modal('show');
   });
 });

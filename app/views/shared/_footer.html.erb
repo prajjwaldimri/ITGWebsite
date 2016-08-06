@@ -2,7 +2,7 @@
   <div class="ui grid stackable container ">
 
     <!-- Social -->
-    <div class="centered row">
+    <div class="centered row wow zoomInDown">
       <button class="ui circular facebook icon button">
         <i class="facebook icon"></i>
       </button>
@@ -20,14 +20,14 @@
     <!--Statistics -->
     <div class="centered row">
       <div class="ui inverted statistics">
-        <div class="statistic">
-          <div class="value">
+        <div class="statistic wow fadeIn">
+          <a href="#" id="developer-button" class="value">
             <%= developer_count.to_words %>
-          </div>
+          </a>
           <div class="label">Developers</div>
         </div>
 
-        <div class="statistic">
+        <div class="statistic wow fadeIn" data-wow-delay="1s">
           <div class="value">
             <img src="/assets/user.jpg" class="ui circular inline image">
             <%= users_count %>
@@ -36,7 +36,7 @@
             Users
           </div>
         </div>
-        <div class="statistic">
+        <div class="statistic wow fadeIn" data-wow-delay="2s">
           <div class="value">
             <%= number_with_delimiter(articles_count, delimiter: ',') %>
           </div>
@@ -44,7 +44,7 @@
             Articles Written
           </div>
         </div>
-        <div class="statistic">
+        <div class="statistic wow fadeIn" data-wow-delay="3s">
           <div class="value">
             <%= number_with_delimiter(assignments_count, delimiter: ',') %>
           </div>
@@ -52,7 +52,7 @@
             Assignments Submitted
           </div>
         </div>
-        <div class="statistic">
+        <div class="statistic wow fadeIn" data-wow-delay="4s">
           <div class="text value">
             HTML, CSS </br>
             Ruby, JS
@@ -68,7 +68,7 @@
     <div class="centered row">
       <div class="ui large borderless inverted menu">
         <div class="header active item">Useful Links:</div>
-        <a class="active item">
+        <a href="http://uktech.ac.in" class="active item">
           UTU
         </a>
         <a class="active item">
@@ -77,10 +77,10 @@
         <a class="active item">
           IIT
         </a>
-        <a class="active item">
+        <a href="http://kecua.ac.in" class="active item">
           KEC
         </a>
-        <a class="active item">
+        <a href="http://gbpec.ac.in" class="active item">
           GBPEC
         </a>
       </div>

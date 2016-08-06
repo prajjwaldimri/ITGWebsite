@@ -19,5 +19,6 @@ class ApplicationController < ActionController::Base
     @articles_count = Article.count
     @assignments_count = Assignment.count
     @developer_count = (User.where(other_designations: "Developer")).count
+    @developers = User.where(other_designations: "Developer")
   end
 end

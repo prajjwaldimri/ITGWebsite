@@ -50,7 +50,7 @@ $(function(){
   });
 
 
-    $('.tlt').textillate({
+  $('.tlt').textillate({
     loop: true,
     initialDelay: 2000
   });
@@ -62,8 +62,6 @@ $(function(){
 
 
   $("#learnmore").click(function() {
-    $('html,body').velocity({
-      scrollTop: $(".main-body").offset().top -70},
-      'slow');
+    $(".main-body").velocity('scroll', {duration: 1000});
     });
   });

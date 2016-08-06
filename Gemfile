@@ -53,6 +53,8 @@ gem 'friendly_id', '~> 5.1.0'
 
 gem 'fog-aws'
 
+gem 'numbers_and_words', '~> 0.10.5'
+
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug'

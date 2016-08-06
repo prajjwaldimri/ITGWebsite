@@ -46,13 +46,7 @@ class ArticlesController < ApplicationController
     Article.find(params[:id]).destroy
     flash[:success] = "Article Deleted"
     redirect_to :back
-  end
-
-  def toggle_approved_status
-  @a = Article.find(params[:id])
-  @a.toggle!(:approved)
-  render :nothing => true
-  end
+  end 
 
   private
 

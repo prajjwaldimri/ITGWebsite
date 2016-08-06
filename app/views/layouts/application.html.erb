@@ -55,7 +55,8 @@
         <i class="icon angle double up"></i>
       </button>
     </div>
-    <%= render partial: 'home/footer' %>
+    <%= render partial: 'home/footer', locals: {users_count: @users_count, articles_count: @articles_count,
+      assignments_count: @assignments_count, developer_count: @developer_count} %>
     <% else %>
     <div class="ui large buttons elevator-button">
       <button class="circular ui icon button down-elevator-button">
@@ -66,7 +67,8 @@
         <i class="icon angle double up"></i>
       </button>
     </div>
-    <%= render partial: 'shared/footer' %>
+    <%= render partial: 'shared/footer', locals: {users_count: @users_count, articles_count: @articles_count,
+      assignments_count: @assignments_count, developer_count: @developer_count} %>
     <% end %>
 
     <%= debug(params) if Rails.env.development? %>

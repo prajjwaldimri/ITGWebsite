@@ -1,6 +1,90 @@
 <footer id="footer" class="footer">
-  <div class="row footer">
-    <h1>Hello</h1>
-    <a class="developer-button">Click me</a>
+  <div class="ui grid">
+
+    <!-- Social -->
+    <div class="centered row">
+      <button class="ui circular facebook icon button">
+        <i class="facebook icon"></i>
+      </button>
+      <button class="ui circular twitter icon button">
+        <i class="twitter icon"></i>
+      </button>
+      <button class="ui circular linkedin icon button">
+        <i class="linkedin icon"></i>
+      </button>
+      <button class="ui circular google plus icon button">
+        <i class="google plus icon"></i>
+      </button>
+    </div>
+
+    <!--Statistics -->
+    <div class="centered row">
+      <div class="ui inverted statistics">
+        <div class="statistic">
+          <div class="value">
+            <%= developer_count.to_words %>
+          </div>
+          <div class="label">Developers</div>
+        </div>
+
+        <div class="statistic">
+          <div class="value">
+            <img src="/assets/user.jpg" class="ui circular inline image">
+            <%= users_count %>
+          </div>
+          <div class="label">
+            Users
+          </div>
+        </div>
+        <div class="statistic">
+          <div class="value">
+            <%= number_with_delimiter(articles_count, delimiter: ',') %>
+          </div>
+          <div class="label">
+            Articles Written
+          </div>
+        </div>
+        <div class="statistic">
+          <div class="value">
+            <%= number_with_delimiter(assignments_count, delimiter: ',') %>
+          </div>
+          <div class="label">
+            Assignments Submitted
+          </div>
+        </div>
+        <div class="statistic">
+          <div class="text value">
+            HTML, CSS </br>
+            Ruby, JS
+          </div>
+          <div class="label">
+            Languages Used
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Links -->
+    <div class="centered row">
+      <div class="ui large borderless inverted menu">
+        <div class="header active item">Useful Links:</div>
+        <a class="active item">
+          UTU
+        </a>
+        <a class="active item">
+          AICTE
+        </a>
+        <a class="active item">
+          IIT
+        </a>
+        <a class="active item">
+          KEC
+        </a>
+        <a class="active item">
+          GBPEC
+        </a>
+      </div>
+    </div>
   </div>
+
 </footer>

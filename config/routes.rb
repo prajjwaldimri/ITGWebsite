@@ -22,11 +22,7 @@ Rails.application.routes.draw do
   delete  'logout'                => 'sessions#destroy'
   resources :users
   resources :assignments, only: [:create, :destroy]
-  resources :articles do
-    member do
-      patch :toggle_approved_status
-    end
-  end
+  resources :articles 
   #resources :sessions
 
   # The priority is based upon order of creation: first created -> highest priority.

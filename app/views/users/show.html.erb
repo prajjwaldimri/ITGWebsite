@@ -11,7 +11,8 @@
         <div class="six wide column" >
           <%= gravatar_for @user %>
         </div>
-        <div class="ten wide column user-details">
+        <div class="ten wide column user-details" data-intro="These are your personal records"
+        data-step="1">
           <h2><%= @user.name %></h2>
           <h3><%= @user.branch %> <%= @user.user_type %></h3>
           <h4><%= @user.rollno %></h4>
@@ -28,8 +29,8 @@
         <a href="<%= edit_user_path %>" class="ui orange button">Edit Profile</a>
         <% end %>
         <% if current_user?(@user) %>
-        <button class="ui green button">Submit Assignment</button>
-        <button class="ui violet button">Submit Article</button>
+        <button id="submit-assignment-button" class="ui green button">Submit Assignment</button>
+        <button id="submit-article-button" class="ui violet button">Submit Article</button>
         <%= link_to "Logout", logout_path, method: 'delete', class: "ui grey button" %>
         <% end %>
       </div>
@@ -43,15 +44,19 @@
 
 <div class="tabs-user">
   <div class="ui top attached tabular menu stackable">
-    <a class="item active teal" data-tab="articles">Articles
+    <a class="item active teal" data-tab="articles" data-intro="Here is the list of your submitted articles"
+    data-step="3">Articles
       <span class="ui left pointing teal label"><%= @user.articles.count %></span>
     </a>
     <% if !current_user.nil? %>
-    <a class="teal item" data-tab="assignments">Assignments
+    <a class="teal item" data-tab="assignments" data-intro="Here is the list of your submitted assignments"
+    data-step="4">Assignments
       <span class="ui teal left pointing label"><%= @user.assignments.count %></span>
     </a>
-    <a class="teal item" data-tab="submit_assignment">Submit Assignment</a>
-    <a class="teal item" data-tab="submit_article">Submit Article</a>
+    <a class="teal item" data-tab="submit_assignment" data-intro="You can submit assignments from here"
+    data-step="5">Submit Assignment</a>
+    <a class="teal item" data-tab="submit_article" data-intro="You can submit articles from here"
+    data-step="6">Submit Article</a>
     <% end %>
   </div>
 

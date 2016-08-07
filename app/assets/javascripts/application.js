@@ -16,6 +16,7 @@
 //= require jquery.particleground.min.js
 //= require jquery.elevator.min.js
 //= require unslider-min.js
+//= require introjs
 //= require_tree .
 
 $(function() {

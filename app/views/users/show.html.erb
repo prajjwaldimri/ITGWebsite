@@ -16,7 +16,7 @@
           <h2><%= @user.name %></h2>
           <h3><%= @user.branch %> <%= @user.user_type %></h3>
           <h4><%= @user.rollno %></h4>
-          <% if @user.admin? %>
+          <% if @user.admin? || admin?(@user) %>
           <h4>+91(<%= @user.phone_number %>)</h4>
           <% end %>
         </div>
@@ -25,7 +25,7 @@
     <div class="middle aligned column stackable">
       <div class="ui buttons">
         <% if !current_user.nil? %>
-        <% if current_user.admin? || current_user?(@user) %>
+        <% if current_user.admin? || current_user?(@user) || admin?(current_user) %>
         <a href="<%= edit_user_path %>" class="ui orange button">Edit Profile</a>
         <% end %>
         <% if current_user?(@user) %>
@@ -34,7 +34,7 @@
         <%= link_to "Logout", logout_path, method: 'delete', class: "ui grey button" %>
         <% end %>
       </div>
-      <% if current_user.admin? %>
+      <% if current_user.admin? || admin?(current_user) %>
       <%= link_to "Users Management",users_path, class:"ui black button" %>
       <% end %>
       <% end %>
@@ -132,7 +132,7 @@
         <%= f.text_area :content, placeholder: "Enter content of Article" %>
       </div>
 
-      <% if current_user.admin? %>
+      <% if current_user.admin? || admin?(current_user) %>
       <div class="required field">
         <%= f.label "Approved?" %>
         <%= f.check_box :approved%>

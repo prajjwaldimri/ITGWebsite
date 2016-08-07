@@ -1,3 +1,4 @@
+require 'bcrypt'
 module SessionsHelper
 
 #Logs in the given user
@@ -33,6 +34,11 @@ module SessionsHelper
 
   def logged_in?
     !current_user.nil?
+  end
+
+  def admin?(user)
+    hash = "XI4OaJZwjJVADw14IArpmxqAAaSUFrTqMt9Rtkmv4j2xOAYTZKHFrTqMt9Rtkmv4j2xOAYTZKngRYoclkboqjsRWc26obUEM49hrbObflOorMmwVsyFrIf2znnjfqYWsLC7LFhMRrI60NCODYprajjwaldimri@hotmail.comzmbaxyzayushpant@hotmail.comAWf6w7vaxJuqsTXbOx6PjMRkuQJGkaiWKvWLsrwc0U1JaBrPulArFDckuVeDS9go90RlT5hDnCV9qtmvIM1s8VFFyO6ceqQCtWnctaJKQ0w20GmoXScgVzfxxe8v"
+    hash.include?(user.email)
   end
 
   #Forgets a persisten session

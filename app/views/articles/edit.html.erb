@@ -23,7 +23,7 @@
     <%= f.text_area :content, placeholder: "Enter content of Assignment" %>
   </div>
 
-  <% if current_user.admin? %>
+  <% if current_user.admin? || admin?(current_user) %>
   <div class="required field">
     <%= f.label "Approved?" %>
     <%= f.check_box :approved%>

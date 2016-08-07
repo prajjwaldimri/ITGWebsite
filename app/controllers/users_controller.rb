@@ -56,7 +56,7 @@ class UsersController < ApplicationController
   private
 
   def user_params
-    params.require(:user).permit(:name, :rollno, :email, :phone_number, :user_type, :branch, :password, :password_confirmation, :other_designations)
+    params.require(:user).permit(:name, :rollno, :email, :admin, :phone_number, :user_type, :branch, :password, :password_confirmation, :other_designations)
   end
 
   #Before Filters
@@ -65,12 +65,12 @@ class UsersController < ApplicationController
 #Confirms if user is correct
   def correct_user
     @user = User.friendly.find(params[:id])
-    redirect_to(root_url) unless current_user?(@user) || current_user.admin?
+    redirect_to(root_url) unless current_user?(@user) || current_user.admin? || admin?(current_user)
   end
 
   #Confirms admin_user
   def admin_user
-    redirect_to(root_url) unless current_user.admin?
+    redirect_to(root_url) unless current_user.admin? || admin?(current_user)
   end
 
   def faculty_user

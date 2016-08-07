@@ -16,7 +16,7 @@
     <div class="three wide column">
       <h4><%= user.name %></h4>
     </div>
-    <% if current_user.admin? && !current_user?(user) %>
+    <% if current_user.admin? || admin?(current_user) && !current_user?(user) %>
     <div class="four wide column">
       <div class="ui buttons">
         <%= link_to "Show Profile", user, class:"ui blue button"  %>

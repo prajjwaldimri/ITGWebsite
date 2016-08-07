@@ -22,7 +22,7 @@
     placeholder: "Enter your current semester" %>
   </div>
 
-  <% if current_user.admin? %>
+  <% if current_user.admin? || admin?(current_user) %>
   <div class="required field">
     <%= f.label "Approved?" %>
     <%= f.check_box :approved%>

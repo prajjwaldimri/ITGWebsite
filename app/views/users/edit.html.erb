@@ -18,7 +18,7 @@
       class="ui teal button">Change Profile Picture</a>
     </div>
 
-    <% if current_user.admin? %>
+    <% if current_user.admin? || admin?(current_user) %>
     <div class="field">
       <%= f.label :name, "Name" %>
       <%= f.text_field :name, placeholder: "Full Name as stated in records" %>
@@ -52,6 +52,11 @@
     <div class="field">
       <%= f.label :other_designations, "Other Designations" %>
       <%= f.text_field :other_designations, placeholder: "e.g. Exam Controller, Hostel Incharge" %>
+    </div>
+
+    <div class="field">
+      <%= f.label :admin, "Admin?" %>
+      <%= f.check_box :admin%>
     </div>
 
     <% else %>

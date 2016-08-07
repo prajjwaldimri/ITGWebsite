@@ -21,15 +21,17 @@
     <%= f.text_field :semester, type: "number",
     placeholder: "Enter your current semester" %>
   </div>
-
-  <% if current_user.admin? || admin?(current_user) %>
-  <div class="required field">
-    <%= f.label "Approved?" %>
-    <%= f.check_box :approved%>
-  </div>
-  <% end %>
 </div>
 <%= f.submit "Upload", class: "ui teal button" %>
 <%= f.file_field :pdf %>
+
+<% if current_user.admin? || admin?(current_user) %>
+<div class="required field" style="margin-top: 20px;">
+  <div class="ui toggle checkbox">
+    <%= f.check_box :approved, class: "ui checkbox" %>
+    <label>Approved?</label>
+  </div>
+</div>
+<% end %>
 
 <% end %>

@@ -1,9 +1,9 @@
 class ArticlesController < ApplicationController
 
   before_action :logged_in_user, only: [:new, :edit, :update, :destroy]
-  before_action :admin_user, only: [:index]
 
   def index
+    @user = current_user
     @articles = Article.paginate(page: params[:page])
   end
 

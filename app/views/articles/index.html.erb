@@ -1,0 +1,24 @@
+<div id="spacer" class="massive ui menu">
+  &nbsp;
+</div>
+
+<% if @articles.any? %>
+<div class="ui centered cards">
+  <% @articles.each do |article| %>
+  <div class="card">
+    <% if !article.articleimage.file.nil? %>
+    <div class="image">
+      <img src="<%= article.articleimage.url %>"/>
+    </div>
+    <% end %>
+    <div class="content">
+      <a class="header" href="<%= article_path(article) %>"><%=article.title%></a>
+      <div class="meta">A <%=article.post_type %> by <%= article.user.name %></div>
+      <div class="description">
+        <%= truncate(article.content, length: 100) %>
+      </div>
+    </div>
+  </div>
+  <% end %>
+</div>
+<% end %>

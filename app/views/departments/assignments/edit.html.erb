@@ -1,0 +1,35 @@
+<% provide(:title, truncate("Editing")) %>
+
+<div id="spacer" class="massive ui menu">
+  &nbsp;
+</div>
+
+<%= form_for(@assignment, html: {class: "ui form assignment", multipart: true, style: "margin-bottom: 10%"}) do |f| %>
+<div class="ui error message"></div>
+<div class="three fields">
+  <div class="required field">
+    <%= f.label "Title" %>
+    <%= f.text_field :title, placeholder: "Title of Assignment" %>
+  </div>
+
+  <div class="required field">
+    <%= f.label :subject %>
+    <%= f.text_field :subject, placeholder: "Subject of Assignment" %>
+  </div>
+  <div class="required field">
+    <%= f.label :semester %>
+    <%= f.text_field :semester, type: "number",
+    placeholder: "Enter your current semester" %>
+  </div>
+
+  <% if current_user.admin? %>
+  <div class="required field">
+    <%= f.label "Approved?" %>
+    <%= f.check_box :approved%>
+  </div>
+  <% end %>
+</div>
+<%= f.submit "Upload", class: "ui teal button" %>
+<%= f.file_field :pdf %>
+
+<% end %>

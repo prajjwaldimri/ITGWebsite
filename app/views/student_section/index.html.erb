@@ -10,11 +10,15 @@
 <div class="ui relaxed two column grid stackable">
   <div class="twelve wide column">
     <div class="ui top attached tabular menu">
-      <a class="active teal item" data-tab="happening">What's Happening</a>
-      <a class="teal item" data-tab="programmes">Programmes</a>
+      <a class="active teal item" data-tab="happening" data-intro="This tab shows the blog and research posts by students of ITG"
+      data-step="1">What's Happening</a>
+      <a class="teal item" data-tab="programmes" data-intro="List of programmes available in ITG"
+      data-step="2">Programmes</a>
       <a class="teal item" data-tab="admissions">Admissions</a>
-      <a class="teal item" data-tab="fees">Fee Structure</a>
-      <a class="teal item" data-tab="facilities">Facilities</a>
+      <a class="teal item" data-tab="fees" data-intro="Details of fees for various courses"
+      data-step="3">Fee Structure</a>
+      <a class="teal item" data-tab="facilities" data-intro="Facilities available to students of ITG"
+      data-step="4">Facilities</a>
     </div>
 
     <div class="ui bottom attached active tab segment" data-tab="happening">
@@ -516,7 +520,7 @@
   <div class="four wide column">
     <!-- News Feed -->
     <div class="row" style="margin-bottom: 10%;">
-      <div class="ui feed">
+      <div class="ui feed" data-intro="Latest News in ITG" data-step="5">
         <h2>News</h2>
         <% if @news_items.any? %>
         <% @news_items.each do |news_item| %>
@@ -541,7 +545,7 @@
     </div>
     <!-- Annoucements Feed -->
     <div class="row">
-      <div class="ui feed" style="margin-bottom: 10%;">
+      <div class="ui feed" style="margin-bottom: 10%;" data-intro="Important Announcements" data-step="6">
         <h2>Announcements</h2>
         <% if @statement_items.any? %>
         <% @statement_items.each do |statement_item| %>
@@ -565,7 +569,7 @@
       </div>
     </div>
     <!-- User Feed -->
-    <div class="row" style="margin-bottom: 10%;">
+    <div class="row" style="margin-bottom: 10%;" data-intro="Recent activities from students" data-step="7">
       <div class="ui feed">
         <h2>User Feed</h2>
         <% if @user_feed_items.any? %>

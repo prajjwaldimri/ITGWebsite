@@ -10,205 +10,201 @@
 <div class="ui relaxed two column grid stackable">
   <div class="twelve wide column">
     <div class="ui top attached tabular menu">
-      <a class="active teal item" data-tab="what happening">What's Happening</a>
-      <a class="teal item" data-tab="faculty incharges">Faculty Incharges</a>
-      <a class="teal item" data-tab="administration">Administration</a>
+      <a class="active teal item" data-tab="happening" data-intro="Blogs and Research Papers from ITG Faculty" data-step="1">What's Happening</a>
+      <a class="teal item" data-tab="faculty-incharges" data-intro="Faculty Incharges in ITG" data-step="2">Faculty Incharges</a>
+      <a class="teal item" data-tab="administration" data-intro="Details about Director and Vice-Chancellor" data-step="3">Administration</a>
     </div>
 
-    <div class="ui bottom attached active tab segment" data-tab="what happening">
+    <div class="ui bottom attached active tab segment" data-tab="happening">
       <% if @user_feed_items.any? %>
       <div class="ui cards">
         <% @user_feed_items.each do |user_feed_item| %>
         <% if user_feed_item.user.user_type == "Faculty" || user_feed_item.user.user_type == "Director" ||
           user_feed_item.user.user_type == "Staff" %>
-        <div class="card">
-          <% if !user_feed_item.articleimage.file.nil? %>
-          <div class="image">
-            <img src="<%= user_feed_item.articleimage.url %>">
+          <div class="card">
+            <% if !user_feed_item.articleimage.file.nil? %>
+            <div class="image">
+              <img src="<%= user_feed_item.articleimage.url %>">
+            </div>
+            <% end %>
+            <div class="content">
+              <a class="header" href="<%= article_path(user_feed_item) %>"><%=user_feed_item.title%></a>
+              <div class="meta">A <%=user_feed_item.post_type %> by <%= user_feed_item.user.name %></div>
+              <div class="description">
+                <%= truncate(user_feed_item.content, length: 100) %>
+              </div>
+            </div>
           </div>
           <% end %>
-          <div class="content">
-            <a class="header" href="<%= article_path(user_feed_item) %>"><%=user_feed_item.title%></a>
-            <div class="meta">A <%=user_feed_item.post_type %> by <%= user_feed_item.user.name %></div>
-            <div class="description">
-              <%= truncate(user_feed_item.content, length: 100) %>
-            </div>
-          </div>
+          <% end %>
         </div>
         <% end %>
-        <% end %>
-      </div>
-      <% end %>
     </div>
-    <div class="ui bottom attached tab segment" data-tab="faculty incharges">
-      Second
+    <div class="ui bottom attached tab segment" data-tab="faculty-incharges">
+        <%= render partial: "shared/facultymembers" %>
     </div>
     <div class="ui bottom attached tab segment" data-tab="administration">
-      <div class="ui top attached tabular menu">
-        <a class="active green item" data-tab="Vice-Chancellor">Vice-Chancellor</a>
-        <a class=" green item" data-tab="Director">Director</a>
-
-
-      </div>
-      <div class="ui bottom attached active tab segment" data-tab="Vice-Chancellor">
-        <div class="ui  card " id="uibackground">
-          <div class="content">
-            <div class="ui grid">
-              <div class="six wide column"><img id="department-image" src="/assets/VC_UTU.jpg"></div>
-              <div class="ten wide column">
-                <div class="header" id="VC_header"><b>Profile</b></div>
-                <div class="description">
-<div class="desc">
-
-
-                    <p >
-                      Prof. P.K. Garg, is currently serving as Vice Chancellor, Uttarakhand Technical University, Dehradun.
-He completed B.Tech (Civil Engg.) in 1980 and M.Tech (Civil Engg) in 1982 both from the University of Roorkee (now IIT Roorkee).
-He is a recipient of Gold Medal at IIT Roorkee to stand first during M.Tech programme, Commonwealth Scholarship Award for doing
-Ph.D. from University of Bristol (UK), and Commonwealth Fellowship Award to carry out post-doctoral research work at University
-of Reading (UK). He joined the Department of Civil Engg at IIT Roorkee in 1982, and gradually advancing his career rose to the
-position of Head of the Department in 2015.
- Dr Garg has shown extra-ordinary capabilities academically and administratively at various positions at IIT Roorkee.
-                    </p>
-                    <p>
-                      Prof. Garg has published more than 290 technical papers in national and international conferences and
-journals. He has undertaken 23 research projects and provided technical services to 83 consultancy projects on various aspects of
- Civil Engineering, generating funds for the Institute. He has authored a text book on Remote Sensing, and produced two technical
-films on Story of Mapping. He has developed several new courses and practical exercises in Geomatics Engineering. Besides,
- supervising a large number of undergraduate projects, he has guided about 70 M.Tech and 17 Ph.D. Thesis. He is instrumental in
-prestigious MHRD funded projects on e-learning; Development of Virtual Labs, Pedagogy and courses under NPTEL. He has served as
-experts on various national committees, including Ministry of Environment & Forest, EAEC Committee, NBA (AICTE) and Project
- Evaluation Committee, DST, New Delhi.
-
-                    </p>
-                    <p>
-                      Prof. Garg has reviewed a large number of papers for national and international journals.
- Considering the need to train the human resource in the country, he has successfully organized 40 programmes in advanced areas
-of Surveying, Photogrammetry, Remote Sensing, GIS and GPS. He has successfully organized 10 conferences and workshops.
-He is a life member of 24 professional societies, out of which he is a Fellow member of 8 societies. For academic work,
-Prof. Garg has travelled widely, nationally and internationally.
-
-                    </p>
-<p>
-
-He vision is to transform Uttarakhand Technical University to be a front runner, playing its key role in promoting Teaching,
-Research,
-Innovation and Technology Transfer for overall development of the Society and Nation.
-</p>
-</div>
+        <div class="ui top attached tabular menu">
+          <a class="active green item" data-tab="Vice-Chancellor">Vice-Chancellor
+          </a>
+          <a class=" green item" data-tab="Director">Director
+          </a>
+        </div>
+        <div class="ui bottom attached active tab segment" data-tab="Vice-Chancellor">
+          <div class="ui  card " id="uibackground">
+            <div class="content">
+              <div class="ui grid">
+                <div class="six wide column">
+                  <img id="department-image" src="/assets/VC_UTU.jpg">
                 </div>
+                <div class="ten wide column">
+                  <div class="header" id="VC_header">
+                    <b>Profile</b>
+                  </div>
+                  <div class="description">
+                    <div class="desc">
+                      <p>
+                        Prof. P.K. Garg, is currently serving as Vice Chancellor, Uttarakhand Technical University, Dehradun.
+                        He completed B.Tech (Civil Engg.) in 1980 and M.Tech (Civil Engg) in 1982 both from the University of Roorkee (now IIT Roorkee).
+                        He is a recipient of Gold Medal at IIT Roorkee to stand first during M.Tech programme, Commonwealth Scholarship Award for doing
+                        Ph.D. from University of Bristol (UK), and Commonwealth Fellowship Award to carry out post-doctoral research work at University
+                        of Reading (UK). He joined the Department of Civil Engg at IIT Roorkee in 1982, and gradually advancing his career rose to the
+                        position of Head of the Department in 2015.
+                        Dr Garg has shown extra-ordinary capabilities academically and administratively at various positions at IIT Roorkee.
+                      </p>
+                      <p>
+                        Prof. Garg has published more than 290 technical papers in national and international conferences and
+                        journals. He has undertaken 23 research projects and provided technical services to 83 consultancy projects on various aspects of
+                        Civil Engineering, generating funds for the Institute. He has authored a text book on Remote Sensing, and produced two technical
+                        films on Story of Mapping. He has developed several new courses and practical exercises in Geomatics Engineering. Besides,
+                        supervising a large number of undergraduate projects, he has guided about 70 M.Tech and 17 Ph.D. Thesis. He is instrumental in
+                        prestigious MHRD funded projects on e-learning; Development of Virtual Labs, Pedagogy and courses under NPTEL. He has served as
+                        experts on various national committees, including Ministry of Environment & Forest, EAEC Committee, NBA (AICTE) and Project
+                        Evaluation Committee, DST, New Delhi.
+                      </p>
+                      <p>
+                        Prof. Garg has reviewed a large number of papers for national and international journals.
+                        Considering the need to train the human resource in the country, he has successfully organized 40 programmes in advanced areas
+                        of Surveying, Photogrammetry, Remote Sensing, GIS and GPS. He has successfully organized 10 conferences and workshops.
+                        He is a life member of 24 professional societies, out of which he is a Fellow member of 8 societies. For academic work,
+                        Prof. Garg has travelled widely, nationally and internationally.
+                      </p>
+                      <p>
+                        He vision is to transform Uttarakhand Technical University to be a front runner, playing its key role in promoting Teaching,
+                        Research,
+                        Innovation and Technology Transfer for overall development of the Society and Nation.
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="ui bottom attached tab segment" data-tab="Director">
+          <div class="ui  card " id="uibackground">
+            <div class="content">
+              <div class="ui grid">
+                <div class="six wide column">
+                  <img id="director-image" src="/assets/director.jpg">
+                </div>
+                <div class="ten wide column">
+                  <div class="header" id="VC_header">
+                    <b>Profile</b>
+                  </div>
+                  <div class="description">
+                    <div class="desc">
+                      <p>
 
+                        Dr. K.K.S.Mer joined as Director of Institute of Technology, Gopeshwar on 13/02/2015.
+                        Prior to his present assignment he was Head of Department of Mechanical Engineering at Govind Ballabh Pant Engineering
+                        College,Ghurdauri,Pauri Garhwal.
+
+                      </p>
+                      <p>
+                        Dr. K.K.S.Mer has graduated in Mechanical Engineering from College of Technology,PantNagar in 1993.
+                        He did his Post Graduation in Design of Process Machines from MNREC, Allahabad in 1995. Dr. K.K.S.Mer obtained his Doctoral
+                        Degree from IIT Roorkee in 2008.
+                      </p>
+                      <p>
+                        At G.B.P.E.C. Ghurdauri, Pauri Garhwal, Uttarakhand,he held administrative responsibilities as Dean Student
+                        Welfare, Nodal Officer Institute Industry Interaction Cell,Training and Placement Officer,Chief Warden & Proctor, other than Head
+                        of Department of Mechanical Engineering.. He has worked on various expert committees of UTU, Dehradun.
+                      </p>
+                      <p>
+
+                        Dr. K.K.S.Mer has a major contribution Design & Development of Machines, Products and Technologies for researches and Industries.
+                        He trained Officers at Uttarakhand Jal Vidut Nigam Kalagarh about materials & maintenance for different parts of pumps.
+                        He is also a member of Board of Studies of Uttarakhand Technical University.
+                      </p>
+                    </div>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
         </div>
       </div>
-      <div class="ui bottom attached tab segment" data-tab="Director">
-        <div class="ui  card " id="uibackground">
-          <div class="content">
-            <div class="ui grid">
-              <div class="six wide column"><img id="director-image" src="/assets/director.jpg"></div>
-              <div class="ten wide column">
-                <div class="header" id="VC_header"><b>Profile</b></div>
-                <div class="description">
-  <div class="desc">
+    </div>
 
+    <div class="four wide column">
 
-                    <p >
-                      Dr. K.K.S.Mer joined as Director of Institute of Technology, Gopeshwar on 13/02/2015.
-Prior to his present assignment he was Head of Department of Mechanical Engineering at Govind Ballabh Pant Engineering
-College,Ghurdauri,Pauri Garhwal.
-
-                    </p>
-                    <p>
-                      Dr. K.K.S.Mer has graduated in Mechanical Engineering from College of Technology,PantNagar in 1993.
-He did his Post Graduation in Design of Process Machines from MNREC, Allahabad in 1995. Dr. K.K.S.Mer obtained his Doctoral
-Degree from IIT Roorkee in 2008.
-
-
-                    </p>
-                    <p>
-                    At G.B.P.E.C. Ghurdauri, Pauri Garhwal, Uttarakhand,he held administrative responsibilities as Dean Student
-Welfare, Nodal Officer Institute Industry Interaction Cell,Training and Placement Officer,Chief Warden & Proctor, other than Head
-of Department of Mechanical Engineering.. He has worked on various expert committees of UTU, Dehradun.
-
-                    </p>
-  <p>
-
-  Dr. K.K.S.Mer has a major contribution Design & Development of Machines, Products and Technologies for researches and Industries.
-He trained Officers at Uttarakhand Jal Vidut Nigam Kalagarh about materials & maintenance for different parts of pumps.
-He is also a member of Board of Studies of Uttarakhand Technical University.
-  </p>
-  </div>
-                </div>
-
+      <div class="row" style="margin-bottom: 10%;">
+        <div class="ui feed">
+          <h2>News</h2>
+          <% if @news_items.any? %>
+          <% @news_items.each do |news_item| %>
+          <div class="event">
+            <div class="label">
+              <i class="info icon circular"></i>
+            </div>
+            <div class="content">
+              <%= news_item.content %>
+            </div>
+          </div>
+          <% end %>
+          <% end %>
+        </div>
+      </div>
+      <div class="row">
+        <div class="ui feed" style="margin-bottom: 10%;" data-intro="Important Announcements related to Faculty" data-step="4">
+          <h2>Announcements</h2>
+          <% if @statement_items.any? %>
+          <% @statement_items.each do |statement_item| %>
+          <div class="event">
+            <div class="label">
+              <i class="info icon circular"></i>
+            </div>
+            <div class="content">
+              <%= statement_item.content %>
+            </div>
+          </div>
+          <% end %>
+          <% end %>
+        </div>
+      </div>
+      <div class="row" style="margin-bottom: 10%;" data-intro="Recent activities from faculty of ITG" data-step="5">
+        <div class="ui feed">
+          <h2>User Feed</h2>
+          <% if @user_feed_items.any? %>
+          <% @user_feed_items.each do |user_feed_item| %>
+          <div class="event">
+            <div class="label">
+              <img src="<%= gravatar_url(user_feed_item.user) %>">
+            </div>
+            <div class="content">
+              <div class="summary">
+                A <%= link_to user_feed_item.post_type, user_feed_item %> was posted by <%= user_feed_item.user.name %>
+              </div>
+              <div class="date">
+                <%= time_ago_in_words(user_feed_item.created_at) %>
               </div>
             </div>
-          </div>
-        </div>
-      </div>
-    </div>
 
-      </div>
-
-  <div class="four wide column">
-
-    <div class="row" style="margin-bottom: 10%;">
-      <div class="ui feed">
-        <h2>News</h2>
-        <% if @news_items.any? %>
-        <% @news_items.each do |news_item| %>
-        <div class="event">
-          <div class="label">
-            <i class="info icon circular"></i>
           </div>
-          <div class="content">
-            <%= news_item.content %>
-          </div>
+          <% end %>
+          <% end %>
         </div>
-        <% end %>
-        <% end %>
-      </div>
-    </div>
-    <div class="row">
-      <div class="ui feed" style="margin-bottom: 10%;">
-        <h2>Announcements</h2>
-        <% if @statement_items.any? %>
-        <% @statement_items.each do |statement_item| %>
-        <div class="event">
-          <div class="label">
-            <i class="info icon circular"></i>
-          </div>
-          <div class="content">
-            <%= statement_item.content %>
-          </div>
-        </div>
-        <% end %>
-        <% end %>
-      </div>
-    </div>
-    <div class="row" style="margin-bottom: 10%;">
-      <div class="ui feed">
-        <h2>User Feed</h2>
-        <% if @user_feed_items.any? %>
-        <% @user_feed_items.each do |user_feed_item| %>
-        <div class="event">
-          <div class="label">
-            <img src="<%= gravatar_url(user_feed_item.user) %>">
-          </div>
-          <div class="content">
-            <div class="summary">
-              A <%= link_to user_feed_item.post_type, user_feed_item %> was posted by <%= user_feed_item.user.name %>
-            </div>
-            <div class="date">
-              <%= time_ago_in_words(user_feed_item.created_at) %>
-            </div>
-          </div>
-
-        </div>
-        <% end %>
-        <% end %>
       </div>
     </div>
   </div>
-</div>

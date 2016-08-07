@@ -1,7 +1,7 @@
 class HomeController < ApplicationController
   def index
+    @user = current_user    
     @articles = Article.paginate(page: params[:page])
-    @user = current_user
   end
 
   def about
